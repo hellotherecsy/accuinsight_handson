@@ -253,7 +253,7 @@ DataInsight 분석 및 시각화를 위해 MariaDB, ICOS, HIVE 등 다양한 종
 ![ex_screenshot](./img/s3_schema.png)
 
 데이터 셋 이름 변경  
-part-00000-~ -> 회사별 일평균 좌석이용률  
+part-00000-~ -> 회사별 일평균 회의실이용률  
 column명 변경  
 bldg -> 빌딩명, room_scale -> 회의실규모, dt -> 날짜, time -> 시간대, ratio -> 회의실이용률  
 저장  
