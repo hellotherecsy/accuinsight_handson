@@ -244,7 +244,7 @@ ICOS 속성텝에서 `더보기` 버튼을 클릭한다.
 
 
 
-![ex_screenshot](./img/SelectSchema.png)
+![ex_screenshot](./img/selectSchema.png)
 
 각 컬럼의 스키마 정보를 확인 할 수 있다.
 
