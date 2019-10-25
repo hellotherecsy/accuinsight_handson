@@ -1,10 +1,5 @@
 # Demo Instruction
 > 공유 오피스 분석 플랫폼 구축 프로젝트에 사용한 AccuInsight+ 서비스 Batch Pipeline, Data Insight를 공유오피스 분석 요건 45개 중 하나를 택해 실습해본다.
-
-| 회사별 일평균 좌석이용률 | 좌석유형별 주 이용 나이 |
-|---|:---:|
-| 본부내 리더와 구성원간 거리 | 회의실 규모별 이용현황 |
-  
   
 # AccuInsight+ Services
   
