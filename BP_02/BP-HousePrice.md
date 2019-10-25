@@ -453,8 +453,7 @@ ICOS 속성텝에서 `더보기` 버튼을 클릭한다.
 
 ![ex_screenshot](./img/kaggleDataProc.png)
 
-BatchPipeline 서비스는 위 kaggle의 전처리 과정들처럼 한줄 한줄 코딩할 필요가 없이 노드 단위로 연결만 해주면 자동으로 pySpark 코드가 생성된다.
-
+BatchPipeline 서비스는 Null값을 손쉽게 처리할 수 있고 특히 위 kaggle의 전처리 과정들처럼 한줄 한줄 코딩할 필요가 없이 노드 단위로 연결만 해주면 자동으로 pySpark 코드가 생성된다.
 
 
 
