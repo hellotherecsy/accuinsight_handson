@@ -1,15 +1,12 @@
 # Demo Instruction
 > 공유 오피스 분석 플랫폼 구축 프로젝트에 사용한 AccuInsight+ 서비스 Batch Pipeline, Data Insight를 공유오피스 분석 요건 45개 중 하나를 택해 실습해본다.
-  
+<br/><br/>
 # AccuInsight+ Services
-  
 ![ex_screenshot](./img/AccuServices.png)
-
+<br/><br/>
 # Demo Outline
-  
 ![ex_screenshot](./img/Outline.png)
-
-
+<br/><br/>
 # Scenario : 회사별 일평균 좌석이용률
 ## 데이터 준비
 > ICOS에 업로드된 데이터를 사용합니다.  
