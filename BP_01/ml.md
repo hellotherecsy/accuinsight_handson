@@ -51,7 +51,7 @@ ML Modeler를 생성할 때 필요한 데이터셋을 추가한다.
 Batch Pipeline에서 만든 데이터를 불러온다.
 
 - HDFS 경로 입력: 
-  - 경로: `/tmp/bp_shop/part-000.csv`
+  - 경로: `/tmp/bp_shop/part-000.csv` (파일 이름은 Hadoop이 자동으로 생성하여 저장한다.)
 - Dataset Name: `Shop Train`
 - Header exists: `TRUE`
 - Delimiter: `,`
