@@ -11,7 +11,7 @@
 ![ex_screenshot](./img/Outline.png)  
 
 
-# Senario : 좌석유형별 주 이용 나이  
+# Scenario : 좌석유형별 주 이용 나이  
 
 ## 데이터 준비
 ICOS에 업로드된 데이터를 사용합니다.  
