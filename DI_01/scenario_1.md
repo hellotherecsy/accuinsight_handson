@@ -199,7 +199,7 @@ from default;
 
 ![ex_screenshot](./img/s1_drop.png)
 
-drop 노드 drag & drop하여 불필요한 데이터 삭제  
+`drop` 노드 drag & drop하여 불필요한 데이터 삭제  
 우측 property 패널  
 - 좌석 예약 데이터의 resv_df_~
 - 좌석 예약 데이터의 key_df_~
@@ -212,7 +212,7 @@ drop 노드 drag & drop하여 불필요한 데이터 삭제
 
 ![ex_screenshot](./img/s1_filter.png)
 
-filter 노드 drag & drop하여 회사명이 '\N' 이거나 나이대가 '\N'이면 삭제  
+`filter` 노드 drag & drop하여 회사명이 '\N' 이거나 나이대가 '\N'이면 삭제  
 우측 property 패널  
 - col : com_df_~
 - filterOption : !=:not equal
@@ -224,9 +224,9 @@ filter 노드 drag & drop하여 회사명이 '\N' 이거나 나이대가 '\N'이
 
 ![ex_screenshot](./img/s1_withColumnRenamed.png)
 
-withColumnRenamed노드 drag&drop하여 생성  
+`withColumnRenamed` 노드 drag&drop하여 생성  
 우측 property 패널  
-전체  컬럼 불러오기 아이콘을 통해 자동 파싱  
+전체 컬럼 불러오기 아이콘을 통해 자동 파싱  
 
 <br/>
 
@@ -234,9 +234,9 @@ withColumnRenamed노드 drag&drop하여 생성
 
 ![ex_screenshot](./img/s1_export.png)
 
-좌측 데이터 내보내기 클릭  
-ICOS 내보내기 노드 drag & drop 하여 생성  
-withColumnRenamed 노드에서 ICOS 내보내기노드로 연결  
+좌측 `데이터 내보내기` 클릭  
+`ICOS 내보내기` 노드 drag & drop 하여 생성  
+`withColumnRenamed` 노드에서 ICOS 내보내기노드로 연결  
 우측 property 패널  
 - path의 browse 아이콘을 클릭하여 열리는 팝업에서 저장할 디렉토리 위치 선택 후 확인 클릭 (ex. /tmp)  
 - file에 생성할 디렉토리명 입력 (ex.modeling_data)  
@@ -258,7 +258,7 @@ ETL 클릭 후 appName 입력
 
 ![ex_screenshot](./img/s1_stateCheck.png)
 
- workflow 관리 화면으로 이동하여 상태 확인  
+workflow 관리 화면으로 이동하여 상태 확인  
 이미 성공으로 종료되었거나 오류가 발생하여 종료된 경우 INACTIVE 상태  
 상세정보 컬럼의 Instance목록 아이콘 클릭  
 
