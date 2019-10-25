@@ -55,8 +55,41 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   
     ![csv_sample](./doc_images/[2-2-1]csv_sample.png)
   - 파이썬 코드를 활용하여 csv파일을 생성할 수 있습니다. (label_generator.py)
-  
-    ![project_manage](./doc_images/[3-1-1]project_manage.png)
+
+```
+#label_generator.py
+
+import os
+import csv
+
+image_path = "." #image path
+
+image_label_list = list()
+
+label_dir = os.listdir(image_path)
+label_dic = {i: label_dir[i] for i in range(len(label_dir))} #number label generating
+
+for i in label_dic.keys():
+    image_list = os.listdir(os.path.join(image_path, label_dic[i]))
+
+    for j in range(len(image_list)):
+        img_file = os.path.join(os.path.join(image_path, label_dic[i])) + "/" + image_list[j]
+        if os.path.exists(img_file) and img_file.find('.DS_Store') == -1:  # filter .DS_Store
+            image_label_list.append([image_list[j], i])
+
+image_label_list.sort(key=lambda x: int(x[0].split('.')[0]))
+
+print(label_dic)
+
+#csv writing
+with open(image_path + "/image_label.csv", 'w') as f:
+    writer = csv.writer(f)
+
+    for line in image_label_list:
+        writer.writerow(line)
+
+```
+
   - 파이썬 코드를 실행했을 때 출력되는 실제 카테고리-정수 쌍은 잘 보관해 두었다가, 이후에 활용합니다. 이 가이드는 다음 표를 기준으로 제작되었습니다.
   
     | 카테고리 | 정수 label |
@@ -204,3 +237,41 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   
   ![prediction_code_4](./doc_images/[7-1-8]prediction_code_4.png)
   - 분류 결과를 실제 카테고리로 변환해 본 결과입니다.
+  
+  - 로컬 환경에서 아래 파이썬 파일을 활용할 수 있습니다. jupyter notebook에서 만든 코드와 동일합니다. (api_predict.py)
+  
+   ```
+#api_prediction.py
+
+import requests
+import os
+import time
+
+root_path = '.' #pred image path
+image_list = os.listdir(root_path)
+
+
+def get_model_result(image, image_path):
+    headers = {'token': ''} #api token
+    files = {'input': (image, open(image_path, 'rb')), }
+
+    return requests.post('', headers=headers, files=files).text #api address
+
+result_dic = dict()
+
+for image in image_list:
+    image_path = os.path.join(root_path, image)
+    # print(image_path)
+
+    result_dic[image] = get_model_result(image, image_path)
+    time.sleep(0.5)
+    # print(image, result_dic[image])
+
+# print(result_dic)
+label_dic = {0: 'forest', 1: 'buildings', 2: 'glacier', 3: 'street', 4: 'mountain', 5: 'sea'}
+
+for img_name in sorted(result_dic.keys()):
+    result_str = img_name + ': ' + label_dic[int(result_dic[img_name][1])]
+    print(result_str)
+
+```
