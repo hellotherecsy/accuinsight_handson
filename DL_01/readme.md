@@ -301,7 +301,7 @@ for img_name in sorted(result_dic.keys()):
 
   ![pred_sample_4](./doc_images/[8-1-4]pred_sample_4.png)
   
-  정답: sea - 예측: [5] (sea)
+  정답: mountain - 예측: [5] (sea)
   
   오답 원인 추정: 파란 하늘 부분이 상하 반전으로 아래로 내려가면서 언뜻 보면 바다처럼 보임
 
