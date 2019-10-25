@@ -55,10 +55,11 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   - 이미지 카테고리는 총 6개(buildings, forest, glacier, mountain, sea, street)입니다.
 
 (2) csv 파일 준비
-  - Image Classification의 input으로 파일명과 label이 있는 csv 데이터가 필요합니다. label 값은 정수만 가능하기 때문에, 실제 카테고리와 정수 쌍을 기억했다가 나중에 다시 매핑해주는 작업이 필요합니다.
+  - Image Classification의 input으로 파일명과 label이 있는 csv 데이터가 필요합니다. label 값은 정수만 가능하기 때문에, 정수 label과 카테고리를 나중에 다시 매핑해주는 작업이 필요합니다.
   
     ![csv_sample](./doc_images/[2-2-1]csv_sample.png)
   - 파이썬 코드를 활용하여 csv파일을 생성할 수 있습니다. (label_generator.py)
+  - image_path 변수에 csv로 라벨링할 이미지 데이터들의 경로를 넣어줍니다.
 
 ```
 #label_generator.py
@@ -94,7 +95,7 @@ with open(image_path + "/image_label.csv", 'w') as f:
 
 ```
 
-  - 파이썬 코드를 실행했을 때 출력되는 실제 카테고리-정수 쌍은 잘 보관해 두었다가, 이후에 활용합니다. 이 가이드는 다음 표를 기준으로 제작되었습니다.
+  - 파이썬 코드를 실행했을 때 출력되는 (실제 카테고리)-(정수 label) 쌍은 잘 보관해 두었다가, 이후에 활용합니다. 이 가이드는 다음 표를 기준으로 제작되었습니다.
   
     | 카테고리 | 정수 label |
     | :---: | :---: |
@@ -243,7 +244,8 @@ with open(image_path + "/image_label.csv", 'w') as f:
   ![prediction_code_4](./doc_images/[7-1-8]prediction_code_4.png)
   - 분류 결과를 실제 카테고리로 변환해 본 결과입니다.
   
-  - 로컬 환경에서 아래 파이썬 파일을 활용할 수 있습니다. jupyter notebook에서 만든 코드와 동일합니다. (api_predict.py)
+  - 로컬 환경에서 아래 파이썬 파일을 활용할 수 있습니다. jupyter notebook에서 만든 코드와 동일합니다. (api_prediction.py)
+  - 비어있는 부분('' 처리된 부분)에 각각 image path, api token, api address를 넣어주면 코드가 동작합니다.
   
    ```
 #api_prediction.py
