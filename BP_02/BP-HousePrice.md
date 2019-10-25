@@ -392,7 +392,7 @@ ICOS 속성텝에서 `더보기` 버튼을 클릭한다.
 
 #### exportHDFS 노드 생성
 
-![ex_screenshot](./img/ExportHDFSNode.png)
+![ex_screenshot](./img/ExportHdfsNode.png)
 
 1. 데이터 내보내기 텝에 `HDFS 내보내기 노드` 를 드래그 & 드랍해 캔버스에 옮긴다.
 2. `withColum 노드` 와 연결해 준다.
@@ -484,7 +484,7 @@ BatchPipeline 서비스는 위 kaggle의 전처리 과정들처럼 한줄 한줄
 
 #### 정상 완료된 워크플로우 확인
 
-![ex_screenshot](./img/workflowInstance.png)
+![ex_screenshot](./img/workflowinstance.png)
 
 워크플로우의 상태가 다시 `INACTIVE`로 변경된다. 이때 실행이력과 워크플로우의 로그를 보기 위해 `인스턴스 목록`버튼을 클릭한다.
 
