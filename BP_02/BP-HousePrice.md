@@ -81,7 +81,7 @@
 
 
 
-![ex_screenshot](./img/selectIcosFile.png)
+![ex_screenshot](./img/selectICOSFile.png)
 
 1. 스토리지(`IBMOSC1146611-6`), Bucket(`handoff-bucket`)을 선택하고 `/BP/HousePrices/train.csv` 파일을 선택한다.
 2. `확인` 버튼을 누른다.
