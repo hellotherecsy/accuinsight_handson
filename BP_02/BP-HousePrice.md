@@ -53,7 +53,7 @@
 
 #### 워크플로우 생성 화면으로 이동 
 
-![ex_screenshot](./img/createWorkflow.png)
+![ex_screenshot](./img/createWorkFlow.png)
 
 워크플로우 텝에 생성버튼을 클릭한다.
 
