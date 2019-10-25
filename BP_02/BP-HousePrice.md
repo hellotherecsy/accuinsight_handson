@@ -7,7 +7,7 @@
 
    > 집 값을 예측하기 위한 ML 모델을 만들기 위해  House Prices 데이터를 BatchPipeline 서비스를 활용해 전처리 하고 HDFS에 저장한다. 
    >
-   > 실제 kaggle의 Competition중 "House Prices: Advanced Regression Techniques" 의 데이터를 활용하고
+   > 실제 kaggle의 Competition중 "House Prices: Advanced Regression Techniques" 의 데이터를 활용하고 NoteBooks중  https://www.kaggle.com/serigne 의 https://www.kaggle.com/serigne/stacked-regressions-top-4-on-leaderboard 를 참고함
    >
    > 
 
