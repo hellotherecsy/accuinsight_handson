@@ -1,11 +1,7 @@
 # Demo Instruction
 > 공유 오피스 분석 플랫폼 구축 프로젝트에 사용한 AccuInsight+ 서비스 Batch Pipeline, Data Insight를 공유오피스 분석 요건 45개 중 하나를 택해 실습해본다.
+  
 
-| 회사별 일평균 좌석이용률 | 좌석유형별 주 이용 나이 |
-|---|:---:|
-| 본부내 리더와 구성원간 거리 | 회의실 규모별 이용현황 |
-  
-  
 # AccuInsight+ Services
   
 ![ex_screenshot](./img/AccuServices.png)
@@ -91,7 +87,7 @@ filter 노드 drag & drop하여 좌석 메타 데이터에서 고정 좌석 제�
 우측 property 패널  
 - col : occupied
 - filterOption : =:equal
-- filterValue : 'N'  
+- filterValue : ‘N’  
   
 
 #### 통계
@@ -116,17 +112,15 @@ agg 노드 drag & drop하여 좌석 메타 데이터에서 빌딩별 전체좌�
 SQL 노드 drag & drop하여 좌석 예약 데이터에서 join key 생성  
 우측 property 패널  
 - query  
-
-select bldg,dt,com,countdesk_id as resv, concat(bldg,'_',dt) as key
-from default;
+> select bldg,dt,com,countdesk_id as resv, concat(bldg,'_',dt) as key
+> from default;
 - overwriteSchema 체크 (SQL 결과로 데이터 변경)  
 
 SQL 노드 drag & drop하여 좌석 메타 데이터에서 join key 생성  
 우측 property 패널  
 - query  
-
-select countdesk_id as total, concat(bldg,'_',dt) as key
-from default; 
+> select countdesk_id as total, concat(bldg,'_',dt) as key
+> from default; 
 - overwriteSchema 체크 (SQL 결과로 데이터 변경)  
 
 #### 2개파일 조인
@@ -167,11 +161,11 @@ drop 노드 drag & drop하여 불필요한 데이터 삭제
 
 ![ex_screenshot](./img/s1_filter.png)
 
-filter 노드 drag & drop하여 회사명이 '\N' 이거나 나이대가 '\N'이면 삭제  
+filter 노드 drag & drop하여 회사명이 ‘\N’ 이거나 나이대가 ‘\N’이면 삭제  
 우측 property 패널  
 - col : com_df_~
 - filterOption : !=:not equal
-- filterValue : '\N'  
+- filterValue : ‘\N’  
 
 #### 컬럼명 변경
 
@@ -260,7 +254,6 @@ bldg -> 빌딩명, dt -> 날짜, com -> 회사명, ratio -> 좌석이용률
 분석 작업 차트 생성  
 차트 생성 버튼 클릭  
   
-
 ![ex_screenshot](./img/makeChart.png)
 
 컬럼 스택 차트 선택  
@@ -294,3 +287,5 @@ Value : 좌석이용률
 ![ex_screenshot](./img/dashboard_img.png)
 
 다운받은 이미지 확인  
+
+
