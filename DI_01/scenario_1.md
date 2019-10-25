@@ -315,7 +315,11 @@ DataInsight 분석 및 시각화를 위해 MariaDB, ICOS, HIVE 등 다양한 종
 데이터 셋 이름 변경  
 part-00000-~ -> 회사별 일평균 좌석이용률  
 column명 변경  
-bldg -> 빌딩명, dt -> 날짜, com -> 회사명, ratio -> 좌석이용률  
+- bldg -> 빌딩명
+- dt -> 날짜
+- com -> 회사명
+- ratio -> 좌석이용률  
+
 저장  
 
 <br/><br/>
