@@ -55,6 +55,7 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   
     ![csv_sample](./doc_images/[2-2-1]csv_sample.png)
   - 파이썬 코드를 활용하여 csv파일을 생성할 수 있습니다. (label_generator.py)
+  
     ![project_manage](./doc_images/[3-1-1]project_manage.png)
   - 파이썬 코드를 실행했을 때 출력되는 실제 카테고리-정수 쌍은 잘 보관해 두었다가, 이후에 활용합니다. 이 가이드는 다음 표를 기준으로 제작되었습니다.
   
@@ -94,10 +95,12 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
 (2) 데이터 업로드
 
   ![dataset_create](./doc_images/[4-2-1]dataset_create.png)
+  
   - 데이터 관리 화면의 데이터 생성 버튼을 눌러 앞서 준비했던 데이터를 업로드합니다. 
   - 데이터 세트 명과 설명, 데이터 명과 설명을 입력하고, 데이터 파일을 등록합니다.
   - 파일 등록 시, 여러 개의 파일을 동시에 올릴 수 있습니다.
   - 데이터 저장 경로는 자동 생성되며, 생성 버튼을 누르면 raw 데이터가 업로드 되면서 데이터 세트가 생성됩니다. 이 과정을 반복하여 총 세 가지의 데이터 세트를 만듭니다. (학습 이미지, 예측 이미지, label csv)
+  
   ![dataset_sample](./doc_images/[4-2-2]dataset_sample.png)
   - 생성된 이미지 데이터 세트의 이름을 누르면 전처리 상세 화면으로 진입할 수 있습니다.
   - 전처리 알고리즘이 rawData인 데이터명을 클릭하면 데이터 전처리 상세 팝업을 볼 수 있는데, 여기에서 업로드 된 데이터 예시를 확인할 수 있습니다. 예시 리프레시 버튼을 누를 때마다 데이터 중 하나를 랜덤으로 보여줍니다.
@@ -106,8 +109,10 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
 
   ![data_preprocess](./doc_images/[4-3-1]data_preprocess.png)
   - 예측에 사용할 이미지 데이터를 상하 반전/흑백 처리합니다. 전처리 상세 화면에서 데이터 전처리 버튼을 클릭합니다.
+  
   ![data_preprocess_create_1](./doc_images/[4-3-2]data_preprocess_create_1.png)
   - 데이터는 업로드 된 rawData를 선택히고, 전처리 알고리즘은 이미지 전처리로 선택합니다.
+  
   ![data_preprocess_create_2](./doc_images/[4-3-3]data_preprocess_create_2.png)
   - 알고리즘을 고르면 알고리즘과 연관된 팝업이 뜹니다. 이미지 전처리 팝업에서 상하 반전과 흑백 처리를 사용으로 선택 후 확인을 누릅니다.
   - Processed 데이터 명/ Processed 데이터 설명은 전처리 된 데이터가 가지게 될 이름과 설명입니다. 원하는 이름을 입력 후 생성을 누르면 전처리가 시작됩니다.
@@ -118,8 +123,10 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
 
   ![job_manage](./doc_images/[5-1-1]job_manage.png)
   - 우측 상단의 분석 탭에서 작업을 선택하면 작업 관리 화면으로 넘어갈 수 있습니다.
+  
   ![job_create_1](./doc_images/[5-1-2]job_create_1.png)
   - 작업 생성 버튼을 눌러 작업을 생성합니다. DL Modeler에 내장된 image classification 알고리즘으로 학습을 진행할 예정이므로 생성 방식으로는 Basic을 선택합니다.
+  
   ![job_create2](./doc_images/[5-1-3]job_create2.png)
   - 그 다음 나오는 작업 생성(Basic) 창에서 작업 상세 정보를 입력합니다. 작업 명과 작업 설명을 원하는 대로 입력한 후, 이미지 분류 알고리즘을 선택합니다.
   - 알고리즘을 선택하면 그에 따라 데이터를 선택하는 부분이 바뀝니다. 데이터 탭에서 업로드해 두었던 학습 이미지와 label csv 파일을 선택한 수 생성을 누릅니다.
@@ -129,6 +136,7 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
 
   ![train_manage](./doc_images/[5-2-1]train_manage.png)
   - 작업 관리 화면에서 생성한 작업명을 클릭하면 작업 상세 화면이 나오는데, 이 화면에서 학습을 생성하고 관리할 수 있습니다.
+  
   ![train_create](./doc_images/[5-2-2]train_create.png)
   - 학습 생성 버튼을 누르면 학습 생성 팝업이 나옵니다.
   - 학습에 사용할 인스턴스(cpu/gpu)를 선택합니다. gpu를 선택한 경우 gpu 개수도 같이 입력합니다.
@@ -150,6 +158,7 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   - 학습 관리 화면의 배포 아이콘(로켓 모양)이나, 학습 상세 팝업에서 배포 버튼을 누르면 학습 배포 팝업이 나타납니다.
   - 배포 명과 배포 설명을 입력하고, 배포에 활용할 인스턴스와 Pb파일을 선택합니다. Pb파일은 학습의 결과로 생성된 모델 파일입니다.
   - 모든 내용을 입력한 후 생성 버튼을 누르면 배포 서버가 생성됩니다.
+  
   ![deploy_create_2](./doc_images/[6-1-2]deploy_create_2.png)
   ![deploy_manage](./doc_images/[6-1-3]deploy_manage.png)
   - 배포된 서버는 배포 관리 화면에서 확인 가능합니다. 배포 관리 화면은 생성 후 나오는 배포 성공 팝업에서 예 버튼을 누르거나, 우측 상단의 분석 탭에서 배포를 선택하면 넘어갈 수 있습니다.
@@ -157,10 +166,12 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
 (2) 샘플 예측
 
   ![prediction_manage](./doc_images/[6-2-1]prediction_manage.png)
-  - 배포 관리 화면에서, 배포 서버 명을 누르면 예측 관리 페이지가 보입니다. 이 페이지에서 해당 배포 서버에 대해 간단한 테스트를 해볼 수 있습니다.
+  - 배포 관리 화면에서, 배포 서버 명을 누르면 예측 관리 페이지가 보입니다. 이 페이지에서 해당 배포 서버에 대해 간단한 테스트를 해볼 수 있습니다.]
+  
   ![deploy_detail](./doc_images/[6-2-2]deploy_detail.png)
   - 상세 탭에서 해당 서버의 상세 정보를 볼 수 있는데, 서버에 API를 던지는 샘플도 여기에 소개됩니다.
   - 배포 서버 테스트를 위해, 예측 생성 버튼을 클릭합니다.
+  
   ![prediction_create](./doc_images/[6-2-3]prediction_create.png)
   - 테스트 데이터로는 전처리 해 두었던 (상하 반전/흑백) 테스트용 이미지 데이터를 선택합니다. 폴더를 선택하면 해당 폴더에 있는 모든 이미지로 예측 해볼 수 있습니다.
   - 예시 리프레시 버튼을 누르면 해당 폴더의 이미지가 랜덤으로 하나씩 보여지며, 샘플 예측 버튼을 누르면 샘플 이미지를 배포 서버가 어떻게 예측했는지 볼 수 있습니다. 이미지 분류 label을 정수로 넣었기 때문에, 정수로 결과를 반환합니다.
@@ -171,18 +182,25 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
 
   - DL Modeler에서 생성한 모델이 실제 분석 업무환경에서 어떻게 활용할 수 있는 지 간단히 보여드리려고 합니다.
   - Jupyter notebook에서 이미지 데이터를 가져와 배포한 모델에 API를 보내 분류 결과를 가져오고, 결과를 카테고리로 변환해 함께 출력하는 예시입니다.
+  
   ![custom_job_create](./doc_images/[7-1-1]custom_job_create.png)
   - 작업 관리 화면으로 넘어와 custom 작업을 생성합니다. custom 작업은 jupyter notebook에 학습 코드를 직접 작성해 학습을 생성하는 기능을 제공합니다. 하지만 이번 demo에서는 jupyter notebook만 활용합니다. 작업 생성 방식에서 custom을 선택하면 위와 같은 팝업이 보입니다.
+  
   ![custom_job_manage](./doc_images/[7-1-2]custom_job_manage.png)
   - 작업 명과 작업 설명, jupyter notebook에 사용할 인스턴스를 선택한 후 생성 버튼을 누르면 jupyter notebook 환경이 생성됩니다. 생성된 작업 명을 클릭하여 학습 관리 페이지로 진입합니다.
+  
   ![jupyter_main](./doc_images/[7-1-3]jupyter_main.png)
   - jupyter notebook 버튼을 누르면 인증 토큰이 뜨는데, 이를 복사한 후 Open을 클릭하여 노트북으로 진입합니다. 로그인은 토큰으로 하면 됩니다.
+  
   ![notebook_create](./doc_images/[7-1-4]notebook_create.png)
   - 파이썬3 노트북을 하나 만듭니다.
+  
   ![prediction_code_1](./doc_images/[7-1-5]prediction_code_1.png)
   - 사용할 라이브러리와 이미지 경로, API를 호출하는 함수를 만듭니다. API 호출 함수는 예측 관리 페이지의 상세 탭에 있는 curl API 예시를 파이썬 코드로 변환한 것입니다.
+  
   ![prediction_code_2](./doc_images/[7-1-6]prediction_code_2.png)
   ![prediction_code_3](./doc_images/[7-1-7]prediction_code_3.png)
   - 이미지 명과 API를 호출해 얻은 분류 결과를 사전으로 매핑합니다. 그리고 정수로 반환되는 결과를 실제 카테고리로 매핑할 사전을 만듭니다.
+  
   ![prediction_code_4](./doc_images/[7-1-8]prediction_code_4.png)
   - 분류 결과를 실제 카테고리로 변환해 본 결과입니다.
