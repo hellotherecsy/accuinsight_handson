@@ -28,7 +28,7 @@
 (1) Dataset 1 : 좌석 예약 데이터  
 
 | column명 | column 설명 | Value Example |
-|---|:---:|---:|
+|---|:---:|---|
 | `bldg` | 빌딩명 | SKC 본사, 서린 빌딩, ... |
 | `desk_type` | 좌석 유형 | 일반좌석, 스탠딩좌석, ... |
 | `desk_id` | 각 좌석의 ID | 3a27b3bf-d8de-11e8-975a-0a9726611f46 |
@@ -41,7 +41,7 @@
 (2) Dataset 2 : 좌석 메타 데이터  
 
 | column명 | column 설명 | Value Example |
-|---|:---:|---:|
+|---|:---:|---|
 | `bldg` | 빌딩명 | SKC 본사, 서린 빌딩, ... |
 | `desk_type` | 좌석 유형 | 일반좌석, 스탠딩좌석, ... |
 | `occupied` | 고정좌석 여부 | N, Y |
