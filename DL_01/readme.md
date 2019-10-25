@@ -47,6 +47,9 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
 ## 데이터 준비
 (1) 데이터 설명
   - 이번 Demo에서 사용할 데이터는 Intel이 Kaggle에 공개한 Intel Image Classification 이미지 데이터입니다. (https://www.kaggle.com/puneet6060/intel-image-classification)
+  
+  ![image_folder](./doc_images/[2-1-1]image_folder.png)
+  ![image-sample](./doc_images/[2-1-2]image-sample.png)
   - 150px X 150px 사이즈의 자연/풍경 이미지 약 25,000개로 구성된 데이터셋으로, Demo 학습에는 총 14,034개의 데이터가 활용되지만, 60개 이미지만 학습 데이터로 사용하여 toy model을 만듭니다.
   - 이미지 카테고리는 총 6개(buildings, forest, glacier, mountain, sea, street)입니다.
 
