@@ -21,7 +21,10 @@
 > 스토리지 : IBMOSC1146611-6  
 > 버킷 : handson-bucket  
 
+<br/>
 (1) Dataset 1 : 좌석 예약 데이터
+
+<br/>
 
 | column명 | column 설명 | Value Example |
 |---|:---:|---:|
@@ -32,8 +35,10 @@
 | `com` | 회사명 | SK C&C, SK이노베이션, … |
 | `age` | 나이대 | 20대,30대,... |
 
- 
+<br/>
 (2) Dataset 2 : 좌석 메타 데이터
+
+<br/>
 
 | column명 | column 설명 | Value Example |
 |---|:---:|---:|
@@ -43,16 +48,27 @@
 | `desk_id` | 각 좌석의 ID | 3a27b3bf-d8de-11e8-975a-0a9726611f46 |
 | `dt` | 예약 날짜 | 20190803 |
 
+<br/>
+
 ## 데이터 처리  
-  
+
+<br/>
 
 ### 데이터파일 2개 조인하여 ETL작업 수행하기  
 
+<br/>
+
  > ETL flow 구성내용 : ICOS에서 파일 불러오기 → 사용할 column만 선택 → 데이터 정제 → 통계 → join key 생성 → 2개 파일 join → 새로운 column 생성 → 불필요한 column 삭제 → null값 제거→ column명 rename → ICOS에 저장  
 
+<br/>
+
 #### 생성 메뉴로 이동
-  
+
+<br/>
+
 ![ex_screenshot](./img/BP_start.png)
+
+<br/>
 
 #### 데이터 로딩
 
