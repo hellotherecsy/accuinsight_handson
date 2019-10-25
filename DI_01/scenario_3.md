@@ -11,7 +11,7 @@
 ![ex_screenshot](./img/Outline.png)  
 
 
-# Senario : 회의실 규모별 이용현황
+# Scenario : 회의실 규모별 이용현황
 
 ## 데이터 준비
 ICOS에 업로드된 데이터를 사용합니다.  
