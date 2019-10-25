@@ -105,10 +105,11 @@ column명 변경  (header)
 <br/>
 
 `select` 노드 drag & drop하여 생성  
-우측 property 패널  
-col checkbox에서 아래 5가지 column 체크  
-- 좌석 예약 데이터 : bldg, desk_id, dt, com
-- 좌석 메타 데이터 : bldg, occupied, desk_id, dt  
+
+    우측 property 패널  
+    col checkbox에서 아래 5가지 column 체크
+    - 좌석 예약 데이터 : bldg, desk_id, dt, com
+    - 좌석 메타 데이터 : bldg, occupied, desk_id, dt
 
 <br/>
 
@@ -122,10 +123,11 @@ col checkbox에서 아래 5가지 column 체크
 
 `distinct` 노드 drag & drop하여 좌석 예약 데이터에서 중복 예약 제거  
 `filter` 노드 drag & drop하여 좌석 메타 데이터에서 고정 좌석 제외  
-우측 property 패널  
-- col : occupied
-- filterOption : =:equal
-- filterValue : 'N'  
+
+    우측 property 패널  
+    - col : occupied
+    - filterOption : =:equal
+    - filterValue : 'N'  
 
 <br/>
 
@@ -134,14 +136,16 @@ col checkbox에서 아래 5가지 column 체크
 ![ex_screenshot](./img/s1_agg.png)
 
 `agg` 노드 drag & drop하여 좌석 예약 데이터에서 빌딩별 회사별 예약좌석수 계산  
-우측 property 패널  
-- aggcol : bldg, com, dt
-- target : func count, col desk_id  
+
+    우측 property 패널  
+    - aggcol : bldg, com, dt
+    - target : func count, col desk_id  
 
 `agg` 노드 drag & drop하여 좌석 메타 데이터에서 빌딩별 전체좌석수 계산  
-우측 property 패널  
-- aggcol : bldg, dt
-- target : func count, col desk_id  
+
+    우측 property 패널  
+    - aggcol : bldg, dt
+    - target : func count, col desk_id  
 
 <br/>
 
@@ -150,17 +154,19 @@ col checkbox에서 아래 5가지 column 체크
 ![ex_screenshot](./img/s1_aql.png)
 
 
-`SQL` 노드 drag & drop하여 좌석 예약 데이터에서 join key 생성  
-우측 property 패널  
-- query  
+`SQL` 노드 drag & drop하여 좌석 예약 데이터에서 join key 생성 
+
+    우측 property 패널  
+    - query  
 
 select bldg,dt,com,countdesk_id as resv, concat(bldg,'_',dt) as key
 from default;
 - overwriteSchema 체크 (SQL 결과로 데이터 변경)  
 
-`SQL` 노드 drag & drop하여 좌석 메타 데이터에서 join key 생성  
-우측 property 패널  
-- query  
+`SQL` 노드 drag & drop하여 좌석 메타 데이터에서 join key 생성
+
+    우측 property 패널  
+    - query  
 
 select countdesk_id as total, concat(bldg,'_',dt) as key
 from default; 
@@ -174,10 +180,11 @@ from default;
 
 좌측의 데이터 처리하기 클릭  
 열린 패널에서 dataJoin 노드 우측 캔버스에 drag & drop하여 생성  
-우측 property패널  
-- col1 : 좌석 예약 데이터의 key 선택  
-- col2 : 좌석 메타 데이터의 key 선택  
-- how : right_outer 선택 (col1,col2 순서가 바뀐 경우 left_outer 선택)  
+
+    우측 property패널  
+    - col1 : 좌석 예약 데이터의 key 선택  
+    - col2 : 좌석 메타 데이터의 key 선택  
+    - how : right_outer 선택 (col1,col2 순서가 바뀐 경우 left_outer 선택)  
 
 <br/>
 
@@ -186,12 +193,13 @@ from default;
 ![ex_screenshot](./img/s1_withColumn.png)
 
 `withColumn` 노드 drag & drop하여 좌석이용률 계산  
-우측 property 패널  
-- selectType : column
-- col1 : resv_dt_~
-- operator : /
-- col2 : total_dt_~
-- newColumn : ratio  
+
+    우측 property 패널  
+    - selectType : column
+    - col1 : resv_dt_~
+    - operator : /
+    - col2 : total_dt_~
+    - newColumn : ratio  
 
 <br/>
 
@@ -200,11 +208,12 @@ from default;
 ![ex_screenshot](./img/s1_drop.png)
 
 `drop` 노드 drag & drop하여 불필요한 데이터 삭제  
-우측 property 패널  
-- 좌석 예약 데이터의 resv_df_~
-- 좌석 예약 데이터의 key_df_~
-- 좌석 메타 데이터의 total_df_~
-- 좌석 메타 데이터의 key_df_~  
+
+    우측 property 패널  
+    - 좌석 예약 데이터의 resv_df_~
+    - 좌석 예약 데이터의 key_df_~
+    - 좌석 메타 데이터의 total_df_~
+    - 좌석 메타 데이터의 key_df_~  
 
 <br/>
 
@@ -212,11 +221,12 @@ from default;
 
 ![ex_screenshot](./img/s1_filter.png)
 
-`filter` 노드 drag & drop하여 회사명이 '\N' 이거나 나이대가 '\N'이면 삭제  
-우측 property 패널  
-- col : com_df_~
-- filterOption : !=:not equal
-- filterValue : '\N'  
+`filter` 노드 drag & drop하여 회사명이 '\N' 이거나 나이대가 '\N'이면 삭제 
+
+    우측 property 패널  
+    - col : com_df_~
+    - filterOption : !=:not equal
+    - filterValue : '\N'  
 
 <br/>
 
@@ -225,8 +235,9 @@ from default;
 ![ex_screenshot](./img/s1_withColumnRenamed.png)
 
 `withColumnRenamed` 노드 drag&drop하여 생성  
-우측 property 패널  
-전체 컬럼 불러오기 아이콘을 통해 자동 파싱  
+
+    우측 property 패널  
+    전체 컬럼 불러오기 아이콘을 통해 자동 파싱  
 
 <br/>
 
@@ -234,12 +245,15 @@ from default;
 
 ![ex_screenshot](./img/s1_export.png)
 
-좌측 `데이터 내보내기` 클릭  
-`ICOS 내보내기` 노드 drag & drop 하여 생성  
-`withColumnRenamed` 노드에서 ICOS 내보내기노드로 연결  
-우측 property 패널  
-- path의 browse 아이콘을 클릭하여 열리는 팝업에서 저장할 디렉토리 위치 선택 후 확인 클릭 (ex. /tmp)  
-- file에 생성할 디렉토리명 입력 (ex.modeling_data)  
+    좌측 `데이터 내보내기` 클릭  
+    `ICOS 내보내기` 노드 drag & drop 하여 생성  
+    `withColumnRenamed` 노드에서 ICOS 내보내기노드로 연결  
+
+<br/>
+
+    우측 property 패널  
+    - path의 browse 아이콘을 클릭하여 열리는 팝업에서 저장할 디렉토리 위치 선택 후 확인 클릭 (ex. /tmp)  
+    - file에 생성할 디렉토리명 입력 (ex.modeling_data)  
 
 <br/>
 
