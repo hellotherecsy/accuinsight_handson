@@ -8,12 +8,14 @@
   
 ![ex_screenshot](./img/AccuServices.png)
 
+<br/><br/>
 # Demo Outline
   
 ![ex_screenshot](./img/Outline.png)
 
-
+<br/><br/>
 # Scenario : 회사별 일평균 좌석이용률
+<br/>
 ## 데이터 준비
 > ICOS에 업로드된 데이터를 사용합니다.  
 > 스토리지 : IBMOSC1146611-6  
