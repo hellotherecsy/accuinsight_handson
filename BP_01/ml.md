@@ -89,8 +89,6 @@ Pipeline에서 등록한 데이터셋을 선택한다.
   - input: `category, price, group_encoded, style_encoded`
   - output: `predict_age_group`
   - label: `age_group`
-  - splitWeight: `0.7`
-  - seed: `2`
   - 나머지 기본 설정 그대로
 
 ### 파이프라인 저장
