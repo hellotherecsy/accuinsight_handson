@@ -1,6 +1,6 @@
 # Demo Instruction
 > 공유 오피스 분석 플랫폼 구축 프로젝트에 사용한 AccuInsight+ 서비스 Batch Pipeline, Data Insight를 공유오피스 분석 요건 45개 중 하나를 택해 실습해본다.
-  
+<br/><br/>
 # AccuInsight+ Services
   
 ![ex_screenshot](./img/AccuServices.png)
