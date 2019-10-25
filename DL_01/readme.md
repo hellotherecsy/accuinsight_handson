@@ -50,7 +50,8 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   
   ![image_folder](./doc_images/[2-1-1]image_folder.png)
   ![image-sample](./doc_images/[2-1-2]image-sample.png)
-  - 150px X 150px 사이즈의 자연/풍경 이미지 약 25,000개로 구성된 데이터셋으로, Demo 학습에는 총 14,034개의 데이터가 활용되지만, 60개 이미지만 학습 데이터로 사용하여 toy model을 만듭니다.
+  - 150px X 150px 사이즈의 자연/풍경 이미지 약 25,000개로 구성된 데이터셋입니다.
+  - Demo 학습에는 총 14,034개의 데이터가 활용되지만, 실습을 할 땐 60개 이미지만 학습 데이터로 사용하여 toy model을 만듭니다.
   - 이미지 카테고리는 총 6개(buildings, forest, glacier, mountain, sea, street)입니다.
 
 (2) csv 파일 준비
@@ -278,3 +279,24 @@ for img_name in sorted(result_dic.keys()):
     print(result_str)
 
 ```
+
+## 예측 결과 sample
+(1) 제대로 예측한 이미지
+![pred_sample_1](./doc_images/[8-1-1] pred_sample_1.png)
+정답: buildings - 예측: [1] (buildings)
+
+![pred_sample_2](./doc_images/[8-1-2] pred_sample_2.png)
+정답: forest - 예측: [0] (forest)
+
+(2) 잘못 예측한 이미지
+![pred_sample_3](./doc_images/[8-1-3] pred_sample_3.png)
+정답: sea - 예측: [2] (glacier)
+오답 원인 추정: 해파리 이미지가 유광인데, 이를 흑백으로 변환하면서 빙하의 특성과 비슷해졌음
+
+![pred_sample_4](./doc_images/[8-1-4] pred_sample_4.png)
+정답: sea - 예측: [5] (sea)
+오답 원인 추정: 파란 하늘 부분이 상하 반전으로 아래로 내려가면서 언뜻 보면 바다처럼 보임
+
+![pred_sample_5](./doc_images/[8-1-5] pred_sample_5.png)
+정답: glacier - 예측: [5] (sea)
+오답 원인 추정: 바다 위에 떠 있는 빙하 사진이므로, 사실 틀린 예측이라고 할 수 없음
