@@ -327,7 +327,7 @@ ICOS 속성텝에서 `더보기` 버튼을 클릭한다.
 
 #### castNode 생성
 
-![ex_screenshot](./img/CastNode.png)
+![ex_screenshot](./img/castNode.png)
 
 1. 데이터 처리하기(기본) 텝에 있는 `cast 노드` 를 드래그 & 드랍해 캔버스에 옮긴다.
 2. `customCode 노드` 와 연결해준다.
