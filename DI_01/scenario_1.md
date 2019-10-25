@@ -25,9 +25,7 @@
 
 <br/>
 
-(1) Dataset 1 : 좌석 예약 데이터
-
-<br/>
+(1) Dataset 1 : 좌석 예약 데이터  
 
 | column명 | column 설명 | Value Example |
 |---|:---:|---:|
@@ -39,9 +37,8 @@
 | `age` | 나이대 | 20대,30대,... |
 
 <br/>
-(2) Dataset 2 : 좌석 메타 데이터
 
-<br/>
+(2) Dataset 2 : 좌석 메타 데이터  
 
 | column명 | column 설명 | Value Example |
 |---|:---:|---:|
