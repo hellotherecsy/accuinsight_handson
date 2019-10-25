@@ -72,24 +72,37 @@
 
 #### 데이터 로딩
 
+<br/>
+
 ![ex_screenshot](./img/DataLoading.png)
+
+<br/>
 
 데이터 불러오기 그룹에서 ICOS 불러오기 노드를 캔버스 영역에 drag & drop하여 node 생성  
 우측 property 패널  
 - file : 불러오려는 ICOS 파일의 경로 지정
 - option : 데이터에 header가 없는 경우 false로 변경
 - schema : 자동 파일 열기  
-  
+
+<br/>
+
 column명 변경  (header)
 > 좌석 예약 데이터 : bldg, desk_type, desk_id, dt, com, age  
+
+<br/>
 
 동일한 방법으로 좌석 메타 데이터도 불러오기  
 > 좌석 메타 데이터 : bldg, desk_type, occupied, desk_id, dt  
 
+<br/>
 
 #### 필요한 컬럼 선택  
 
+<br/>
+
 ![ex_screenshot](./img/s1_select.png)
+
+<br/>
 
 select 노드 drag & drop하여 생성  
 우측 property 패널  
@@ -97,10 +110,15 @@ col checkbox에서 아래 5가지 column 체크
 - 좌석 예약 데이터 : bldg, desk_id, dt, com
 - 좌석 메타 데이터 : bldg, occupied, desk_id, dt  
 
+<br/>
 
 #### 데이터 정제
 
+<br/>
+
 ![ex_screenshot](./img/s1_distinct_filter.png)
+
+<br/>
 
 distinct 노드 drag & drop하여 좌석 예약 데이터에서 중복 예약 제거  
 filter 노드 drag & drop하여 좌석 메타 데이터에서 고정 좌석 제외  
@@ -108,7 +126,8 @@ filter 노드 drag & drop하여 좌석 메타 데이터에서 고정 좌석 제�
 - col : occupied
 - filterOption : =:equal
 - filterValue : 'N'  
-  
+
+<br/>
 
 #### 통계
 
@@ -123,7 +142,9 @@ agg 노드 drag & drop하여 좌석 메타 데이터에서 빌딩별 전체좌�
 우측 property 패널  
 - aggcol : bldg, dt
 - target : func count, col desk_id  
-  
+
+<br/>
+
 #### join key 생성
 
 ![ex_screenshot](./img/s1_aql.png)
@@ -145,6 +166,8 @@ select countdesk_id as total, concat(bldg,'_',dt) as key
 from default; 
 - overwriteSchema 체크 (SQL 결과로 데이터 변경)  
 
+<br/>
+
 #### 2개파일 조인
 
 ![ex_screenshot](./img/s1_join.png)
@@ -155,6 +178,8 @@ from default;
 - col1 : 좌석 예약 데이터의 key 선택  
 - col2 : 좌석 메타 데이터의 key 선택  
 - how : right_outer 선택 (col1,col2 순서가 바뀐 경우 left_outer 선택)  
+
+<br/>
 
 #### 새로운 column 생성
 
@@ -168,6 +193,8 @@ withColumn 노드 drag & drop하여 좌석이용률 계산
 - col2 : total_dt_~
 - newColumn : ratio  
 
+<br/>
+
 #### 불필요한 column 삭제
 
 ![ex_screenshot](./img/s1_drop.png)
@@ -179,6 +206,8 @@ drop 노드 drag & drop하여 불필요한 데이터 삭제
 - 좌석 메타 데이터의 total_df_~
 - 좌석 메타 데이터의 key_df_~  
 
+<br/>
+
 #### null값 제거
 
 ![ex_screenshot](./img/s1_filter.png)
@@ -189,6 +218,8 @@ filter 노드 drag & drop하여 회사명이 '\N' 이거나 나이대가 '\N'이
 - filterOption : !=:not equal
 - filterValue : '\N'  
 
+<br/>
+
 #### 컬럼명 변경
 
 ![ex_screenshot](./img/s1_withColumnRenamed.png)
@@ -196,6 +227,8 @@ filter 노드 drag & drop하여 회사명이 '\N' 이거나 나이대가 '\N'이
 withColumnRenamed노드 drag&drop하여 생성  
 우측 property 패널  
 전체  컬럼 불러오기 아이콘을 통해 자동 파싱  
+
+<br/>
 
 #### ICOS에 저장
 
@@ -208,6 +241,8 @@ withColumnRenamed 노드에서 ICOS 내보내기노드로 연결
 - path의 browse 아이콘을 클릭하여 열리는 팝업에서 저장할 디렉토리 위치 선택 후 확인 클릭 (ex. /tmp)  
 - file에 생성할 디렉토리명 입력 (ex.modeling_data)  
 
+<br/>
+
 #### 저장 및 실행
   
 ETL 클릭 후 appName 입력
@@ -217,6 +252,8 @@ ETL 클릭 후 appName 입력
 저장 클릭  
 실행 클릭  
 
+<br/>
+
 #### 워크플로우 상태 확인
 
 ![ex_screenshot](./img/s1_stateCheck.png)
@@ -224,6 +261,8 @@ ETL 클릭 후 appName 입력
  workflow 관리 화면으로 이동하여 상태 확인  
 이미 성공으로 종료되었거나 오류가 발생하여 종료된 경우 INACTIVE 상태  
 상세정보 컬럼의 Instance목록 아이콘 클릭  
+
+<br/>
 
 #### 실행결과 확인
 
@@ -233,12 +272,24 @@ CONFIGURATION > ICOS BROWSER 메뉴로 이동
 지정했던 ICOS directory위치로 이동하여 내보내기로 생성한 디렉토리 하단의 part-00000-~파일 클릭  
 우측 상단의 다운로드 버튼 클릭하여 파일내용 확인  
 
+<br/><br/>
+
 ## 데이터 시각화 (Data Insight) 
+
+<br/>
+
 ### 데이터 준비
+
+<br/>
+
 #### 데이터 셋 추가
 데이터 셋 관리 페이지에서 데이터 셋 추가를 클릭하면 추가 페이지로 이동합니다.  
 
+<br/>
+
 ![ex_screenshot](./img/addDataset.png)
+
+<br/>
 
 DataInsight 분석 및 시각화를 위해 MariaDB, ICOS, HIVE 등 다양한 종류의 데이터 셋을 추가할 수 있습니다.  
 지원하는 Data Source 타입  
@@ -248,12 +299,18 @@ DataInsight 분석 및 시각화를 위해 MariaDB, ICOS, HIVE 등 다양한 종
 ④ HIVE : 하둡 클러스터의 데이터를 hive를 통하여 업로드  
 ⑤ ICOS : IBM 오브젝트 스토리지의 파일을 업로드  
 ⑥ MySQL : MySQL 테이블을 연동하여 데이터 업로드  
-  
+
+<br/>
+
 데이터 셋 추가 : ICOS 선택  
 이전에 Batch Pipeline 실행 결과 파일(ICOS) 선택  
 스키마 편집  
 
+<br/>
+
 ![ex_screenshot](./img/s1_schema.png)
+
+<br/>
 
 데이터 셋 이름 변경  
 part-00000-~ -> 회사별 일평균 좌석이용률  
@@ -261,13 +318,21 @@ column명 변경
 bldg -> 빌딩명, dt -> 날짜, com -> 회사명, ratio -> 좌석이용률  
 저장  
 
+<br/><br/>
 
 ### 차트 작성
+
+<br/>
+
 #### 분석 작업 관리
 분석 작업 관리 페이지에서 분석 작업 생성을 클릭하면 추가 페이지로 이동합니다.  
 차트 작성할 데이터 셋 적용  
 
+<br/>
+
 ![ex_screenshot](./img/s1_selectDataset.png)
+
+<br/>
 
 필터 추가  
 - 이름 : 날짜
@@ -297,6 +362,7 @@ Value : 좌석이용률
 저장  
 대시보드 생성 버튼 클릭  
 
+<br/><br/>
 
 ### DASHBOARD
 
@@ -305,9 +371,13 @@ Value : 좌석이용률
 
 ![ex_screenshot](./img/dashboard.png)
 
+<br/>
+
 대시보드 이미지로 내보내기
 
 ![ex_screenshot](./img/dashboard_img.png)
+
+<br/>
 
 다운받은 이미지 확인 
 
