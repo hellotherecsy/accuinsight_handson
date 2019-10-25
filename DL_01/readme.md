@@ -209,6 +209,7 @@ with open(image_path + "/image_label.csv", 'w') as f:
   
   ![deploy_detail](./doc_images/[6-2-2]deploy_detail.png)
   - 상세 탭에서 해당 서버의 상세 정보를 볼 수 있는데, 서버에 API를 던지는 샘플도 여기에 소개됩니다.
+  - 서버 주소와 api 토큰은 서버에 api 요청을 보낼 때 사용되니 기억해 둡니다.
   - 배포 서버 테스트를 위해, 예측 생성 버튼을 클릭합니다.
   
   ![prediction_create](./doc_images/[6-2-3]prediction_create.png)
