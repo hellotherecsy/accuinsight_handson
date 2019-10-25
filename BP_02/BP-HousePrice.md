@@ -44,7 +44,7 @@
      11. 결과파일을 확인한다.
      
   ## 최종 워크플로우 모습
-![ex_screenshot](./img/finalWorkFlow.png)
+![ex_screenshot](./img/finalWorkflow.png)
   ## 데이터 전처리 진행
 
 
