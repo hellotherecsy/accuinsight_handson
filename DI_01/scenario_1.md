@@ -58,7 +58,7 @@
 
 <br/>
 
- > ETL flow 구성내용 : ICOS에서 파일 불러오기 → 사용할 column만 선택 → 데이터 정제 → 통계 → join key 생성 → 2개 파일 join → 새로운 column 생성 → 불필요한 column 삭제 → null값 제거→ column명 rename → ICOS에 저장  
+ > ETL flow 구성내용 : `ICOS에서 파일 불러오기` → `사용할 column만 선택` → `데이터 정제` → `통계` → `join key 생성` → `2개 파일 join` → `새로운 column 생성` → `불필요한 column 삭제` → `null값 제거`→ `column명 rename` → `ICOS에 저장`
 
 <br/>
 
@@ -78,7 +78,7 @@
 
 <br/>
 
-데이터 불러오기 그룹에서 ICOS 불러오기 노드를 캔버스 영역에 drag & drop하여 node 생성  
+데이터 불러오기 그룹에서 `ICOS 불러오기` 노드를 캔버스 영역에 drag & drop하여 node 생성  
 우측 property 패널  
 - file : 불러오려는 ICOS 파일의 경로 지정
 - option : 데이터에 header가 없는 경우 false로 변경
@@ -104,7 +104,7 @@ column명 변경  (header)
 
 <br/>
 
-select 노드 drag & drop하여 생성  
+`select` 노드 drag & drop하여 생성  
 우측 property 패널  
 col checkbox에서 아래 5가지 column 체크  
 - 좌석 예약 데이터 : bldg, desk_id, dt, com
@@ -120,8 +120,8 @@ col checkbox에서 아래 5가지 column 체크
 
 <br/>
 
-distinct 노드 drag & drop하여 좌석 예약 데이터에서 중복 예약 제거  
-filter 노드 drag & drop하여 좌석 메타 데이터에서 고정 좌석 제외  
+`distinct` 노드 drag & drop하여 좌석 예약 데이터에서 중복 예약 제거  
+`filter` 노드 drag & drop하여 좌석 메타 데이터에서 고정 좌석 제외  
 우측 property 패널  
 - col : occupied
 - filterOption : =:equal
@@ -133,12 +133,12 @@ filter 노드 drag & drop하여 좌석 메타 데이터에서 고정 좌석 제�
 
 ![ex_screenshot](./img/s1_agg.png)
 
-agg 노드 drag & drop하여 좌석 예약 데이터에서 빌딩별 회사별 예약좌석수 계산  
+`agg` 노드 drag & drop하여 좌석 예약 데이터에서 빌딩별 회사별 예약좌석수 계산  
 우측 property 패널  
 - aggcol : bldg, com, dt
 - target : func count, col desk_id  
 
-agg 노드 drag & drop하여 좌석 메타 데이터에서 빌딩별 전체좌석수 계산  
+`agg` 노드 drag & drop하여 좌석 메타 데이터에서 빌딩별 전체좌석수 계산  
 우측 property 패널  
 - aggcol : bldg, dt
 - target : func count, col desk_id  
@@ -150,7 +150,7 @@ agg 노드 drag & drop하여 좌석 메타 데이터에서 빌딩별 전체좌�
 ![ex_screenshot](./img/s1_aql.png)
 
 
-SQL 노드 drag & drop하여 좌석 예약 데이터에서 join key 생성  
+`SQL` 노드 drag & drop하여 좌석 예약 데이터에서 join key 생성  
 우측 property 패널  
 - query  
 
@@ -158,7 +158,7 @@ select bldg,dt,com,countdesk_id as resv, concat(bldg,'_',dt) as key
 from default;
 - overwriteSchema 체크 (SQL 결과로 데이터 변경)  
 
-SQL 노드 drag & drop하여 좌석 메타 데이터에서 join key 생성  
+`SQL` 노드 drag & drop하여 좌석 메타 데이터에서 join key 생성  
 우측 property 패널  
 - query  
 
@@ -185,7 +185,7 @@ from default;
 
 ![ex_screenshot](./img/s1_withColumn.png)
 
-withColumn 노드 drag & drop하여 좌석이용률 계산  
+`withColumn` 노드 drag & drop하여 좌석이용률 계산  
 우측 property 패널  
 - selectType : column
 - col1 : resv_dt_~
