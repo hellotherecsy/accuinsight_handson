@@ -4,3 +4,8 @@
 | [회사별 일평균 좌석이용률](scenario_1.md) | [좌석유형별 주 이용 나이](scenario_2.md) | [좌석유형별 주 이용 나이](scenario_3.md) |
 |---|:---:|---|
 | ![ex_screenshot](./img/scenario1.png) | ![ex_screenshot](./img/scenario2.png) | ![ex_screenshot](./img/scenario3.png) |
+
+
+<br/>
+
+[Scenario](scenario_1.md#Scenario-:-회사별-일평균-좌석이용률)
