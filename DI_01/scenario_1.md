@@ -25,7 +25,7 @@
 >     1. [워크플로우 상태 확인](scenario_1.md#워크플로우-상태-확인)
 >     1. [실행결과 확인](scenario_1.md#실행결과-확인)
 > 1. [데이터 시각화 (Data Insight)](scenario_1.md#데이터-시각화-(data-insight))
->     1. [데이터 준비](scenario_1.md#데이터-준비)
+>     1. [데이터 셋 준비](scenario_1.md#데이터-셋-준비)
 >         1. [데이터 셋 추가](scenario_1.md#데이터-셋-추가)
 >     1. [차트 작성](scenario_1.md#차트-작성)
 >         1. [분석 작업 관리](scenario_1.md#분석-작업-관리)
@@ -327,7 +327,7 @@ CONFIGURATION > ICOS BROWSER 메뉴로 이동
 
 <br/>
 
-### 데이터 준비
+### 데이터  준비
 
 <br/>
 
