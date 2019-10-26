@@ -10,7 +10,6 @@
 >     1. [데이터파일 2개 조인하여 ETL작업 수행하기](scenario_2.md#데이터파일-2개-조인하여-etl작업-수행하기)
 >         1. [생성 메뉴로 이동](scenario_2.md#생성-메뉴로-이동)
 >         1. [데이터 로딩](scenario_2.md#데이터-로딩)
->         1. [필요한 컬럼 선택](scenario_2.md#필요한-컬럼-선택)
 >         1. [데이터 정제](scenario_2.md#데이터-정제)
 >         1. [통계](scenario_2.md#통계)
 >         1. [join key 생성](scenario_2.md#join-key-생성)
@@ -241,7 +240,7 @@ from default;
 
 ![ex_screenshot](./img/s2_filter.png)
 
-`filter` 노드 drag & drop하여 회사명이 '\N'이면 삭제 
+`filter` 노드 drag & drop하여 회사명이 '\N'이거나 나이대가 '\N'이면 삭제<br/>
 `drop` 노드에서 `filter` 노드로 연결<br/>
 우측 property 패널  
 - **col** : com_df_~
@@ -250,7 +249,7 @@ from default;
 
 <br/>
 
-필터 추가 & **filterOperator**는 **OR**로 설정  
+필터 추가 & **filterOperator**는 **OR**로 설정<br/>
 - **col** : age_df_~
 - **filterOption** : !=:not equal
 - **filterValue** : ‘\N’  
@@ -261,9 +260,9 @@ from default;
 
 ![ex_screenshot](./img/s2_withColumnRenamed.png)
 
-`withColumnRenamed` 노드 drag&drop하여 생성  
+`withColumnRenamed` 노드 drag&drop하여 생성<br/>
 `filter` 노드에서 `withColumnRenamed` 노드로 연결<br/>
-우측 property 패널  
+우측 property 패널<br/>
 - `전체 컬럼 불러오기` 아이콘을 통해 자동 파싱  
 
 <br/>
@@ -272,13 +271,13 @@ from default;
 
 ![ex_screenshot](./img/s2_export.png)
 
-좌측 `데이터 내보내기` 클릭  
-`ICOS 내보내기` 노드 drag & drop 하여 생성  
-`withColumnRenamed` 노드에서 `ICOS 내보내기` 노드로 연결  
+좌측 `데이터 내보내기` 클릭<br/>
+`ICOS 내보내기` 노드 drag & drop 하여 생성<br/>
+`withColumnRenamed` 노드에서 `ICOS 내보내기` 노드로 연결<br/>
 
 <br/>
 
-우측 property 패널  
+우측 property 패널<br/>
 - **path**의 browse 아이콘을 클릭하여 열리는 팝업에서 저장할 디렉토리 위치 선택 후 확인 클릭 (ex. ~/DI/results)  
 - **folder**에 생성할 디렉토리명 입력 (ex. edu01_scenario2)  
 
@@ -286,7 +285,7 @@ from default;
 
 #### 저장 및 실행
   
-캔버스 상단에 워크플로우 이름 입력 (ex. 회의실 일평균 좌석이용률)
+캔버스 상단에 워크플로우 이름 입력 (ex. 회의실 일평균 좌석이용률)<br/>
 
 <br/>
 
