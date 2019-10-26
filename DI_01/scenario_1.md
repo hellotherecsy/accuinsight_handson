@@ -109,20 +109,24 @@
 
 데이터 불러오기 그룹에서 `ICOS 불러오기` 노드를 캔버스 영역에 drag & drop하여 node 생성  
 우측 property 패널  
-- file : 불러오려는 ICOS 파일의 경로 지정
+- **file** : 불러오려는 ICOS 파일의 경로 지정
     - 좌석 예약 데이터의 경로 : IBMOSC1146611-6 스토리지에서 handson-bucket/DI/Dataset/desk_resv
     - 좌석 메타 데이터의 경로 : IBMOSC1146611-6 스토리지에서 handson-bucket/DI/Dataset/desk_info
-- option : 데이터에 header가 없는 경우 false로 변경
-- schema : `자동 파일 열기` 클릭  
+- **option** : 데이터에 header가 없는 경우 false로 변경
+- **schema** : `자동 파싱 열기` 클릭  
+
+schema - `자동 파싱 열기` - sample data 탭에서 데이터 샘플을 확인
+schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경
+
+> 좌석 예약 데이터 : bldg, desk_type, desk_id, dt, com, age
+
+`확인` 클릭 
+
+     Note : 우측 property 패널 - schema 에서 직접 컬럼명 변경 가능
 
 <br/>
 
-column명 변경  (header)
-> 좌석 예약 데이터 : bldg, desk_type, desk_id, dt, com, age  
-
-<br/>
-
-동일한 방법으로 좌석 메타 데이터도 불러오기  
+동일한 방법으로 좌석 메타 데이터도 불러오기 & 컬럼명 변경  
 > 좌석 메타 데이터 : bldg, desk_type, occupied, desk_id, dt  
 
 <br/>
@@ -138,9 +142,9 @@ column명 변경  (header)
 `select` 노드 drag & drop하여 생성  
 
 우측 property 패널  
-col checkbox에서 아래 5가지 column 체크
-- 좌석 예약 데이터 : bldg, desk_id, dt, com
-- 좌석 메타 데이터 : bldg, occupied, desk_id, dt
+- **col** checkbox에서 아래 5가지 column 체크
+    - 좌석 예약 데이터 : bldg, desk_id, dt, com
+    - 좌석 메타 데이터 : bldg, occupied, desk_id, dt
 
 <br/>
 
@@ -156,9 +160,9 @@ col checkbox에서 아래 5가지 column 체크
 `filter` 노드 drag & drop하여 좌석 메타 데이터에서 고정 좌석 제외  
 
 우측 property 패널  
-- col : occupied
-- filterOption : =:equal
-- filterValue : 'N'  
+- **col** : occupied
+- **filterOption** : =:equal
+- **filterValue** : 'N'  
 
 <br/>
 
@@ -169,14 +173,14 @@ col checkbox에서 아래 5가지 column 체크
 `agg` 노드 drag & drop하여 좌석 예약 데이터에서 빌딩별 회사별 예약좌석수 계산  
 
 우측 property 패널  
-- aggcol : bldg, com, dt
-- target : func count, col desk_id  
+- **aggcol** : bldg, com, dt
+- **target** : func count, col desk_id  
 
 `agg` 노드 drag & drop하여 좌석 메타 데이터에서 빌딩별 전체좌석수 계산  
 
 우측 property 패널  
-- aggcol : bldg, dt
-- target : func count, col desk_id  
+- **aggcol** : bldg, dt
+- **target** : func count, col desk_id  
 
 <br/>
 
@@ -188,7 +192,7 @@ col checkbox에서 아래 5가지 column 체크
 `SQL` 노드 drag & drop하여 좌석 예약 데이터에서 join key 생성 
 
 우측 property 패널  
-- query  
+- **query**  
 
 <br/>
 
@@ -199,12 +203,12 @@ from default;
 
 <br/>
 
-- overwriteSchema 체크 (SQL 결과로 데이터 변경)  
+- **overwriteSchema** 체크 (SQL 결과로 변경된 데이터 적용)  
 
 `SQL` 노드 drag & drop하여 좌석 메타 데이터에서 join key 생성
 
 우측 property 패널  
-- query  
+- **query**  
 
 <br/>
 
@@ -213,7 +217,7 @@ select countdesk_id as total, concat(bldg,'_',dt) as key
 from default;
 ```
 
-- overwriteSchema 체크 (SQL 결과로 데이터 변경)  
+- **overwriteSchema** 체크 (SQL 결과로 변경된 데이터 적용)  
 
 <br/>
 
@@ -221,13 +225,13 @@ from default;
 
 ![ex_screenshot](./img/s1_join.png)
 
-좌측의 데이터 처리하기 클릭  
-열린 패널에서 dataJoin 노드 우측 캔버스에 drag & drop하여 생성  
+좌측의 `데이터 처리하기` 클릭  
+열린 패널에서 `dataJoin` 노드 우측 캔버스에 drag & drop하여 생성  
 
 우측 property패널  
-- col1 : 좌석 예약 데이터의 key 선택  
-- col2 : 좌석 메타 데이터의 key 선택  
-- how : right_outer 선택 (col1,col2 순서가 바뀐 경우 left_outer 선택)  
+- **col1** : 좌석 예약 데이터의 key 선택  
+- **col2** : 좌석 메타 데이터의 key 선택  
+- **how** : right_outer 선택 (col1,col2 순서가 바뀐 경우 left_outer 선택)  
 
 <br/>
 
@@ -238,11 +242,11 @@ from default;
 `withColumn` 노드 drag & drop하여 좌석이용률 계산  
 
 우측 property 패널  
-- selectType : column
-- col1 : resv_dt_~
-- operator : /
-- col2 : total_dt_~
-- newColumn : ratio  
+- **selectType** : column
+- **col1** : resv_dt_~
+- **operator** : /
+- **col2** : total_dt_~
+- **newColumn** : ratio  
 
 <br/>
 
@@ -253,10 +257,11 @@ from default;
 `drop` 노드 drag & drop하여 불필요한 데이터 삭제  
 
 우측 property 패널  
-- 좌석 예약 데이터의 resv_df_~
-- 좌석 예약 데이터의 key_df_~
-- 좌석 메타 데이터의 total_df_~
-- 좌석 메타 데이터의 key_df_~  
+- **col** checkbox에서 아래 4가지 column 체크
+    - 좌석 예약 데이터의 resv_df_~
+    - 좌석 예약 데이터의 key_df_~
+    - 좌석 메타 데이터의 total_df_~
+    - 좌석 메타 데이터의 key_df_~  
 
 <br/>
 
@@ -267,9 +272,9 @@ from default;
 `filter` 노드 drag & drop하여 회사명이 '\N' 이거나 나이대가 '\N'이면 삭제 
 
 우측 property 패널  
-- col : com_df_~
-- filterOption : !=:not equal
-- filterValue : '\N'  
+- **col** : com_df_~
+- **filterOption** : !=:not equal
+- **filterValue** : '\N'  
 
 <br/>
 
@@ -280,7 +285,7 @@ from default;
 `withColumnRenamed` 노드 drag&drop하여 생성  
 
 우측 property 패널  
-전체 컬럼 불러오기 아이콘을 통해 자동 파싱  
+`전체 컬럼 불러오기` 아이콘을 통해 자동 파싱  
 
 <br/>
 
@@ -290,24 +295,24 @@ from default;
 
 좌측 `데이터 내보내기` 클릭  
 `ICOS 내보내기` 노드 drag & drop 하여 생성  
-`withColumnRenamed` 노드에서 ICOS 내보내기노드로 연결  
+`withColumnRenamed` 노드에서 `ICOS 내보내기` 노드로 연결  
 
 <br/>
 
 우측 property 패널  
-- path의 browse 아이콘을 클릭하여 열리는 팝업에서 저장할 디렉토리 위치 선택 후 확인 클릭 (ex. /tmp)  
-- file에 생성할 디렉토리명 입력 (ex.modeling_data)  
+- **path**의 browse 아이콘을 클릭하여 열리는 팝업에서 저장할 디렉토리 위치 선택 후 확인 클릭 (ex. ~/DI/results)  
+- **folder**에 생성할 디렉토리명 입력 (ex. edu01_scenario1)  
 
 <br/>
 
 #### 저장 및 실행
   
-ETL 클릭 후 appName 입력
+캔버스에서 **ETL** 클릭 후 **appName** 입력
 
 ![ex_screenshot](./img/s1_final.png)
 
-저장 클릭  
-실행 클릭  
+`저장` 클릭  
+`실행` 클릭  
 
 <br/>
 
@@ -315,9 +320,9 @@ ETL 클릭 후 appName 입력
 
 ![ex_screenshot](./img/s1_stateCheck.png)
 
-workflow 관리 화면으로 이동하여 상태 확인  
+`워크플로우 관리` 화면으로 이동하여 상태 확인  
 이미 성공으로 종료되었거나 오류가 발생하여 종료된 경우 INACTIVE 상태  
-상세정보 컬럼의 Instance목록 아이콘 클릭  
+상세정보 컬럼의 `인스턴스 목록` 아이콘 클릭하면 이전 실행 이력 관리 가능  
 
 <br/>
 
@@ -325,9 +330,9 @@ workflow 관리 화면으로 이동하여 상태 확인
 
 ![ex_screenshot](./img/s1_resultCheck.png)
 
-CONFIGURATION > ICOS BROWSER 메뉴로 이동  
-지정했던 ICOS directory위치로 이동하여 내보내기로 생성한 디렉토리 하단의 part-00000-~파일 클릭  
-우측 상단의 다운로드 버튼 클릭하여 파일내용 확인  
+`브라우저` 탭 > `ICOS` 메뉴로 이동  
+지정했던 ICOS directory 위치로 이동하여 내보내기로 생성한 디렉토리 하단의 part-00000-~파일 클릭  
+우측 상단의 `다운로드` 버튼 클릭하여 파일내용 확인  
 
 <br/><br/>
 
@@ -340,7 +345,7 @@ CONFIGURATION > ICOS BROWSER 메뉴로 이동
 <br/>
 
 #### 데이터 셋 추가
-데이터 셋 관리 페이지에서 데이터 셋 추가를 클릭하면 추가 페이지로 이동합니다.  
+`데이터 셋 관리` 페이지에서 `데이터 셋 추가`를 클릭하면 추가 페이지로 이동합니다.  
 
 <br/>
 
@@ -359,9 +364,14 @@ DataInsight 분석 및 시각화를 위해 MariaDB, ICOS, HIVE 등 다양한 종
 
 <br/>
 
-데이터 셋 추가 : ICOS 선택  
-이전에 Batch Pipeline 실행 결과 파일(ICOS) 선택  
-스키마 편집  
+> 위에서 Batch Pipeline을 통해 실행한 결과 파일을 사용합니다.  
+> 스토리지 : IBMOSC1146611-6  
+> 버킷 : handson-bucket  
+
+`데이터 셋 추가` 클릭 후 `ICOS` 선택  
+1단계_ICOS선택
+2단계_Bucket선택
+`스키마 편집` 클릭
 
 <br/>
 
@@ -369,15 +379,16 @@ DataInsight 분석 및 시각화를 위해 MariaDB, ICOS, HIVE 등 다양한 종
 
 <br/>
 
-데이터 셋 이름 변경  
-part-00000-~ -> 회사별 일평균 좌석이용률  
-column명 변경  
-- bldg -> 빌딩명
-- dt -> 날짜
-- com -> 회사명
-- ratio -> 좌석이용률  
+`수정` 클릭하여 그룹 설정 및 데이터 셋 이름 변경  
+- part-00000-~ -> 회사별 일평균 좌석이용률  
+각 컬럼의 `필드명 변경`을 통해 컬럼명 변경  
+- **bldg** -> 빌딩명
+- **dt** -> 날짜
+- **com** -> 회사명
+- **ratio** -> 좌석이용률  
 
-저장  
+`저장` 클릭 
+_새로운 분석 작업 페이지로 이동 하겠습니까?_ 라는 팝업이 뜨면 `이동`하거나 `아니요`하고 다음 단계
 
 <br/><br/>
 
@@ -386,8 +397,8 @@ column명 변경
 <br/>
 
 #### 분석 작업 관리
-분석 작업 관리 페이지에서 분석 작업 생성을 클릭하면 추가 페이지로 이동합니다.  
-차트 작성할 데이터 셋 적용  
+`분석 작업 관리` 페이지에서 `분석 작업 생성`을 클릭하면 추가 페이지로 이동합니다.  
+차트 작성할 데이터 셋 `적용`
 
 <br/>
 
@@ -396,32 +407,38 @@ column명 변경
 <br/>
 
 필터 추가  
-- 이름 : 날짜
-- 날짜 = 20190820  
-  
-분석 작업 차트 생성  
-차트 생성 버튼 클릭  
-  
+- **이름** : 이름 없음 -> 날짜
+- **날짜** = 20190820  
+
+<br/>
+
+`차트 생성` 버튼 클릭
 
 ![ex_screenshot](./img/makeChart.png)
 
-컬럼 스택 차트 선택  
-Axis : 회사명  
-Value : 좌석이용률  
+`컬럼 스택 차트` 선택  
+- **Axis** : 회사명  
+- **Value** : 좌석이용률  
 
 ![ex_screenshot](./img/s1_makeChart1.png)
   
-저장  
-차트 생성 버튼 클릭  
+`저장` 클릭
 
-파이 차트 선택  
-Grouping : 회사명  
-Value : 좌석이용률  
+<br/>
+
+`차트 생성` 버튼 클릭  
+
+`파이 차트` 선택  
+- **Grouping** : 회사명  
+- **Value** : 좌석이용률  
 
 ![ex_screenshot](./img/s1_makeChart2.png)
 
-저장  
-대시보드 생성 버튼 클릭  
+`저장` 클릭
+
+<br/>
+
+`대시보드 생성` 버튼 클릭  
 
 <br/><br/>
 
@@ -434,7 +451,7 @@ Value : 좌석이용률
 
 <br/>
 
-대시보드 이미지로 내보내기
+`대시보드 이미지로 내보내기` 버튼 클릭
 
 ![ex_screenshot](./img/dashboard_img.png)
 
