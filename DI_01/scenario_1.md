@@ -115,6 +115,8 @@
 - **option** : 데이터에 header가 없는 경우 false로 변경
 - **schema** : `자동 파싱 열기` 클릭  
 
+<br/>
+
 schema - `자동 파싱 열기` - sample data 탭에서 데이터 샘플을 확인
 schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경
 
@@ -142,7 +144,7 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경
 `select` 노드 drag & drop하여 생성  
 
 우측 property 패널  
-- **col** checkbox에서 아래 5가지 column 체크
+- **col** checkbox에서 각각 아래 4가지 column 체크
     - 좌석 예약 데이터 : bldg, desk_id, dt, com
     - 좌석 메타 데이터 : bldg, occupied, desk_id, dt
 
@@ -156,9 +158,8 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경
 
 <br/>
 
-`distinct` 노드 drag & drop하여 좌석 예약 데이터에서 중복 예약 제거  
-`filter` 노드 drag & drop하여 좌석 메타 데이터에서 고정 좌석 제외  
-
+`distinct` 노드 drag & drop하여 좌석 예약 데이터에서 중복 예약 제거<br/><br/>
+`filter` 노드 drag & drop하여 좌석 메타 데이터에서 고정 좌석 제외<br/>
 우측 property 패널  
 - **col** : occupied
 - **filterOption** : =:equal
