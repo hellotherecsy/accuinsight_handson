@@ -307,8 +307,12 @@ from default;
 <br/>
 
 #### 저장 및 실행
-  
-캔버스에서 **ETL** 클릭 후 **appName** 입력
+
+캔버스 상단에 워크플로우 이름 입력 (ex. 회의실 일평균 좌석이용률)
+
+<br/>
+
+캔버스에서 **ETL** 클릭 후 **appName** 입력 (ex. scenario1)
 
 ![ex_screenshot](./img/s1_final.png)
 
