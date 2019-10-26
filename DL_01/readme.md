@@ -71,10 +71,11 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   - 이미지 카테고리는 총 6개(buildings, forest, glacier, mountain, sea, street)입니다.
 
 (2) csv 파일 준비
+
   ![csv_sample](./doc_images/[2-2-1]csv_sample.png)
   - Image Classification의 학습 input으로 총 두 가지의 데이터가 필요합니다.
     - 학습에 사용할 이미지 파일
-    - 학습 아미지 파일명과 label이 매핑되어 있는 csv 데이터
+    - 학습 이미지 파일명과 label이 매핑되어 있는 csv 데이터
   - 학습 label 값은 정수만 가능하기 때문에, 정수 label과 카테고리를 나중에 다시 매핑해주는 작업이 필요합니다.
   - demo에서는 학습에 사용할 csv 파일이 미리 준비되어 있습니다. demo의 label csv 파일은 다음 표를 기준으로 제작되었습니다.
   
