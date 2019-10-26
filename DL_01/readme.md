@@ -58,7 +58,7 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
 
 # Intel image classification demo (DL Modeler)
 ## Demo Overview
-6개의 카테고리로 구분된 풍경 이미지를 DL Modeler에 업로드하여, built-in 알고리즘 중 하나인 Image Classification을 이용해 GPU 분산 학습합니다. 학습이 완료되면, 학습 모델을 배포하여 새로운 이미지의 카테고리를 예측합니다. 딥 러닝 모델의 우수성을 더 잘 드러내기 위해 예측할 이미지는 데이터 전처리 기능으로 흑백, 상하 반전 처리하여 학습된 이미지와 다른 모양으로 만듭니다.
+6개의 카테고리로 구분된 풍경 이미지를 DL Modeler에 업로드하여, built-in 알고리즘 중 하나인 Image Classification을 이용해 GPU 분산 학습합니다. 학습이 완료되면, 학습 모델을 배포하여 새로운 이미지의 카테고리를 예측합니다. 예측할 이미지는 데이터 전처리 기능으로 흑백, 상하 반전 처리하여 학습된 이미지와 다른 모양으로 만듭니다.
 
 ## 데이터 준비
 (1) 데이터 설명
@@ -122,7 +122,7 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   - 데이터를 업로드하면 데이터 세트를 함께 만들게 됩니다.
 
 (2) 데이터 업로드
-  ![data_manage](./doc_images/[3-3-2]data_manage.png)
+  ![data_manage1](./doc_images/[3-3-2]data_manage.png)
   
   - 데이터 관리 화면입니다. 우측 상단의 데이터 생성 버튼을 누르면 데이터 세트 생성 팝업이 뜹니다.
   - 아래 과정은 학습 이미지를 업로드하는 과정입니다.
@@ -183,9 +183,9 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
 (3) 업로드 데이터 확인
 
   ![uploaded_data](./doc_images/[4-4-1]uploaded_data.png)
-  - 데이터 관리 화면에서, 생성된 이미지 데이터 세트의 이름을 누르면 전처리 상세 화면으로 진입할 수 있습니다.
+  - 데이터 관리 화면에서, 생성된 이미지 데이터 세트 이름을 누르면 해당 데이터의 전처리 상세 화면으로 진입할 수 있습니다.
   
-  ![data_preprocess](./doc_images/[4-4-2]data_preprocess.png)
+  ![data_preprocess1](./doc_images/[4-4-2]data_preprocess.png)
   - DLModeler의 모든 데이터는 전처리 알고리즘을 거친 것으로 가정합니다.
   - 업로드 한 RAW 데이터의 전처리 알고리즘은 rawData 입니다. rawData는 아무런 전처리도 수행하지 않았음을 의미합니다.
   - 전처리 알고리즘이 rawData인 데이터명을 클릭하면 데이터 전처리 상세 팝업을 볼 수 있습니다.
@@ -196,17 +196,31 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   
 (4) 데이터 전처리
 
-  ![data_preprocess](./doc_images/[4-3-1]data_preprocess.png)
-  - 예측에 사용할 이미지 데이터를 상하 반전/흑백 처리합니다. 전처리 상세 화면에서 데이터 전처리 버튼을 클릭합니다.
+  - 예측에 사용할 이미지 데이터를 상하 반전/흑백 처리합니다.
+  - 예측 이미지 전처리를 진행하는 이유는, 학습 이미지와 유사한 이미지가 아니면 딥 러닝 알고리즘이 어떻게 처리하는지를 보기 위함입니다.
   
-  ![data_preprocess_create_1](./doc_images/[4-3-2]data_preprocess_create_1.png)
-  - 데이터는 업로드 된 rawData를 선택히고, 전처리 알고리즘은 이미지 전처리로 선택합니다.
+  ![data_manage2](./doc_images/[4-3-1-1]data_manage.png)
+  - 데이터 관리 화면으로 되돌아옵니다.
+  - 데이터 관리 화면에서 pred-image를 선택합니다.
   
-  ![data_preprocess_create_2](./doc_images/[4-3-3]data_preprocess_create_2.png)
-  - 알고리즘을 고르면 알고리즘과 연관된 팝업이 뜹니다. 이미지 전처리 팝업에서 상하 반전과 흑백 처리를 사용으로 선택 후 저장을 누릅니다.
+  ![data_preprocess2](./doc_images/[4-3-1]data_preprocess.png)
+  - 전처리 상세 화면에서 데이터 전처리 버튼을 클릭합니다.
+  - 그러면 데이터 전처리 등록 팝업이 뜹니다. 아래 과정은 데이터 전처리 정보를 입력하는 과정입니다.
+    
+    
+    ![data_preprocess_create_1](./doc_images/[4-3-2]data_preprocess_create_1.png)
+    - a. 데이터 선택은 업로드 된 rawData로 합니다. 데이터 업로드 시 입력했던 저장할 데이터 명(pred-image)과 동일합니다.
+    - b. 전처리 알고리즘은 이미지 전처리로 선택합니다. 알고리즘을 고르면 알고리즘과 연관된 팝업이 뜹니다. 
   
-  - 다시 원래 전처리 생성 팝업으로 돌아갑니다. Processed 데이터 명/ Processed 데이터 설명은 전처리 된 데이터가 가지게 될 이름과 설명입니다. 원하는 이름을 입력 후 생성을 누르면 전처리가 시작됩니다.
-  - 전처리 진행 과정은 전처리 상세 페이지에서 확인할 수 있습니다. 전처리가 완료되면, rawData와 동일하게 데이터 전처리 상세 팝업에 진입하여 전처리 된 데이터 예시를 볼 수 있습니다.
+      ![data_preprocess_create_2](./doc_images/[4-3-3]data_preprocess_create_2.png)
+       - 이미지 전처리 팝업에서 상하 반전과 흑백 처리를 사용으로 선택 후 저장을 누릅니다.
+    - c. 다시 원래 전처리 생성 팝업으로 돌아갑니다. Processed 데이터 명과 데이터 설명을 입력합니다. 이는 전처리 된 데이터가 가지게 될 이름과 설명입니다.
+      - Processed 데이터 명: processed-pred-image
+      - Processed 데이터 설명: processed jpg image for prediction
+    - d. 모든 과정을 마친 후 생성을 누르면 전처리가 시작됩니다.
+    
+  - 전처리 진행 과정은 전처리 상세 페이지에서 확인할 수 있습니다.
+  - 전처리가 완료되면, rawData와 동일하게 데이터 전처리 상세 팝업에 진입하여 전처리 된 데이터 예시를 볼 수 있습니다.
 
 ## 학습
 (1) 작업 생성
@@ -364,4 +378,4 @@ for img_name in sorted(result_dic.keys()):
   
   정답: glacier - 예측: [5] (sea)
   
-  오답 원인 추정: 원래는 호수 위 빙하 사진이지만, 흑백+상하 반전 빙하 부분이 파도처럼 보임
+  오답 원인 추정: 원래는 호수 위 빙하 사진이지만, 흑백+상하 반전이 적용되고 나서 빙하 부분이 파도처럼 보임
