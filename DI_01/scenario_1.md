@@ -177,6 +177,8 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경
 - **aggcol** : bldg, com, dt
 - **target** : func count, col desk_id  
 
+<br/>
+
 `agg` 노드 drag & drop하여 좌석 메타 데이터에서 빌딩별 전체좌석수 계산  
 
 우측 property 패널  
@@ -195,8 +197,6 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경
 우측 property 패널  
 - **query**  
 
-<br/>
-
 ```SQL
 select bldg,dt,com,countdesk_id as resv, concat(bldg,'_',dt) as key
 from default;
@@ -210,8 +210,6 @@ from default;
 
 우측 property 패널  
 - **query**  
-
-<br/>
 
 ```SQL
 select countdesk_id as total, concat(bldg,'_',dt) as key
