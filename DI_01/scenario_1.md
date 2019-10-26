@@ -1,20 +1,42 @@
-# Demo Instruction
-> 공유 오피스 분석 플랫폼 구축 프로젝트에 사용한 AccuInsight+ 서비스 Batch Pipeline, Data Insight를 공유오피스 분석 요건 45개 중 하나를 택해 실습해본다.
+# Scenario : 회사별 일평균 좌석이용률
+
+<br/>
+
+목차
+1. [데이터 준비](scenario_1.md#데이터-준비)
+    1. [Dataset 1 : 좌석 예약 데이터](scenario_1.md#dataset-1-좌석-예약-데이터)
+    1. [Dataset 2 : 좌석 메타 데이터](scenario_1.md#dataset-1-좌석-메타-데이터)
+1. [데이터 처리 (Batch Pipeline)](scenario_1.md#데이터-처리-(batch-pipeline))
+    1. [데이터파일 2개 조인하여 ETL작업 수행하기](scenario_1.md#데이터파일-2개-조인하여-etl작업-수행하기)
+        1. [생성 메뉴로 이동](scenario_1.md#생성-메뉴로-이동)
+        1. [데이터 로딩](scenario_1.md#데이터-로딩)
+        1. [필요한 컬럼 선택](scenario_1.md#필요한-컬럼-선택)
+        1. [데이터 정제](scenario_1.md#데이터-정제)
+        1. [통계](scenario_1.md#통계)
+        1. [join key 생성](scenario_1.md#join-key-생성)
+        1. [2개파일 조인](scenario_1.md#2개파일-조인)
+        1. [새로운 column 생성](scenario_1.md#새로운-column-생성)
+        1. [불필요한 column 삭제](scenario_1.md#불필요한-column-삭제)
+        1. [null값 제거](scenario_1.md#null값-제거)
+        1. [컬럼명 변경](scenario_1.md#컬럼명-변경)
+        1. [ICOS에 저장](scenario_1.md#ICOS에-저장)
+        1. [저장 및 실행](scenario_1.md#저장-및-실행)
+    1. [워크플로우 상태 확인](scenario_1.md#워크플로우-상태-확인)
+    1. [실행결과 확인](scenario_1.md#실행결과-확인)
+1. [데이터 시각화 (Data Insight)](scenario_1.md#데이터-시각화-(data-insight))
+    1. [데이터 준비](scenario_1.md#데이터-준비)
+        1. [데이터 셋 추가](scenario_1.md#데이터-셋-추가)
+    1. [차트 작성](scenario_1.md#차트-작성)
+        1. [분석 작업 관리](scenario_1.md#분석-작업-관리)
+    1. [DASHBOARD](scenario_1.md#DASHBOARD)
+
+<br/>
+# 실제 공유오피스 분석 화면
+
 ![ex_screenshot](./img/scenario1.png)
 
 <br/><br/>
 
-# AccuInsight+ Services
-  
-![ex_screenshot](./img/AccuServices.png)
-
-<br/><br/>
-# Demo Outline
-  
-![ex_screenshot](./img/Outline.png)
-
-<br/><br/>
-# Scenario : 회사별 일평균 좌석이용률
 
 <br/>
 
@@ -50,11 +72,11 @@
 
 <br/>
 
-## 데이터 처리  
+## 데이터 처리 (Batch Pipeline)
 
 <br/>
 
-### 데이터파일 2개 조인하여 ETL작업 수행하기  
+### 데이터파일 2개 조인하여 ETL작업 수행하기
 
 <br/>
 
@@ -272,7 +294,7 @@ ETL 클릭 후 appName 입력
 
 <br/>
 
-#### 워크플로우 상태 확인
+### 워크플로우 상태 확인
 
 ![ex_screenshot](./img/s1_stateCheck.png)
 
@@ -282,7 +304,7 @@ workflow 관리 화면으로 이동하여 상태 확인
 
 <br/>
 
-#### 실행결과 확인
+### 실행결과 확인
 
 ![ex_screenshot](./img/s1_resultCheck.png)
 
