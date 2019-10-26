@@ -239,7 +239,10 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
 
   - 예측에 사용할 이미지 데이터를 상하 반전/흑백 처리합니다.
   
-  ![preprocess_sample](./doc_images/[4-3-1-2]prepreocess.sample.png)
+    | 원본 | 전처리 |
+    | :---: | :---: |
+    | ![original](./doc_images/[4-3-1-2]original.png) | ![processed](./doc_images/[4-3-1-3]processed.png) |
+    
   - 예측 이미지 전처리를 진행하는 이유는, 학습 이미지와 유사한 이미지가 아니면 딥 러닝 알고리즘이 어떻게 처리하는지를 보기 위함입니다.
   
   ![data_manage2](./doc_images/[4-3-1-1]data_manage.png)
@@ -275,7 +278,7 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
 (1) 작업 생성
 
   ![job_manage](./doc_images/[5-1-1-1]jump_to_job.png)
-  - 지금까지 작업한 데이터를 가지고, 이미지 학습을 진행합니다.
+  - 지금까지 작업한 데이터를 가지고, 이미지 학습을 진행하기 위해 작업 화면으로 이동합니다.
   - 우측 상단의 분석 탭에서 서비스 메뉴 사이를 이동할 수 있습니다.
   - 여기에서 작업을 선택하면 작업 관리 화면으로 넘어갑니다.
   
