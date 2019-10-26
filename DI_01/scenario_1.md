@@ -202,9 +202,9 @@ select bldg,dt,com,countdesk_id as resv, concat(bldg,'_',dt) as key
 from default;
 ``` 
 
-<br/>
-
 - **overwriteSchema** 체크 (SQL 결과로 변경된 데이터 적용)  
+
+<br/>
 
 `SQL` 노드 drag & drop하여 좌석 메타 데이터에서 join key 생성
 
