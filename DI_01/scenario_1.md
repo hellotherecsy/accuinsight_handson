@@ -196,7 +196,7 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경
 
 
 `SQL` 노드 drag & drop하여 좌석 예약 데이터에서 join key 생성  
-`agg` 노드에서 `SQL` 노드로 연결<br/>
+좌석 예약 데이터의 `agg` 노드에서 `SQL` 노드로 연결<br/>
 우측 property 패널  
 - **query**  
 
@@ -210,7 +210,7 @@ from default;
 <br/>
 
 `SQL` 노드 drag & drop하여 좌석 메타 데이터에서 join key 생성  
-`agg` 노드에서 `SQL` 노드로 연결<br/>
+좌석  데이터의 `agg` 노드에서 `SQL` 노드로 연결<br/>
 우측 property 패널  
 - **query**  
 
