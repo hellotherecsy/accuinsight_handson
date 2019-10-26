@@ -5,8 +5,8 @@
 > 목차
 > ---
 > 1. [데이터 준비](scenario_1.md#데이터-준비)
->    1. [좌석 예약 데이터]
->    1. [좌석 메타 데이터]
+>    1. Dataset 1: 좌석 예약 데이터
+>    1. Dataset 2: 좌석 메타 데이터
 > 1. [데이터 처리 (Batch Pipeline)](scenario_1.md#데이터-처리-batch-pipeline)
 >     1. [데이터파일 2개 조인하여 ETL작업 수행하기](scenario_1.md#데이터파일-2개-조인하여-etl작업-수행하기)
 >         1. [생성 메뉴로 이동](scenario_1.md#생성-메뉴로-이동)
@@ -37,9 +37,6 @@
 ![ex_screenshot](./img/scenario1.png)
 
 <br/><br/>
-
-
-<br/>
 
 ## 데이터 준비
 > ICOS에 업로드된 데이터를 사용합니다.  
@@ -104,8 +101,12 @@
 데이터 불러오기 그룹에서 `ICOS 불러오기` 노드를 캔버스 영역에 drag & drop하여 node 생성  
 우측 property 패널  
 - file : 불러오려는 ICOS 파일의 경로 지정
+
+    좌석 예약 데이터 경로 : IBMOSC1146611-6 스토리지에서 handson-bucket/DI/Dataset/desk_resv
+    좌석 메타 데이터 경로 : IBMOSC1146611-6 스토리지에서 handson-bucket/DI/Dataset/desk_info
+
 - option : 데이터에 header가 없는 경우 false로 변경
-- schema : 자동 파일 열기  
+- schema : `자동 파일 열기` 클릭  
 
 <br/>
 
