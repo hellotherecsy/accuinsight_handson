@@ -329,7 +329,7 @@ ETL 클릭 후 appName 입력
 저장 클릭<br/>
 실행 클릭<br/>
 
-#### 워크플로우 상태 확인
+### 워크플로우 상태 확인
 
 ![ex_screenshot](./img/s3_stateCheck.png)
 
@@ -339,7 +339,7 @@ ETL 클릭 후 appName 입력
 
 <br/>
 
-#### 실행결과 확인
+### 실행결과 확인
 
 ![ex_screenshot](./img/s3_resultCheck.png)
 
