@@ -184,44 +184,46 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
     - d. 데이터 파일 등록 우측의 폴더 아이콘을 클릭하면 경로 검색 창이 나옵니다.
     
           파일 위치: IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > pred-image
+          여러 개의 파일을 ctrl+클릭으로 동시에 선택하여 올릴 수 있습니다.
           pred-image 폴더 안에 있는 모든 파일(22개)을 선택하고 선택 버튼을 누릅니다. 
     - e. 데이터 저장 경로는 데이터 세트 정보와, RAW 데이터 정보를 입력하면 자동 생성됩니다. 생성 버튼을 누르면 데이터가 업로드 되면서 데이터 세트가 생성됩니다.
   
   - 각 데이터 별로 데이터 세트 생성 정보, RAW 데이터 등록 정보, 파일 위치가 달라집니다. 이를 정리하면 아래와 같습니다.
   
-  - 학습 이미지
+    - 학습 이미지
     
-  | 구분 | 입력 정보 |
-  | :---: | :--- |
-  | 데이터 세트 명 | train-image |
-  | 데이터 세트 설명 | training image set |
-  | 저장할 데이터 명 | train-image |
-  | RAW 데이터 설명 | jpg image for training |
-  | 파일 위치 | IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > train-image (59개) |
+    | 구분 | 입력 정보 |
+    | :---: | :--- |
+    | 데이터 세트 명 | train-image |
+    | 데이터 세트 설명 | training image set |
+    | 저장할 데이터 명 | train-image |
+    | RAW 데이터 설명 | jpg image for training |
+    | 파일 위치 | IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > train-image (59개) |
     
-  - 학습 label csv
+    - 학습 label csv
     
-  | 구분 | 입력 정보 |
-  | :---: | :--- |
-  | 데이터 세트 명 | train-label |
-  | 데이터 세트 설명 | training label set |
-  | 저장할 데이터 명 | train-label |
-  | RAW 데이터 설명 | label csv data for training |
-  | 파일 위치 | IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > train-label (1개) |
+    | 구분 | 입력 정보 |
+    | :---: | :--- |
+    | 데이터 세트 명 | train-label |
+    | 데이터 세트 설명 | training label set |
+    | 저장할 데이터 명 | train-label |
+    | RAW 데이터 설명 | label csv data for training |
+    | 파일 위치 | IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > train-label (1개) |
     
-  - 예측 이미지
+    - 예측 이미지
     
-  | 구분 | 입력 정보 |
-  | :---: | :--- |
-  | 데이터 세트 명 | pred-image |
-  | 데이터 세트 설명 | prediction image set |
-  | 저장할 데이터 명 | pred-image |
-  | RAW 데이터 설명 | jpg image for prediction |
-  | 파일 위치 | IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > pred-image (22개) |
+    | 구분 | 입력 정보 |
+    | :---: | :--- |
+    | 데이터 세트 명 | pred-image |
+    | 데이터 세트 설명 | prediction image set |
+    | 저장할 데이터 명 | pred-image |
+    | RAW 데이터 설명 | jpg image for prediction |
+    | 파일 위치 | IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > pred-image (22개) |
 
 (3) 업로드 데이터 확인
 
   ![uploaded_data](./doc_images/[4-4-1]uploaded_data.png)
+  - 데이터 업로드 과정을 모두 수행하고 나면, 위와 같이 세 개의 데이터 세트가 만들어집니다.
   - 데이터 관리 화면에서, 생성된 이미지 데이터 세트 이름을 누르면 해당 데이터의 전처리 상세 화면으로 진입할 수 있습니다.
   
   ![data_preprocess1](./doc_images/[4-4-2]data_preprocess.png)
@@ -236,6 +238,7 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
 (4) 데이터 전처리
 
   - 예측에 사용할 이미지 데이터를 상하 반전/흑백 처리합니다.
+  
   ![preprocess_sample](./doc_images/[4-3-1-2]prepreocess.sample.png)
   - 예측 이미지 전처리를 진행하는 이유는, 학습 이미지와 유사한 이미지가 아니면 딥 러닝 알고리즘이 어떻게 처리하는지를 보기 위함입니다.
   
