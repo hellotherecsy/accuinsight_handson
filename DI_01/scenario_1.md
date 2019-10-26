@@ -5,7 +5,7 @@
 > 목차
 > ---
 > 1. [데이터 준비](scenario_1.md#데이터-준비)
->    1. [좌석 예약 데이터](scenario_1.md#dataset-1-좌석-예약-데이터)
+>    1. [좌석 예약 데이터](scenario_1.md#1-dataset-1-좌석-예약-데이터)
 >    1. [좌석 메타 데이터](scenario_1.md#dataset-2-좌석-메타-데이터)
 > 1. [데이터 처리 (Batch Pipeline)](scenario_1.md#데이터-처리-batch-pipeline)
 >     1. [데이터파일 2개 조인하여 ETL작업 수행하기](scenario_1.md#데이터파일-2개-조인하여-etl작업-수행하기)
