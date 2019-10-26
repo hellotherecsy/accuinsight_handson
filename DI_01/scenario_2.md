@@ -19,7 +19,7 @@
 >         1. [null값 제거](scenario_2.md#null값-제거)
 >         1. [컬럼명 변경](scenario_2.md#컬럼명-변경)
 >         1. [ICOS에 저장](scenario_2.md#ICOS에-저장)
->         1. [저장 및 실행](scenario_2.md#저장-및-실행)
+>     1. [워크플로우 저장 및 실행](scenario_2.md#-저장-및-실행)
 >     1. [워크플로우 상태 확인](scenario_2.md#워크플로우-상태-확인)
 >     1. [실행결과 확인](scenario_2.md#실행결과-확인)
 > 1. [데이터 시각화 (Data Insight)](scenario_2.md#데이터-시각화-data-insight)
@@ -285,7 +285,7 @@ from default;
 
 <br/>
 
-#### 저장 및 실행
+###  저장 및 실행
   
 캔버스 상단에 워크플로우 이름 입력 (ex. 회의실 일평균 좌석이용률)<br/>
 
@@ -300,7 +300,7 @@ from default;
 
 <br/>
 
-#### 워크플로우 상태 확인
+### 워크플로우 상태 확인
 
 ![ex_screenshot](./img/s2_stateCheck.png)
 
@@ -310,7 +310,7 @@ from default;
 
 <br/>
 
-#### 실행결과 확인
+### 실행결과 확인
 
 ![ex_screenshot](./img/s2_resultCheck.png)
 
