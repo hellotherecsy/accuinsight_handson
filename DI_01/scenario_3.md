@@ -22,7 +22,7 @@
 >         1. [컬럼 순서 변경](scenario_3.md#기존-파일과-통합하기-위해-컬럼-순서-변경)
 >         1. [기존 파일과 통합](scenario_3.md#기존-파일과-통합)
 >         1. [ICOS에 저장](scenario_3.md#ICOS에-저장)
->         1. [저장 및 실행](scenario_3.md#저장-및-실행)
+>     1. [워크플로우 저장 및 실행](scenario_3.md#워크플로우-저장-및-실행)
 >     1. [워크플로우 상태 확인](scenario_3.md#워크플로우-상태-확인)
 >     1. [실행결과 확인](scenario_3.md#실행결과-확인)
 > 1. [데이터 시각화 (Data Insight)](scenario_3.md#데이터-시각화-data-insight)
@@ -320,7 +320,7 @@ from default;
 
 <br/>
 
-#### 저장 및 실행
+### 워크플로우 저장 및 실행
   
 ETL 클릭 후 appName 입력
 
