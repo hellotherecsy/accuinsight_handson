@@ -3,6 +3,7 @@
 <br/>
 
 > 목차
+> ---
 > 1. [데이터 준비](scenario_1.md#데이터-준비)
 >    1. [Dataset 1 : 좌석 예약 데이터](scenario_1.md#dataset-1-좌석-예약-데이터)
 >    1. [Dataset 2 : 좌석 메타 데이터](scenario_1.md#dataset-1-좌석-메타-데이터)
@@ -183,8 +184,13 @@ col checkbox에서 아래 5가지 column 체크
 
 <br/>
 
-    select bldg,dt,com,countdesk_id as resv, concat(bldg,'_',dt) as key
-    from default;
+```SQL
+select bldg,dt,com,countdesk_id as resv, concat(bldg,'_',dt) as key
+from default;
+``` 
+
+<br/>
+
 - overwriteSchema 체크 (SQL 결과로 데이터 변경)  
 
 `SQL` 노드 drag & drop하여 좌석 메타 데이터에서 join key 생성
@@ -194,8 +200,11 @@ col checkbox에서 아래 5가지 column 체크
 
 <br/>
 
-    select countdesk_id as total, concat(bldg,'_',dt) as key
-    from default; 
+```SQL
+select countdesk_id as total, concat(bldg,'_',dt) as key
+from default;
+```
+
 - overwriteSchema 체크 (SQL 결과로 데이터 변경)  
 
 <br/>
