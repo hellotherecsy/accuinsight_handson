@@ -142,8 +142,9 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
     
     ![data_browse](./doc_images/[4-2-1-1]data_browse.png)
     
-        - 파일 위치: IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > train-image
-        여러 개의 파일을 ctrl+클릭으로 동시에 선택하여 올릴 수 있습니다. train-image 폴더 안에 있는 모든 파일(59개)을 선택하고 선택 버튼을 누릅니다. 
+        파일 위치: IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > train-image
+        여러 개의 파일을 ctrl+클릭으로 동시에 선택하여 올릴 수 있습니다.
+        train-image 폴더 안에 있는 모든 파일(59개)을 선택하고 선택 버튼을 누릅니다. 
     - e. 데이터 저장 경로는 데이터 세트 정보와, RAW 데이터 정보를 입력하면 자동 생성됩니다. 생성 버튼을 누르면 데이터가 업로드 되면서 데이터 세트가 생성됩니다.
   
   - 예측 이미지, label csv도 위의 a ~ e 과정을 반복하여 같은 방법으로 업로드할 수 있습니다.
@@ -157,7 +158,7 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
     | 데이터 세트 설명 | training image set |
     | 저장할 데이터 명 | train-image |
     | RAW 데이터 설명 | jpg image for training |
-    | 파일 위치 | IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > train-image |
+    | 파일 위치 | IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > train-image (59개) |
     
     - 학습 label csv 파일
     
@@ -167,7 +168,7 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
     | 데이터 세트 설명 | training label set |
     | 저장할 데이터 명 | train-label |
     | RAW 데이터 설명 | label csv data for training |
-    | 파일 위치 | IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > train-label |
+    | 파일 위치 | IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > train-label (!개) |
     
     - 예측 이미지
     
@@ -179,12 +180,21 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
     | RAW 데이터 설명 | jpg image for prediction |
     | 파일 위치 | IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > pred-image |
     
+(3) 업로드 데이터 확인
+
+  ![uploaded_data](./doc_images/[4-4-1]uploaded_data.png)
+  - 데이터 관리 화면에서, 생성된 이미지 데이터 세트의 이름을 누르면 전처리 상세 화면으로 진입할 수 있습니다.
+  
+  ![data_preprocess](./doc_images/[4-4-2]data_preprocess.png)
+  - DLModeler의 모든 데이터는 전처리 알고리즘을 거친 것으로 가정합니다.
+  - 업로드 한 RAW 데이터의 전처리 알고리즘은 rawData 입니다. rawData는 아무런 전처리도 수행하지 않았음을 의미합니다.
+  - 전처리 알고리즘이 rawData인 데이터명을 클릭하면 데이터 전처리 상세 팝업을 볼 수 있습니다.
   
   ![dataset_sample](./doc_images/[4-2-2]dataset_sample.png)
-  - 생성된 이미지 데이터 세트의 이름을 누르면 전처리 상세 화면으로 진입할 수 있습니다.
-  - 전처리 알고리즘이 rawData인 데이터명을 클릭하면 데이터 전처리 상세 팝업을 볼 수 있는데, 여기에서 업로드 된 데이터 예시를 확인할 수 있습니다. 예시 리프레시 버튼을 누를 때마다 데이터 중 하나를 랜덤으로 보여줍니다.
+  - 우측의 데이터 예시 확인 란에서 업로드 된 데이터 예시를 확인할 수 있습니다.
+  - 예시 리프레시 버튼을 누를 때마다 데이터 중 하나를 랜덤으로 보여줍니다.
   
-(3) 데이터 전처리
+(4) 데이터 전처리
 
   ![data_preprocess](./doc_images/[4-3-1]data_preprocess.png)
   - 예측에 사용할 이미지 데이터를 상하 반전/흑백 처리합니다. 전처리 상세 화면에서 데이터 전처리 버튼을 클릭합니다.
