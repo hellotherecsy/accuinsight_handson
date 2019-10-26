@@ -113,6 +113,14 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   
   - 프로젝트를 생성하면, 위와 같은 프로젝트 카드가 프로젝트 관리 화면에 나타납니다.
   - 프로젝트 카드 하단의 데이터/작업/배포 버튼은 각각 해당 프로젝트의 데이터/작업/배포 화면으로 이동하는 버튼입니다.
+  - Demo에서는 각 화면에서 다음과 같은 과정이 진행됩니다.
+  
+    | 화면 구분 | 진행 내용 |
+    | :---: | :--- |
+    | 데이터 | 데이터 등록, 예측 데이터 전처리|
+    | 작업 | built-in 알고리즘으로 이미지 학습, jupyter notebook 생성 |
+    | 배포 | 배포API 서버 정보 확인, 샘플 예측 |
+
   - 먼저, Demo에 사용할 데이터 업로드를 위해 데이터 버튼을 클릭하여 데이터 관리 화면으로 이동합니다.
 
 ## 데이터
@@ -125,8 +133,8 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   ![data_manage1](./doc_images/[3-3-2]data_manage.png)
   
   - 데이터 관리 화면입니다. 우측 상단의 데이터 생성 버튼을 누르면 데이터 세트 생성 팝업이 뜹니다.
-  - 아래 과정은 학습 이미지를 업로드하는 과정입니다.
-  
+  - 아래 과정은 데이터를 업로드하는 과정입니다. 먼저, 학습 이미지 데이터를 업로드합니다.
+ 
     ![dataset_create](./doc_images/[4-2-1]dataset_create.png)
   
     - a. 데이터 세트 생성 정보를 입력합니다. 데이터 세트 명과 데이터 세트 설명을 입력합니다.
@@ -146,40 +154,71 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
         여러 개의 파일을 ctrl+클릭으로 동시에 선택하여 올릴 수 있습니다.
         train-image 폴더 안에 있는 모든 파일(59개)을 선택하고 선택 버튼을 누릅니다. 
     - e. 데이터 저장 경로는 데이터 세트 정보와, RAW 데이터 정보를 입력하면 자동 생성됩니다. 생성 버튼을 누르면 데이터가 업로드 되면서 데이터 세트가 생성됩니다.
+    
+  - 다음으로, 학습 label csv 데이터를 업로드합니다.
+    - a. 데이터 세트 생성 정보를 입력합니다. 데이터 세트 명과 데이터 세트 설명을 입력합니다.
+      - 데이터 세트 명: train-label
+      - 데이터 세트 설명: training label set
+    
+    - b. RAW 데이터 등록 정보를 입력합니다. 저장할 데이터 명과 RAW 데이터 설명을 입력합니다. RAW 데이터 설명 입력 란은 맨 아래에 있습니다.
+      - 저장할 데이터 명: train-label
+      - RAW 데이터 설명: label csv data for training
+    
+    - c. 데이터 파일을 등록합니다. ICOS에서 데이터를 가져올 것이므로, ICOS를 선택합니다.        
+    - d. 데이터 파일 등록 우측의 폴더 아이콘을 클릭하면 경로 검색 창이 나옵니다.
+    
+          파일 위치: IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > train-label
+          train-image 폴더 안에 있는 csv 파일을 선택하고 선택 버튼을 누릅니다. 
+    - e. 데이터 저장 경로는 데이터 세트 정보와, RAW 데이터 정보를 입력하면 자동 생성됩니다. 생성 버튼을 누르면 데이터가 업로드 되면서 데이터 세트가 생성됩니다.
+    
+  - 마지막으로 예측 이미지를 업로드합니다.
+    - a. 데이터 세트 생성 정보를 입력합니다. 데이터 세트 명과 데이터 세트 설명을 입력합니다.
+      - 데이터 세트 명: pred-label
+      - 데이터 세트 설명: prediction image set
+    
+    - b. RAW 데이터 등록 정보를 입력합니다. 저장할 데이터 명과 RAW 데이터 설명을 입력합니다. RAW 데이터 설명 입력 란은 맨 아래에 있습니다.
+      - 저장할 데이터 명: pred-label
+      - RAW 데이터 설명: jpg image for prediction
+    
+    - c. 데이터 파일을 등록합니다. ICOS에서 데이터를 가져올 것이므로, ICOS를 선택합니다.        
+    - d. 데이터 파일 등록 우측의 폴더 아이콘을 클릭하면 경로 검색 창이 나옵니다.
+    
+          파일 위치: IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > pred-image
+          pred-image 폴더 안에 있는 모든 파일(22개)을 선택하고 선택 버튼을 누릅니다. 
+    - e. 데이터 저장 경로는 데이터 세트 정보와, RAW 데이터 정보를 입력하면 자동 생성됩니다. 생성 버튼을 누르면 데이터가 업로드 되면서 데이터 세트가 생성됩니다.
   
-  - 예측 이미지, label csv도 위의 a ~ e 과정을 반복하여 같은 방법으로 업로드할 수 있습니다.
-  - 데이터 생성 시 입력 정보와 파일 위치를 정리하면 아래와 같습니다.
+  - 각 데이터 별로 데이터 세트 생성 정보, RAW 데이터 등록 정보, 파일 위치가 달라집니다. 이를 정리하면 아래와 같습니다.
   
-    - 학습 이미지
+  - 학습 이미지
     
-    | 구분 | 입력 정보 |
-    | :---: | :--- |
-    | 데이터 세트 명 | train-image |
-    | 데이터 세트 설명 | training image set |
-    | 저장할 데이터 명 | train-image |
-    | RAW 데이터 설명 | jpg image for training |
-    | 파일 위치 | IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > train-image (59개) |
+  | 구분 | 입력 정보 |
+  | :---: | :--- |
+  | 데이터 세트 명 | train-image |
+  | 데이터 세트 설명 | training image set |
+  | 저장할 데이터 명 | train-image |
+  | RAW 데이터 설명 | jpg image for training |
+  | 파일 위치 | IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > train-image (59개) |
     
-    - 학습 label csv 파일
+  - 학습 label csv
     
-    | 구분 | 입력 정보 |
-    | :---: | :--- |
-    | 데이터 세트 명 | train-label |
-    | 데이터 세트 설명 | training label set |
-    | 저장할 데이터 명 | train-label |
-    | RAW 데이터 설명 | label csv data for training |
-    | 파일 위치 | IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > train-label (!개) |
+  | 구분 | 입력 정보 |
+  | :---: | :--- |
+  | 데이터 세트 명 | train-label |
+  | 데이터 세트 설명 | training label set |
+  | 저장할 데이터 명 | train-label |
+  | RAW 데이터 설명 | label csv data for training |
+  | 파일 위치 | IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > train-label (1개) |
     
-    - 예측 이미지
+  - 예측 이미지
     
-    | 구분 | 입력 정보 |
-    | :---: | :--- |
-    | 데이터 세트 명 | pred-image |
-    | 데이터 세트 설명 | prediction image set |
-    | 저장할 데이터 명 | pred-image |
-    | RAW 데이터 설명 | jpg image for prediction |
-    | 파일 위치 | IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > pred-image |
-    
+  | 구분 | 입력 정보 |
+  | :---: | :--- |
+  | 데이터 세트 명 | pred-image |
+  | 데이터 세트 설명 | prediction image set |
+  | 저장할 데이터 명 | pred-image |
+  | RAW 데이터 설명 | jpg image for prediction |
+  | 파일 위치 | IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > pred-image (22개) |
+
 (3) 업로드 데이터 확인
 
   ![uploaded_data](./doc_images/[4-4-1]uploaded_data.png)
@@ -197,6 +236,7 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
 (4) 데이터 전처리
 
   - 예측에 사용할 이미지 데이터를 상하 반전/흑백 처리합니다.
+  ![preprocess_sample](./doc_images/[4-3-1-2]prepreocess.sample.png)
   - 예측 이미지 전처리를 진행하는 이유는, 학습 이미지와 유사한 이미지가 아니면 딥 러닝 알고리즘이 어떻게 처리하는지를 보기 위함입니다.
   
   ![data_manage2](./doc_images/[4-3-1-1]data_manage.png)
@@ -205,8 +245,7 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   
   ![data_preprocess2](./doc_images/[4-3-1]data_preprocess.png)
   - 전처리 상세 화면에서 데이터 전처리 버튼을 클릭합니다.
-  - 그러면 데이터 전처리 등록 팝업이 뜹니다. 아래 과정은 데이터 전처리 정보를 입력하는 과정입니다.
-    
+  - 그러면 데이터 전처리 등록 팝업이 뜹니다. 아래는 데이터 전처리 정보를 입력하는 과정입니다.
     
     ![data_preprocess_create_1](./doc_images/[4-3-2]data_preprocess_create_1.png)
     - a. 데이터 선택은 업로드 된 rawData로 합니다. 데이터 업로드 시 입력했던 저장할 데이터 명(pred-image)과 동일합니다.
@@ -217,7 +256,7 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
     - c. 다시 원래 전처리 생성 팝업으로 돌아갑니다. Processed 데이터 명과 데이터 설명을 입력합니다. 이는 전처리 된 데이터가 가지게 될 이름과 설명입니다.
       - Processed 데이터 명: processed-pred-image
       - Processed 데이터 설명: processed jpg image for prediction
-    - d. 모든 과정을 마친 후 생성을 누르면 전처리가 시작됩니다.
+    - d. 모든 과정을 마친 후 생성을 누르면 전처리가 시작됩니다. 데이터 양이 많지 않기 때문에, 금방 완료됩니다.
     
   ![data_preprocess_start](./doc_images/[4-3-4]data_preprocess_start.png)
   - 전처리 관리 페이지에 전처리 데이터가 생긴 것을 볼 수 있습니다.
@@ -230,6 +269,7 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
 
 ## 학습
 (1) 작업 생성
+
   ![job_manage](./doc_images/[5-1-1-1]jump_to_job.png)
   - 지금까지 작업한 데이터를 가지고, 이미지 학습을 진행합니다.
   - 우측 상단의 분석 탭에서 서비스 메뉴 사이를 이동할 수 있습니다.
@@ -243,7 +283,7 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   
   ![job_create2](./doc_images/[5-1-3]job_create2.png)
   - 그 다음 나오는 작업 생성(Basic) 창에서 작업 상세 정보를 입력합니다. 작업 명과 작업 설명을 원하는 대로 입력한 후, 이미지 분류 알고리즘을 선택합니다.
-  - 알고리즘을 선택하면 그에 따라 데이터를 선택하는 부분이 바뀝니다. 데이터 탭에서 업로드해 두었던 학습 이미지와 label csv 파일을 선택한 수 생성을 누릅니다.
+  - 알고리즘을 선택하면 그에 따라 데이터를 선택하는 부분이 바뀝니다. 데이터 탭에서 업로드해 두었던 학습 이미지와 label csv 파일을 선택한 후 생성을 누릅니다.
   - 내장 image classification 알고리즘은 tensorflow 기반으로 만들어졌으며, 학습 신경망 layer는 6개로 구성됩니다.
 
 (2) 학습 생성
