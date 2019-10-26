@@ -40,6 +40,9 @@
 
 ## 실제 공유오피스 분석 화면
 
+- 회사별 일평균 좌석이용률
+
+
 ![ex_screenshot](./img/scenario1.png)
 
 <br/><br/>
