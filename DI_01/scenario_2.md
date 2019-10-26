@@ -428,10 +428,10 @@ _새로운 분석 작업 페이지로 이동 하겠습니까?_ 라는 팝업이 
 
 <br/>
 
-    소수점 2째 자리까지 : Number formatting에서 Precision을 2로 변경<br/>
-    애니메이션 삭제 : Miscellaneous에서 Start duration을 0으로 변경<br/>
-    Label 위치 변경 : Legend에서 Align 콤보박스 선택<br/>
-    Label의 Column 개수 증가 : Legend에서 Max columns 개수 지정<br/>
-    타이틀 설정 : Title에서 Text에 ‘30대의 좌석유형별 이용현황’ 입력<br/>
+    소수점 2째 자리까지 : Number formatting에서 Precision을 2로 변경
+    애니메이션 삭제 : Miscellaneous에서 Start duration을 0으로 변경
+    Label 위치 변경 : Legend에서 Align 콤보박스 선택
+    Label의 Column 개수 증가 : Legend에서 Max columns 개수 지정
+    타이틀 설정 : Title에서 Text에 ‘30대의 좌석유형별 이용현황’ 입력
 
 <br/>
