@@ -20,7 +20,7 @@
 >         1. [null값 제거](scenario_1.md#null값-제거)
 >         1. [컬럼명 변경](scenario_1.md#컬럼명-변경)
 >         1. [ICOS에 저장](scenario_1.md#ICOS에-저장)
->         1. [저장 및 실행](scenario_1.md#저장-및-실행)
+>     1. [워크플로우 저장 및 실행](scenario_1.md#워크플로우-저장-및-실행)
 >     1. [워크플로우 상태 확인](scenario_1.md#워크플로우-상태-확인)
 >     1. [실행결과 확인](scenario_1.md#실행결과-확인)
 > 1. [데이터 시각화 (Data Insight)](scenario_1.md#데이터-시각화-data-insight)
@@ -306,7 +306,7 @@ from default;
 
 <br/>
 
-#### 저장 및 실행
+### 워크플로우 저장 및 실행
 
 캔버스 상단에 워크플로우 이름 입력 (ex. 회의실 일평균 좌석이용률)
 
