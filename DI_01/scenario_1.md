@@ -101,10 +101,8 @@
 데이터 불러오기 그룹에서 `ICOS 불러오기` 노드를 캔버스 영역에 drag & drop하여 node 생성  
 우측 property 패널  
 - file : 불러오려는 ICOS 파일의 경로 지정
-
-    좌석 예약 데이터 경로 : IBMOSC1146611-6 스토리지에서 handson-bucket/DI/Dataset/desk_resv
-    좌석 메타 데이터 경로 : IBMOSC1146611-6 스토리지에서 handson-bucket/DI/Dataset/desk_info
-
+    - 좌석 예약 데이터의 경로 : IBMOSC1146611-6 스토리지에서 handson-bucket/DI/Dataset/desk_resv
+    - 좌석 메타 데이터의 경로 : IBMOSC1146611-6 스토리지에서 handson-bucket/DI/Dataset/desk_info
 - option : 데이터에 header가 없는 경우 false로 변경
 - schema : `자동 파일 열기` 클릭  
 
