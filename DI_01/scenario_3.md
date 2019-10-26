@@ -35,6 +35,8 @@
 
 > 약 25개의 SK 관계사들의 건물별 규모별 시간대별 회의실 이용 현황을 분석한다.
 
+<br/>
+
 # 실제 공유오피스 분석 화면
 
 - 회의실 규모별 이용현황
@@ -54,18 +56,19 @@
 
 | column명 | column 설명 | Value Example |
 |---|:---:|---:|
-| `bldg` | 빌딩명 | SKC 본사, 서린 빌딩, ... |
+| `bldg` | 건물명 | SKC 본사, 서린 빌딩, ... |
 | `room_scale` | 회의실 규모 | 2, 4, 5, ... |
 | `room_resv_id` | 각 회의실의 ID | 3a27b3bf-d8de-11e8-975a-0a9726611f46 |
 | `time` | 회의실 사용 시점 (30분 단위) | 09:30:00, 11:00:00, ... |
 | `dt` | 예약 날짜 | 20190803 |
 
- 
+<br/>
+
 (2) Dataset 2 : 회의실 메타 데이터
 
 | column명 | column 설명 | Value Example |
 |---|:---:|---:|
-| `bldg` | 빌딩명 | SKC 본사, 서린 빌딩, ... |
+| `bldg` | 건물명 | SKC 본사, 서린 빌딩, ... |
 | `room_scale` | 회의실 규모 | 2, 4, 5, ... |
 | `room_id` | 각 회의실의 ID | 3a27b3bf-d8de-11e8-975a-0a9726611f46 |
 | `room_type` | 회의실 유형 | 일반회의실, 프로젝트룸, ... |
@@ -80,7 +83,7 @@
 
 <br/>
 
-> ETL flow 구성내용 : ICOS에서 파일 불러오기 → 데이터 정제 → 통계 → join key 생성 → 2개 파일 join → 통계 → 불필요한 column 삭제 → column명 rename → 통계 및 정제를 통한 새로운 파일 생성 → 기존 파일과 통합 → ICOS에 저장    
+> ETL flow 구성내용 : `ICOS에서 파일 불러오기` → `데이터 정제` → `통계` → `join key 생성` → `2개 파일 join` → `통계` → `불필요한 column 삭제` → `column명 rename` → `통계 및 정제를 통한 새로운 파일 생성` → `기존 파일과 통합` → `ICOS에 저장`  
 
 <br/>
 
@@ -145,7 +148,7 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경
 
 ![ex_screenshot](./img/s3_agg1.png)
 
-`agg` 노드 drag & drop하여 회의실 예약 데이터에서 빌딩별 규모별 시간대별 예약회의실수 계산<br/>
+`agg` 노드 drag & drop하여 회의실 예약 데이터에서 건물별 규모별 시간대별 예약회의실수 계산<br/>
 `distinct` 노드에서 `agg` 노드로 연결<br/>
 우측 property 패널<br/>
 - **aggcol** : bldg, room_scale, dt, time<br/>
@@ -153,7 +156,7 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경
 
 <br/>
 
-`agg` 노드 drag & drop하여 회의실 메타 데이터에서 빌딩별 규모별 전체회의실수 계산<br/>
+`agg` 노드 drag & drop하여 회의실 메타 데이터에서 건물별 규모별 전체회의실수 계산<br/>
 `filter` 노드에서 `agg` 노드로 연결<br/>
 우측 property 패널<br/>
 - **aggcol** : bldg, room_scale, dt<br/>
