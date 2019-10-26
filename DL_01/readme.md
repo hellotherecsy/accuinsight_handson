@@ -39,6 +39,21 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
 
 (4) 배포
   - 학습 완료된 모델을 API로 배포합니다. 업로드한 데이터로 간단한 예측도 시각화 해서 볼 수 있습니다.
+  
+## 서비스 시작하기
+
+(1) 메인 페이지 진입
+  ![main_page](./doc_images/[1-1-1]main_page.png)
+  - https://accuinsight.cloudz.co.kr/dlmodeler/#/intro
+  - 메인 페이지 우측 상단의 로그인 버튼이나, 좌측에 있는 지금 '지금 시작해 보세요' 버튼을 클릭하면 로그인 화면으로 이동합니다.
+  
+(2) 로그인
+
+  ![login](./doc_images/[1-2-1]ㅣlogin.png)
+  - cloudz 포탈 로그인을 합니다.
+  - 로그인을 하면 자동으로 프로젝트 관리 페이지로 이동됩니다.
+  - 자동으로 이동되지 않고 메인 페이지로 돌아갈 경우, 메인 페이지의 '지금 시작해 보세요' 버튼을 다시 클릭하면 이동됩니다.
+
 
 # Intel image classification demo (DL Modeler)
 ## Demo Overview
@@ -106,11 +121,14 @@ with open(image_path + "/image_label.csv", 'w') as f:
     | mountain | 4 |
     | sea | 5 |
 
+
+
+
 ## 프로젝트
 (1) 프로젝트 관리
 
   ![project_manage](./doc_images/[3-1-1]project_manage.png)
-  - 메인 페이지 맨 아래 콘솔로 이동 버튼을 누르면, 로그인 후 프로젝트 관리 페이지에 진입할 수 있습니다. 관리 페이지에서는 프로젝트 생성/수정/삭제 작업이 가능합니다.
+  - 관리 페이지에서는 프로젝트 생성/수정/삭제 작업이 가능합니다.
 
 (2) 프로젝트 생성
 
