@@ -87,7 +87,7 @@
 
 <br/>
 
- > ETL flow 구성내용 : `ICOS에서 파일 불러오기` → `사용할 column만 선택` → `데이터 정제` → `통계` → `join key 생성` → `2개 파일 join` → `새로운 column 생성` → `불필요한 column 삭제` → `null값 제거`→ `column명 rename` → `ICOS에 저장`
+ > **ETL flow 구성내용** : `ICOS에서 파일 불러오기` → `사용할 column만 선택` → `데이터 정제` → `통계` → `join key 생성` → `2개 파일 join` → `새로운 column 생성` → `불필요한 column 삭제` → `null값 제거`→ `column명 rename` → `ICOS에 저장`
 
 <br/>
 
