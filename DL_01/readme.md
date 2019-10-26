@@ -54,7 +54,7 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   
   ![project_manage](./doc_images/[1-2-2]project_manage.png)
   - 로그인을 하면 자동으로 프로젝트 관리 페이지로 이동됩니다.
-  - 자동으로 이동되지 않고 메인 페이지로 돌아갈 경우, 메인 페이지의 '지금 시작해 보세요' 버튼을 다시 클릭하면 이동됩니다.
+  - 자동으로 이동되지 않고 메인 페이지로 돌아가는 경우는 계정에서 프로젝트가 선택되어 있는 경우입니다. 메인 페이지의 '지금 시작해 보세요' 버튼을 다시 클릭하면 프로젝트 관리 페이지로 이동됩니다.
 
 # Intel image classification demo (DL Modeler)
 ## Demo Overview
@@ -228,8 +228,8 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   
   ![data_preprocess1](./doc_images/[4-4-2]data_preprocess.png)
   - DLModeler의 모든 데이터는 전처리 알고리즘을 거친 것으로 가정합니다.
-  - 업로드 한 RAW 데이터의 전처리 알고리즘은 rawData 입니다. rawData는 아무런 전처리도 수행하지 않았음을 의미합니다.
-  - 전처리 알고리즘이 rawData인 데이터명을 클릭하면 데이터 전처리 상세 팝업을 볼 수 있습니다.
+  - 업로드 한 RAW 데이터의 전처리 알고리즘은 rawData 입니다. rawData는 아무런 변화가 없는 전처리를 수행했음을 의미합니다.
+  - 전처리 알고리즘이 rawData인 데이터명을 클릭하면 업로드한 데이터에 관한 데이터 전처리 상세 팝업을 볼 수 있습니다.
   
   ![dataset_sample](./doc_images/[4-2-2]dataset_sample.png)
   - 우측의 데이터 예시 확인 란에서 업로드 된 데이터 예시를 확인할 수 있습니다.
@@ -237,13 +237,13 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   
 (4) 데이터 전처리
 
-  - 예측에 사용할 이미지 데이터를 상하 반전/흑백 처리합니다.
+  - 예측에 사용할 이미지 데이터를 상하 반전+흑백 처리합니다.
   
     | 원본 | 전처리 |
     | :---: | :---: |
     | ![original](./doc_images/[4-3-1-2]original.png) | ![processed](./doc_images/[4-3-1-3]processed.png) |
     
-  - 예측 이미지 전처리를 진행하는 이유는, 학습 이미지와 유사한 이미지가 아니면 딥 러닝 알고리즘이 어떻게 처리하는지를 보기 위함입니다.
+  - 예측 이미지 전처리를 진행하는 이유는, 학습 이미지와 유사하지 않은 이미지를 딥 러닝 알고리즘이 어떻게 분류하는지를 보기 위함입니다.
   
   ![data_manage2](./doc_images/[4-3-1-1]data_manage.png)
   - 데이터 관리 화면으로 되돌아옵니다.
@@ -277,7 +277,7 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
 ## 학습
 (1) 작업 생성
 
-  ![job_manage](./doc_images/[5-1-1-1]jump_to_job.png)
+  ![jump_to_job](./doc_images/[5-1-1-1]jump_to_job.png)
   - 지금까지 작업한 데이터를 가지고, 이미지 학습을 진행하기 위해 작업 화면으로 이동합니다.
   - 우측 상단의 분석 탭에서 서비스 메뉴 사이를 이동할 수 있습니다.
   - 여기에서 작업을 선택하면 작업 관리 화면으로 넘어갑니다.
@@ -286,20 +286,38 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   - 작업 생성 버튼을 눌러 작업을 생성합니다. 
   
   ![job_create_1](./doc_images/[5-1-2]job_create_1.png)
-  DL Modeler에 내장된 image classification 알고리즘으로 학습을 진행할 예정이므로 생성 방식으로는 Basic을 선택합니다.
+  - DL Modeler에 내장된 image classification 알고리즘으로 학습을 진행할 예정이므로 생성 방식으로는 Basic을 선택합니다.
   
-  ![job_create2](./doc_images/[5-1-3]job_create2.png)
-  - 그 다음 나오는 작업 생성(Basic) 창에서 작업 상세 정보를 입력합니다. 작업 명과 작업 설명을 원하는 대로 입력한 후, 이미지 분류 알고리즘을 선택합니다.
-  - 알고리즘을 선택하면 그에 따라 데이터를 선택하는 부분이 바뀝니다. 데이터 탭에서 업로드해 두었던 학습 이미지와 label csv 파일을 선택한 후 생성을 누릅니다.
+  ![job_create_2](./doc_images/[5-1-3]job_create_2.png)
+  - 그 다음 나오는 작업 생성(Basic) 창에서 작업 상세 정보를 입력합니다.
+  - 먼저, 작업 명과 작업 설명을 입력합니다.
+    - 작업 명: image-classification
+    - 작업 설명: image classification demo
+    
+  ![job_create_3](./doc_images/[5-1-4]job_create_3.png)
+  - 알고리즘은 이미지 분류를 선택합니다.
   - 내장 image classification 알고리즘은 tensorflow 기반으로 만들어졌으며, 학습 신경망 layer는 6개로 구성됩니다.
+  - 알고리즘을 선택하면 그에 따라 데이터를 선택하는 부분이 바뀝니다. 위 칸에는 학습 이미지, 아래 칸에는 학습 label 경로를 입력합니다.
+  - 오른쪽에 있는 폴더 아이콘을 각각 눌러 파일 경로를 찾습니다.
+  
+  ![job_create_4](./doc_images/[5-1-5]job_create_4.png)
+  - 이미지 경로를 찾을 땐 train-image '폴더'를, 레이블 경로를 찾을 땐 train-label '폴더'를 선택 후, 확인을 클릭합니다.
+    - 이미지 경로
+        mnt > project > image-classification_324_edu01 (사용자에 따라 다름) > data > train-image > train-image (폴더 선택)
+    - 레이블 경로
+        mnt > project > image-classification_324_edu01 (사용자에 따라 다름) > data > train-label > train-label (폴더 선택)
+  - 이 데이터는 데이터 탭에서 업로드해 두었던 학습 이미지와 label csv 파일입니다.
+  - 모든 정보를 입력하면 생성 버튼이 활성화됩니다. 생성 버튼을 눌러 작업을 생성합니다.
 
 (2) 학습 생성
 
+  ![job_manage](./doc_images/[5-2-1-1]job_manage.png)
+  - 작업 관리 화면에 생성한 작업이 보입니다. 작업명을 클릭하면 학습 관리 화면이 나옵니다.
+
   ![train_manage](./doc_images/[5-2-1]train_manage.png)
-  - 작업 관리 화면에서 생성한 작업명을 클릭하면 작업 상세 화면이 나오는데, 이 화면에서 학습을 생성하고 관리할 수 있습니다.
+  - 학습 관리 화면에서 학습을 생성하고 관리할 수 있습니다. 학습 생성 버튼을 눌러 학습 생성을 시작합니다.
   
   ![train_create](./doc_images/[5-2-2]train_create.png)
-  - 학습 생성 버튼을 누르면 학습 생성 팝업이 나옵니다.
   - 학습에 사용할 인스턴스(cpu/gpu)를 선택합니다. gpu를 선택한 경우 gpu 개수도 같이 입력합니다.
   - 하이퍼파라미터는 자유롭게 설정하되, demo 이미지의 카테고리 수가 6개이므로 num_types는 6으로 설정해줍니다.
   - 학습 추가 버튼을 누르면 학습명과 하이퍼파라미터를 입력하는 칸이 늘어나며, 한 화면에서 여러 개의 학습을 동시에 생성할 수 있습니다.
