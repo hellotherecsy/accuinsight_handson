@@ -259,12 +259,13 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
     - c. 다시 원래 전처리 생성 팝업으로 돌아갑니다. Processed 데이터 명과 데이터 설명을 입력합니다. 이는 전처리 된 데이터가 가지게 될 이름과 설명입니다.
       - Processed 데이터 명: processed-pred-image
       - Processed 데이터 설명: processed jpg image for prediction
-    - d. 모든 과정을 마친 후 생성을 누르면 전처리가 시작됩니다. 데이터 양이 많지 않기 때문에, 금방 완료됩니다.
+    - d. 모든 과정을 마친 후 생성을 누르면 전처리가 시작됩니다. 
     
   ![data_preprocess_start](./doc_images/[4-3-4]data_preprocess_start.png)
   - 전처리 관리 페이지에 전처리 데이터가 생긴 것을 볼 수 있습니다.
   - 전처리 상태는 전처리 대기/전처리 중/전처리 완료/전처리 실패 로 표시됩니다.
   - 상태는 자동 새로 고침이 되지 않기 때문에 사용자가 직접 새로 고침 버튼을 눌러 주기적으로 확인해야 합니다.
+  - 데이터 양이 많지 않기 때문에, 전처리는 금방 완료됩니다.
   
   ![data_preprocess_result](./doc_images/[4-3-5]data_preprocess_result.png)
   - 전처리 상세 페이지에서도 전처리 상태를 확인할 수 있습니다.
