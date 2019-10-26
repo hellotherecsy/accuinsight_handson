@@ -48,7 +48,9 @@
 ## 데이터 준비
 > ICOS에 업로드된 데이터를 사용합니다.  
 > 스토리지 : IBMOSC1146611-6  
-> 버킷 : handson-bucket  
+> 버킷 : handson-bucket
+
+<br/>
 
 (1) Dataset 1 : 좌석 예약 데이터
 
