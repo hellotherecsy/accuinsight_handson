@@ -133,17 +133,17 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
       - 데이터 세트 명: train-image
       - 데이터 세트 설명: training image set
     
-    - b. RAW 데이터 등록 정보를 입력합니다. 저장할 데이터 명과 RAW 데이터 설명을 입력합니다.
+    - b. RAW 데이터 등록 정보를 입력합니다. 저장할 데이터 명과 RAW 데이터 설명을 입력합니다. RAW 데이터 설명 입력 란은 맨 아래에 있습니다.
       - 저장할 데이터 명: train-image
       - RAW 데이터 설명: jpg image for training
     
-    - c. 데이터 파일을 등록합니다. ICOS에서 데이터를 가져올 것이므로, ICOS를 선택합니다. 그리고 우측의 폴더 아이콘을 클릭하면 경로 검색 창이 나옵니다.
-  
-      ![data_browse](./doc_images/[4-2-1-1]data_browse.png)
+    - c. 데이터 파일을 등록합니다. ICOS에서 데이터를 가져올 것이므로, ICOS를 선택합니다.        
+    - d. 데이터 파일 등록 우측의 폴더 아이콘을 클릭하면 경로 검색 창이 나옵니다.
+    
+    ![data_browse](./doc_images/[4-2-1-1]data_browse.png)
     
         - 파일 위치: IBMOSC1146611-6 > handson-bucket > DL > intel-image-classification > train-image
-        
-    - d. 여러 개의 파일을 ctrl+클릭으로 동시에 선택하여 올릴 수 있습니다. train-image 폴더 안에 있는 모든 파일(59개)을 선택하고 선택 버튼을 누릅니다. 
+        여러 개의 파일을 ctrl+클릭으로 동시에 선택하여 올릴 수 있습니다. train-image 폴더 안에 있는 모든 파일(59개)을 선택하고 선택 버튼을 누릅니다. 
     - e. 데이터 저장 경로는 데이터 세트 정보와, RAW 데이터 정보를 입력하면 자동 생성됩니다. 생성 버튼을 누르면 데이터가 업로드 되면서 데이터 세트가 생성됩니다.
   
   - 예측 이미지, label csv도 위의 a ~ e 과정을 반복하여 같은 방법으로 업로드할 수 있습니다.
