@@ -219,17 +219,27 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
       - Processed 데이터 설명: processed jpg image for prediction
     - d. 모든 과정을 마친 후 생성을 누르면 전처리가 시작됩니다.
     
-  - 전처리 진행 과정은 전처리 상세 페이지에서 확인할 수 있습니다.
-  - 전처리가 완료되면, rawData와 동일하게 데이터 전처리 상세 팝업에 진입하여 전처리 된 데이터 예시를 볼 수 있습니다.
+  ![data_preprocess_start](./doc_images/[4-3-4]data_preprocess_start.png)
+  - 전처리 관리 페이지에 전처리 데이터가 생긴 것을 볼 수 있습니다.
+  - 전처리 상태는 전처리 대기/전처리 중/전처리 완료/전처리 실패 로 표시됩니다.
+  - 상태는 자동 새로 고침이 되지 않기 때문에 사용자가 직접 새로 고침 버튼을 눌러 주기적으로 확인해야 합니다.
+  
+  ![data_preprocess_result](./doc_images/[4-3-5]data_preprocess_result.png)
+  - 전처리 상세 페이지에서도 전처리 상태를 확인할 수 있습니다.
+  - 전처리가 완료되면, rawData와 동일하게 전처리 된 데이터 예시를 볼 수 있습니다.
 
 ## 학습
 (1) 작업 생성
-
+  ![job_manage](./doc_images/[5-1-1-1]jump_to_job.png)
+  - 지금까지 작업한 데이터를 가지고, 이미지 학습을 진행합니다.
+  - 우측 상단의 분석 탭에서 서비스 메뉴 사이를 이동할 수 있습니다.
+  - 여기에서 작업을 선택하면 작업 관리 화면으로 넘어갑니다.
+  
   ![job_manage](./doc_images/[5-1-1]job_manage.png)
-  - 우측 상단의 분석 탭에서 작업을 선택하면 작업 관리 화면으로 넘어갈 수 있습니다.
+  - 작업 생성 버튼을 눌러 작업을 생성합니다. 
   
   ![job_create_1](./doc_images/[5-1-2]job_create_1.png)
-  - 작업 생성 버튼을 눌러 작업을 생성합니다. DL Modeler에 내장된 image classification 알고리즘으로 학습을 진행할 예정이므로 생성 방식으로는 Basic을 선택합니다.
+  DL Modeler에 내장된 image classification 알고리즘으로 학습을 진행할 예정이므로 생성 방식으로는 Basic을 선택합니다.
   
   ![job_create2](./doc_images/[5-1-3]job_create2.png)
   - 그 다음 나오는 작업 생성(Basic) 창에서 작업 상세 정보를 입력합니다. 작업 명과 작업 설명을 원하는 대로 입력한 후, 이미지 분류 알고리즘을 선택합니다.
