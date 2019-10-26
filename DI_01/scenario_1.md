@@ -58,7 +58,7 @@
 
 | column명 | column 설명 | Value Example |
 |---|:---:|---|
-| `bldg` | 빌딩명 | SKC 본사, 서린 빌딩, ... |
+| `bldg` | 건물명 | SKC 본사, 서린 빌딩, ... |
 | `desk_type` | 좌석 유형 | 일반좌석, 스탠딩좌석, ... |
 | `desk_id` | 각 좌석의 ID | 3a27b3bf-d8de-11e8-975a-0a9726611f46 |
 | `dt` | 예약 날짜 | 20190803 |
@@ -71,7 +71,7 @@
 
 | column명 | column 설명 | Value Example |
 |---|:---:|---|
-| `bldg` | 빌딩명 | SKC 본사, 서린 빌딩, ... |
+| `bldg` | 건물명 | SKC 본사, 서린 빌딩, ... |
 | `desk_type` | 좌석 유형 | 일반좌석, 스탠딩좌석, ... |
 | `occupied` | 고정좌석 여부 | N, Y |
 | `desk_id` | 각 좌석의 ID | 3a27b3bf-d8de-11e8-975a-0a9726611f46 |
@@ -174,7 +174,7 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경
 
 ![ex_screenshot](./img/s1_agg.png)
 
-`agg` 노드 drag & drop하여 좌석 예약 데이터에서 빌딩별 회사별 예약좌석수 계산  
+`agg` 노드 drag & drop하여 좌석 예약 데이터에서 건물별 회사별 예약좌석수 계산  
 `distinct` 노드에서 `agg` 노드로 연결<br/>
 우측 property 패널  
 - **aggcol** : bldg, com, dt
@@ -182,7 +182,7 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경
 
 <br/>
 
-`agg` 노드 drag & drop하여 좌석 메타 데이터에서 빌딩별 전체좌석수 계산  
+`agg` 노드 drag & drop하여 좌석 메타 데이터에서 건물별 전체좌석수 계산  
 `filter` 노드에서 `agg` 노드로 연결<br/>
 우측 property 패널  
 - **aggcol** : bldg, dt
@@ -383,7 +383,7 @@ DataInsight 분석 및 시각화를 위해 MariaDB, ICOS, HIVE 등 다양한 종
 `수정` 클릭하여 그룹 설정 및 데이터 셋 이름 변경  
 - part-00000-~ -> 회사별 일평균 좌석이용률  
 각 컬럼의 `필드명 변경`을 통해 컬럼명 변경  
-- **bldg** -> 빌딩명
+- **bldg** -> 건물명
 - **dt** -> 날짜
 - **com** -> 회사명
 - **ratio** -> 좌석이용률  
