@@ -1,6 +1,3 @@
-# Scenario : 회사별 일평균 좌석이용률
-
-<br/>
 
 > 목차
 > ---
@@ -39,6 +36,10 @@
 ![ex_screenshot](./img/scenario1.png)
 
 <br/><br/>
+
+# Scenario : 회사별 일평균 좌석이용률
+
+<br/>
 
 ## 데이터 준비
 > ICOS에 업로드된 데이터를 사용합니다.  
