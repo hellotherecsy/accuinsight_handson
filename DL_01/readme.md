@@ -67,15 +67,31 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   ![image_folder](./doc_images/[2-1-1]image_folder.png)
   ![image-sample](./doc_images/[2-1-2]image-sample.png)
   - 150px X 150px 사이즈의 자연/풍경 이미지 약 25,000개로 구성된 데이터셋입니다.
-  - Demo 학습에는 총 14,034개의 데이터가 활용되지만, 실습을 할 땐 60개 이미지만 학습 데이터로 사용하여 toy model을 만듭니다.
+  - Demo 학습에는 총 14,034개의 데이터가 있지만, 실습을 할 땐 59개 이미지만 학습 데이터로 사용하여 toy model을 만듭니다.
   - 이미지 카테고리는 총 6개(buildings, forest, glacier, mountain, sea, street)입니다.
 
 (2) csv 파일 준비
-  - Image Classification의 input으로 파일명과 label이 있는 csv 데이터가 필요합니다. label 값은 정수만 가능하기 때문에, 정수 label과 카테고리를 나중에 다시 매핑해주는 작업이 필요합니다.
+  ![csv_sample](./doc_images/[2-2-1]csv_sample.png)
+  - Image Classification의 학습 input으로 총 두 가지의 데이터가 필요합니다.
+    - 학습에 사용할 이미지 파일
+    - 학습 아미지 파일명과 label이 매핑되어 있는 csv 데이터
+  - 학습 label 값은 정수만 가능하기 때문에, 정수 label과 카테고리를 나중에 다시 매핑해주는 작업이 필요합니다.
+  - demo에서는 학습에 사용할 csv 파일이 미리 준비되어 있습니다. demo의 label csv 파일은 다음 표를 기준으로 제작되었습니다.
   
-    ![csv_sample](./doc_images/[2-2-1]csv_sample.png)
-  - 파이썬 코드를 활용하여 csv파일을 생성할 수 있습니다. (label_generator.py)
-  - image_path 변수에 csv로 라벨링할 이미지 데이터들의 경로를 넣어줍니다.
+    | 카테고리 | 정수 label |
+    | :---: | :---: |
+    | forest | 0 |
+    | buildings | 1 |
+    | glacier | 2 |
+    | street | 3 |
+    | mountain | 4 |
+    | sea | 5 |
+    
+    
+  - 또한, 로컬 pc에서 아래 파이썬 파일을 이용해 csv파일을 생성할 수 있습니다. (label_generator.py)
+  - 6번째 줄, image_path 변수에 csv로 라벨링할 이미지 데이터들의 경로를 넣어줍니다.
+  - csv 파일은 이미지 경로와 같은 곳에 생성됩니다.
+  - 파이썬 코드를 실행했을 때 같이 출력되는 (실제 카테고리)-(정수 label) 쌍은 잘 보관해 두었다가, 이후에 활용합니다.
 
 ```
 #label_generator.py
@@ -111,32 +127,19 @@ with open(image_path + "/image_label.csv", 'w') as f:
 
 ```
 
-  - 파이썬 코드를 실행했을 때 출력되는 (실제 카테고리)-(정수 label) 쌍은 잘 보관해 두었다가, 이후에 활용합니다. 이 가이드는 다음 표를 기준으로 제작되었습니다.
-  
-    | 카테고리 | 정수 label |
-    | :---: | :---: |
-    | forest | 0 |
-    | buildings | 1 |
-    | glacier | 2 |
-    | street | 3 |
-    | mountain | 4 |
-    | sea | 5 |
-
-
-
-
 ## 프로젝트
 (1) 프로젝트 관리
 
   ![project_manage](./doc_images/[3-1-1]project_manage.png)
   - 로그인 후 이동되는 페이지입니다.
   - 프로젝트 관리 페이지에서는 프로젝트 생성/수정/삭제 작업이 가능합니다.
+  - 프로젝트 관리 페이지에서 프로젝트 생성 버튼을 누르면 프로젝트를 생성 팝업이 뜹니다.
 
 (2) 프로젝트 생성
 
    ![project_create](./doc_images/[3-2-1]project_create.png)
-  - 프로젝트 관리 페이지에서 프로젝트 생성 버튼을 눌러 프로젝트를 생성합니다.
-  - 프로젝트 생성 팝업에서 프로젝트명과 프로젝트 설명을 입력하고, 프로젝트에 접근할 사용자를 지정하면 생성 버튼이 활성화됩니다. 생성 버튼을 누르면 프로젝트가 생성됩니다.
+  - 프로젝트 생성 팝업에서 프로젝트명과 프로젝트 설명을 입력하고, 프로젝트에 접근할 사용자를 지정하면 생성 버튼이 활성화됩니다.
+  - 모든 내용을 입력한 후 생성 버튼을 누르면 프로젝트가 생성됩니다.
   
 (3) 프로젝트 진입
 
