@@ -28,7 +28,7 @@
 >         1. [데이터 셋 추가](scenario_2.md#데이터-셋-추가)
 >     1. [차트 작성](scenario_2.md#차트-작성)
 >         1. [분석 작업 관리](scenario_2.md#분석-작업-관리)
->     1. [DASHBOARD](scenario_2.md#DASHBOARD)
+>     1. [Go Editor](scenario_2.md#go-editor)
 
 <br/><br/>
 
@@ -73,7 +73,7 @@ ICOS에 업로드된 데이터를 사용합니다.
 | `desk_id` | 각 좌석의 ID | 3a27b3bf-d8de-11e8-975a-0a9726611f46 |
 | `dt` | 예약 날짜 | 20190803 |
 
-## 데이터 처리
+## 데이터 처리 (Batch Pipeline)
 
 <br/>
 
