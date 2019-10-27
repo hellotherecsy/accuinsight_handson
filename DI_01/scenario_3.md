@@ -46,7 +46,7 @@
 
 ![ex_screenshot](./img/scenario3.png)
 
-<br/><br/>
+<br/>
 
 ## 데이터 준비
 > ICOS에 업로드된 데이터를 사용합니다.  
@@ -93,15 +93,11 @@
 
 #### 생성 메뉴로 이동
 
-<br/>
-
 ![ex_screenshot](./img/BP_start.png)
 
 <br/>
 
 #### 데이터 로딩
-
-<br/>
 
 ![ex_screenshot](./img/DataLoading_1027.png)
 
