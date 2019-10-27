@@ -372,7 +372,7 @@ DataInsight 분석 및 시각화를 위해 MariaDB, ICOS, HIVE 등 다양한 종
 
 <br/>
 
-![ex_screenshot](./img/s1_schema.png)
+![ex_screenshot](./img/s1_schema_1027.png)
 
 <br/>
 
@@ -416,7 +416,7 @@ _새로운 분석 작업 페이지로 이동 하겠습니까?_ 라는 팝업이 
 
 `차트 생성` 버튼 클릭<br/>
 
-![ex_screenshot](./img/makeChart.png)
+![ex_screenshot](./img/s1_makeChart_1027.png)
 
 `컬럼 스택 차트` 선택<br/>
 - **Axis** : 회사명<br/>
