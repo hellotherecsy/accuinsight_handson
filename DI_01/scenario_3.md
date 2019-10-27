@@ -342,7 +342,7 @@ ETL 클릭 후 appName 입력
 
 ### 실행결과 확인
 
-![ex_screenshot](./img/s3_resultCheck.png)
+![ex_screenshot](./img/s1_resultCheck.png)
 
 `브라우저` 탭 > `ICOS` 메뉴로 이동<br/>
 지정했던 ICOS directory 위치로 이동하여 내보내기로 생성한 디렉토리 하단의 part-00000-~파일 클릭<br/>
