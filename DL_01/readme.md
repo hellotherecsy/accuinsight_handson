@@ -406,10 +406,14 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
       
     - b. 테스트 데이터 선택을 위해 폴더 아이콘을 누릅니다.
     
-    ![pred_data_select](./doc_images/[6-2-4]pred_data_select.png)
+      ![pred_data_select](./doc_images/[6-2-4]pred_data_select.png)
+        
       테스트 데이터로는 전처리 해 두었던 (상하 반전/흑백) 테스트용 이미지 데이터를 선택합니다.
+        
       폴더 경로
+      
         mnt > project > image-classification_324_edu01 (사용자에 따라 다름) > data > pred-image > processed-pred-image_{날짜}
+        
       폴더를 선택하면 해당 폴더에 있는 모든 이미지로 예측 해볼 수 있습니다.
     
     - c. 데이터 선택 후 예시 리프레시 버튼을 누르면 해당 폴더의 이미지가 랜덤으로 하나씩 보여집니다.
