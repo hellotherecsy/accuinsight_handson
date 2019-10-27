@@ -490,7 +490,7 @@ _새로운 분석 작업 페이지로 이동 하겠습니까?_ 라는 팝업이 
 
 <br/>
   
-![ex_screenshot](./img/s3_makeChart.png)
+![ex_screenshot](./img/s3_makeChart1_1027.png)
   
 `저장` 클릭<br/>
 
