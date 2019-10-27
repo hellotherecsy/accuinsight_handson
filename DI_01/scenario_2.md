@@ -76,6 +76,8 @@
 | `desk_id` | 각 좌석의 ID | 3a27b3bf-d8de-11e8-975a-0a9726611f46 |
 | `dt` | 예약 날짜 | 20190803 |
 
+<br/>
+
 ## 데이터 처리 (Batch Pipeline)
 
 <br/>
@@ -212,6 +214,8 @@ from default;
 - **col2** : 좌석 메타 데이터의 key 선택  
 - **how** : right_outer 선택 (col1,col2 순서가 바뀐 경우 left_outer 선택)  
 
+<br/>
+
 #### 새로운 column 생성
 
 ![ex_screenshot](./img/s2_withColumn.png)
@@ -239,6 +243,8 @@ from default;
     - 좌석 예약 데이터의 key_df_~
     - 좌석 메타 데이터의 total_df_~
     - 좌석 메타 데이터의 key_df_~  
+
+<br/>
 
 #### null값 제거
 
@@ -413,7 +419,9 @@ _새로운 분석 작업 페이지로 이동 하겠습니까?_ 라는 팝업이 
 - **Grouping** : 좌석유형<br/>
 - **Value** : 좌석이용률<br/>
 - **Flag** : SUM<br/>
-  
+
+<br/>
+
 ![ex_screenshot](./img/s2_makeChart.png)
     
 `저장` 클릭<br/>
