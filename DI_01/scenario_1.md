@@ -8,7 +8,7 @@
 >    1. Dataset 2: 좌석 메타 데이터
 > 1. [데이터 처리 (Batch Pipeline)](scenario_1.md#데이터-처리-batch-pipeline)
 >     1. [데이터파일 2개 조인하여 ETL작업 수행하기](scenario_1.md#데이터파일-2개-조인하여-etl작업-수행하기)
->         1. [생성 메뉴로 이동](scenario_1.md#생성-메뉴로-이동)
+>         1. [워크플로우 생성 메뉴로 이동](scenario_1.md#생성-메뉴로-이동)
 >         1. [데이터 로딩](scenario_1.md#데이터-로딩)
 >         1. [필요한 컬럼 선택](scenario_1.md#필요한-컬럼-선택)
 >         1. [데이터 정제](scenario_1.md#데이터-정제)
@@ -17,7 +17,7 @@
 >         1. [2개파일 조인](scenario_1.md#2개파일-조인)
 >         1. [새로운 column 생성](scenario_1.md#새로운-column-생성)
 >         1. [불필요한 column 삭제](scenario_1.md#불필요한-column-삭제)
->         1. [null값 제거](scenario_1.md#null값-제거)
+>         1. [null 값 제거](scenario_1.md#null-값-제거)
 >         1. [컬럼명 변경](scenario_1.md#컬럼명-변경)
 >         1. [ICOS에 저장](scenario_1.md#ICOS에-저장)
 >     1. [워크플로우 저장 및 실행](scenario_1.md#워크플로우-저장-및-실행)
@@ -87,7 +87,7 @@
 
 <br/>
 
- > **ETL flow 구성내용** : `ICOS에서 파일 불러오기` → `사용할 column만 선택` → `데이터 정제` → `통계` → `join key 생성` → `2개 파일 join` → `새로운 column 생성` → `불필요한 column 삭제` → `null값 제거`→ `column명 rename` → `ICOS에 저장`
+ > **ETL flow 구성내용** : `ICOS에서 파일 불러오기` → `사용할 column만 선택` → `데이터 정제` → `통계` → `join key 생성` → `2개 파일 join` → `새로운 column 생성` → `불필요한 column 삭제` → `null 값 제거`→ `column명 rename` → `ICOS에 저장`
 
 <br/>
 
@@ -258,7 +258,7 @@ from default;
 
 <br/>
 
-#### null값 제거
+#### null 값 제거
 
 ![ex_screenshot](./img/s1_filter.png)
 
