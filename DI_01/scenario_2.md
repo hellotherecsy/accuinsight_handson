@@ -112,8 +112,8 @@
 
 <br/>
 
-schema - `자동 파싱 열기` - sample data 탭에서 데이터 샘플을 확인
-schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경
+schema - `자동 파싱 열기` - sample data 탭에서 데이터 샘플을 확인<br/>
+schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경<br/>
 
 > 좌석 예약 데이터 : bldg, desk_type, desk_id, dt, com, age
 
