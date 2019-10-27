@@ -484,6 +484,7 @@ _새로운 분석 작업 페이지로 이동 하겠습니까?_ 라는 팝업이 
 - **Axis** 콤보박스에서 **시간대** 선택<br/>
 - **Grouping** 콤보박스에서 **규모** 선택<br/>
 - **Value** 콤보박스에서 **회의실이용률** 선택<br/>
+- **Flag** 콤보박스에서 **SUM** 선택<br/>
 <br/>
 
     Note : Flag를 선택하지 않으면, Value값이 Integer나 Float면 SUM, String인 경우 COUNT하도록 설정되어 있다
