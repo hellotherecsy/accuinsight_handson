@@ -93,15 +93,11 @@
 
 #### 생성 메뉴로 이동
 
-<br/>
-
 ![ex_screenshot](./img/BP_start.png)
 
 <br/>
 
 #### 데이터 로딩
-
-<br/>
 
 ![ex_screenshot](./img/DataLoading_1027.png)
 
@@ -135,8 +131,6 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경<br/>
 
 #### 필요한 컬럼 선택  
 
-<br/>
-
 ![ex_screenshot](./img/s1_select.png)
 
 <br/>
@@ -152,8 +146,6 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경<br/>
 <br/>
 
 #### 데이터 정제
-
-<br/>
 
 ![ex_screenshot](./img/s1_distinct_filter.png)
 
