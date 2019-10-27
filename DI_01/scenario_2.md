@@ -151,7 +151,7 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경
 
 ![ex_screenshot](./img/s2_agg.png)
 
-`agg` 노드 drag & drop하여 좌석 예약 데이터에서 빌딩별 좌석유형별 회사별 나이대별 예약좌석수 계산<br/>
+`agg` 노드 drag & drop하여 좌석 예약 데이터에서 건물별 좌석유형별 회사별 나이대별 예약좌석수 계산<br/>
 `distinct` 노드에서 `agg` 노드로 연결<br/>
 우측 property 패널<br/>
 - **aggcol** : bldg, desk_type, dt, com, age<br/>
@@ -159,7 +159,7 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경
 
 <br/>
 
-**agg** 노드 drag & drop하여 좌석 메타 데이터에서 빌딩별 좌석유형별 전체좌석수 계산<br/>
+**agg** 노드 drag & drop하여 좌석 메타 데이터에서 건물별 좌석유형별 전체좌석수 계산<br/>
 `filter` 노드에서 `agg` 노드로 연결<br/>
 우측 property 패널<br/>
 - **aggcol** : bldg, desk_type, dt<br/>
