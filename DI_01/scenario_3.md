@@ -207,6 +207,8 @@ from default;
 - **col2** : 회의실 메타 데이터의 key 선택  
 - **how** : right_outer 선택 (col1,col2 순서가 바뀐 경우 left_outer 선택)  
 
+<br/>
+
 #### 새로운 column 생성
 
 ![ex_screenshot](./img/s3_withColumn1.png)
@@ -325,6 +327,8 @@ ETL 클릭 후 appName 입력
 
 저장 클릭<br/>
 실행 클릭<br/>
+
+<br/>
 
 ### 워크플로우 상태 확인
 
