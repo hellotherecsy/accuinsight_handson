@@ -269,6 +269,8 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   - 전처리 상태는 전처리 대기/전처리 중/전처리 완료/전처리 실패 로 표시됩니다.
   - 상태는 자동 새로 고침이 되지 않기 때문에 사용자가 직접 새로 고침 버튼을 눌러 주기적으로 확인해야 합니다.
   - 데이터 양이 많지 않기 때문에, 전처리는 금방 완료됩니다.
+  - 전처리 데이터의 경로는 이후 예측에서 사용되니 기억해 둡니다.
+  - 경로 컬럼에 있는 두 버튼 중, 오른쪽에 있는 문서 모양의 버튼을 누르면 경로를 복사할 수 있습니다.
   
   ![data_preprocess_result](./doc_images/[4-3-5]data_preprocess_result.png)
   - 전처리 상세 페이지에서도 전처리 상태를 확인할 수 있습니다.
@@ -430,13 +432,13 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
 
   ![deploy_detail](./doc_images/[6-2-2]deploy_detail.png)
   - 배포 상세 탭에서 해당 서버의 상세 정보를 볼 수 있는데, 서버에 API를 던지는 샘플도 여기에 소개됩니다.
-  - 네모 박스 안에 있는 REST API서버 주소와 인증 토큰은 서버에 api 요청을 보낼 때 사용되니 기억해 둡니다.
+  - 네모 박스 안에 있는 REST API서버 주소와 인증 토큰은 서버에 api 요청을 보낼 때 사용됩니다.
+  - 외부에서 API 활용 demo에는 방금 만든 toy model 서버가 아닌, 14,034개 전체 데이터로 만든 모델의 API서버에 요청을 보내 분류 데이터를 가져오겠습니다.
   
 (2) 파이썬 작업 환경 세팅
 
   - DL Modeler에서 생성한 모델이 실제 분석 업무환경에서 어떻게 활용할 수 있는 지 간단히 보여드리려고 합니다.
   - Jupyter notebook에서 이미지 데이터를 가져와 배포한 모델에 API를 보내 분류 결과를 가져오고, 결과를 카테고리로 변환해 함께 출력하는 예시입니다.
-  - demo에서 만든 toy model 서버가 아닌, 14,034개 전체 데이터로 만든 모델의 API서버에 요청을 보내 분류 데이터를 가져옵니다.
   
   ![job_manage](./doc_images/[7-1-1-1]job_manage.png)
   - 작업 생성을 위해 작업 관리 화면으로 이동합니다. 우측 상단의 분석 메뉴를 이용하면 됩니다.
@@ -469,22 +471,23 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   
   ![jupyter_main](./doc_images/[7-1-3]jupyter_main.png)
   - jupyter notabook 메인 작업 화면입니다.
-  
+  - 코드 작성을 위해 노트북을 하나 만듭니다.
+
   ![notebook_create](./doc_images/[7-1-4]notebook_create.png)
-  - 코드 작성을 위해 파이썬3 노트북을 하나 만듭니다.
+  - 우측 상단의 New 버튼을 클릭하면 python3 노트북을 선택할 수 있습니다.
   
   ![prediction_code_1](./doc_images/[7-1-5]prediction_code_1.png)
-  - 사용할 라이브러리와 이미지 경로, API를 호출하는 함수를 만듭니다. API 호출 함수는 예측 관리 페이지의 상세 탭에 있는 curl API 예시를 파이썬 코드로 변환한 것입니다.
-  
-  ![prediction_code_2](./doc_images/[7-1-6]prediction_code_2.png)
-  ![prediction_code_3](./doc_images/[7-1-7]prediction_code_3.png)
+  - 사용할 라이브러리와 이미지 경로, API를 호출하는 함수를 만듭니다.
+  - API 호출 함수는 예측 관리 페이지의 상세 탭에 있는 curl API 예시를 파이썬 코드로 변환한 것입니다.
   - 이미지 명과 API를 호출해 얻은 분류 결과를 사전으로 매핑합니다. 그리고 정수로 반환되는 결과를 실제 카테고리로 매핑할 사전을 만듭니다.
   
-  ![prediction_code_4](./doc_images/[7-1-8]prediction_code_4.png)
+  ![prediction_code_2](./doc_images/[7-1-6]prediction_code_2.png)
   - 분류 결과를 실제 카테고리로 변환해 본 결과입니다.
   
-  - 로컬 환경에서 아래 파이썬 파일을 활용할 수 있습니다. jupyter notebook에서 만든 코드와 동일합니다. (api_prediction.py)
-  - 비어있는 부분('' 처리된 부분)에 각각 image path, api token, api address를 넣어주면 코드가 동작합니다.
+  - 아래 파이썬 파일을 활용할 수 있습니다. jupyter notebook에서 만든 코드와 동일합니다. (api_prediction.py)
+  - 7번째 줄 root_path 변수 값이 비어있습니다.
+  - 비어있는 부분('' 처리된 부분)에 예측하고자 하는 이미지가 들어 있는 image path(전처리해 두었던 폴더)를 넣어줍니다.
+  - get_model_result 함수 안에 있는 headers의 token 값과, post를 보내는 서버 주소를 변경하면 그 서버의 모델로 이미지를 예측하게 됩니다.
   
    ```
 #api_prediction.py
@@ -498,10 +501,10 @@ image_list = os.listdir(root_path)
 
 
 def get_model_result(image, image_path):
-    headers = {'token': ''} #api token
+    headers = {'token': '7c8cfee6-17ec-48f5-a6fd-d6454929d1a4'} #api token
     files = {'input': (image, open(image_path, 'rb')), }
 
-    return requests.post('', headers=headers, files=files).text #api address
+    return requests.post('http://169.56.170.100:30522/predict', headers=headers, files=files).text #api address
 
 result_dic = dict()
 
