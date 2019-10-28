@@ -272,7 +272,7 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   
   ![data_preprocess_result](./doc_images/[4-3-5]data_preprocess_result.png)
   - 전처리 상세 페이지에서도 전처리 상태를 확인할 수 있습니다.
-  - 전처리가 완료되면, rawData와 동일하게 전처리 된 데이터 예시를 볼 수 있습니다.
+  - 전처리가 완료되면, rawData와 동일한  전처리 된 데이터 예시를 볼 수 있습니다.
 
 ## 학습
 (1) 작업 생성
@@ -427,26 +427,51 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
 
 ## 모델 활용
 (1) 배포된 API 정보 확인
+
   ![deploy_detail](./doc_images/[6-2-2]deploy_detail.png)
   - 배포 상세 탭에서 해당 서버의 상세 정보를 볼 수 있는데, 서버에 API를 던지는 샘플도 여기에 소개됩니다.
-  - 서버 주소와 api 토큰은 서버에 api 요청을 보낼 때 사용되니 기억해 둡니다.
+  - 네모 박스 안에 있는 REST API서버 주소와 인증 토큰은 서버에 api 요청을 보낼 때 사용되니 기억해 둡니다.
   
 (2) 파이썬 작업 환경 세팅
 
   - DL Modeler에서 생성한 모델이 실제 분석 업무환경에서 어떻게 활용할 수 있는 지 간단히 보여드리려고 합니다.
   - Jupyter notebook에서 이미지 데이터를 가져와 배포한 모델에 API를 보내 분류 결과를 가져오고, 결과를 카테고리로 변환해 함께 출력하는 예시입니다.
+  - demo에서 만든 toy model 서버가 아닌, 14,034개 전체 데이터로 만든 모델의 API서버에 요청을 보내 분류 데이터를 가져옵니다.
+  
+  ![job_manage](./doc_images/[7-1-1-1]job_manage.png)
+  - 작업 생성을 위해 작업 관리 화면으로 이동합니다. 우측 상단의 분석 메뉴를 이용하면 됩니다.
+  - 작업 관리 화면에서 작업 생성 버튼을 클릭합니다.
+  
+  ![job_create_mode](./doc_images/[7-1-1-2]job_create_mode.png)
+  - custom 모드를 선택한 후 생성을 클릭합니다.
+  - custom 작업은 jupyter notebook에 학습 코드를 직접 작성해 학습을 생성하는 기능을 제공합니다. 하지만 이번 demo에서는 jupyter notebook만 활용합니다. 
   
   ![custom_job_create](./doc_images/[7-1-1]custom_job_create.png)
-  - 작업 관리 화면으로 넘어와 custom 작업을 생성합니다. custom 작업은 jupyter notebook에 학습 코드를 직접 작성해 학습을 생성하는 기능을 제공합니다. 하지만 이번 demo에서는 jupyter notebook만 활용합니다. 작업 생성 방식에서 custom을 선택하면 위와 같은 팝업이 보입니다.
+  - 생성을 누르면 위와 같은 팝업이 보입니다.
+  - 작업 명과 작업 설명을 입력합니다.
+    - 작업 명: cpu-notebook
+    - 작업 설명: cpu jupyter notebook
+  - jupyter notebook에서 별도로 GPU를 사용할 일이 없으므로, 작업 인스턴스는 CPU를 선택합니다.
+  - 생성을 클릭하면 custom 작업이 생성됩니다.
+  
+  ![custom_job_create_result](./doc_images/[7-1-1-3]custom_job_create_result.png)
+  - 생성된 작업 명을 클릭하여 학습 관리 페이지로 진입합니다.
   
   ![custom_job_manage](./doc_images/[7-1-2]custom_job_manage.png)
-  - 작업 명과 작업 설명, jupyter notebook에 사용할 인스턴스를 선택한 후 생성 버튼을 누르면 jupyter notebook 환경이 생성됩니다. 생성된 작업 명을 클릭하여 학습 관리 페이지로 진입합니다.
+  - custom 모드를 이용하여 jupyter notebook 환경이 생성되었기 때문에, basic 작업과 다르게 jupyter notebook 버튼이 보입니다. 이 버튼을 클릭합니다.
+  
+  ![jupyter_token](./doc_images/[7-1-2-1]jupyter_token.png)
+  - jupyter notebook 버튼을 누르면 인증 토큰이 뜨는데, Copy 버튼을 누르면 토큰이 복사됩니다.
+  - 이후 Open을 클릭하여 노트북으로 진입합니다.
+  
+  ![jupyter_login](./doc_images/[7-1-2-2]jupyter_login.png)
+  - jupyter notebook 로그인 화면이 뜹니다. 로그인은 아까 복사했던 토큰으로 하면 됩니다.
   
   ![jupyter_main](./doc_images/[7-1-3]jupyter_main.png)
-  - jupyter notebook 버튼을 누르면 인증 토큰이 뜨는데, 이를 복사한 후 Open을 클릭하여 노트북으로 진입합니다. 로그인은 토큰으로 하면 됩니다.
+  - jupyter notabook 메인 작업 화면입니다.
   
   ![notebook_create](./doc_images/[7-1-4]notebook_create.png)
-  - 파이썬3 노트북을 하나 만듭니다.
+  - 코드 작성을 위해 파이썬3 노트북을 하나 만듭니다.
   
   ![prediction_code_1](./doc_images/[7-1-5]prediction_code_1.png)
   - 사용할 라이브러리와 이미지 경로, API를 호출하는 함수를 만듭니다. API 호출 함수는 예측 관리 페이지의 상세 탭에 있는 curl API 예시를 파이썬 코드로 변환한 것입니다.
