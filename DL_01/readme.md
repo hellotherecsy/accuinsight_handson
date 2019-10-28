@@ -456,6 +456,8 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   - jupyter notebook에서 별도로 GPU를 사용할 일이 없으므로, 작업 인스턴스는 CPU를 선택합니다.
   - 생성을 클릭하면 custom 작업이 생성됩니다.
   
+(3) jupyter notebook으로 예측
+  
   ![custom_job_create_result](./doc_images/[7-1-1-3]custom_job_create_result.png)
   - 생성된 작업 명을 클릭하여 학습 관리 페이지로 진입합니다.
   
@@ -477,6 +479,8 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   - 우측 상단의 New 버튼을 클릭하면 python3 노트북을 선택할 수 있습니다.
   
   ![prediction_code_1](./doc_images/[7-1-5]prediction_code_1.png)
+  - 새 노트북에서 파이썬 코딩을 진행합니다.
+  
   [1]
   - 사용할 라이브러리를 호출합니다.
   - 예측할 대상이 되는 이미지가 있는 경로를 선언합니다.
@@ -495,8 +499,10 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   
   ![prediction_code_2](./doc_images/[7-1-6]prediction_code_2.png)
   - 분류 결과를 실제 카테고리로 변환해 본 결과입니다.
-  
-  - 아래 파이썬 파일을 활용할 수 있습니다. jupyter notebook에서 만든 코드와 동일합니다. (api_prediction.py)
+
+(4) jupyter notebook sample code
+
+  - 아래 파이썬 파일을은 위에서 jupyter notebook에서 만든 코드와 동일합니다. (api_prediction.py)
   - 7번째 줄 root_path 변수 값이 비어있습니다.
   - 비어있는 부분('' 처리된 부분)에 예측하고자 하는 이미지가 들어 있는 image path(전처리해 두었던 폴더)를 넣어줍니다.
   - get_model_result 함수 안에 있는 headers의 token 값과, post를 보내는 서버 주소를 변경하면 그 서버의 모델로 이미지를 예측하게 됩니다.
