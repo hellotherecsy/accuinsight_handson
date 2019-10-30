@@ -105,7 +105,7 @@
 
 <br/>
 
-데이터 불러오기 그룹에서 `ICOS 불러오기` 노드를 캔버스 영역에 drag & drop하여 node 생성  
+`데이터 ` 패널에서 `ICOS 불러오기` 노드를 캔버스 영역에 drag & drop하여 node 생성  
 우측 property 패널  
 - **file** : 불러오려는 ICOS 파일의 경로 지정
     - 회의실 예약 데이터의 경로 : IBMOSC1146611-6 스토리지에서 handson-bucket/DI/Dataset/room_resv
@@ -145,9 +145,9 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경<br/>
 
 ![ex_screenshot](./img/s3_distinct_filter.png)
 
-`distinct` 노드 drag & drop하여 회의실 예약 데이터에서 중복 예약 제거<br/>
+`데이터 처리(기본)` 패널에서 `distinct` 노드 drag & drop하여 회의실 예약 데이터에서 중복 예약 제거<br/>
 회의실 예약 데이터에서 `distinct` 노드로 연결<br/><br/>
-`filter` 노드 drag & drop하여 회의실 메타 데이터에서 일반회의실만 필터링<br/>
+`데이터 처리(기본)` 패널에서 `filter` 노드 drag & drop하여 회의실 메타 데이터에서 일반회의실만 필터링<br/>
 회의실 메타 데이터에서 `filter` 노드로 연결<br/><br/>
 우측 property 패널<br/>
 - **col** : room_type
@@ -160,7 +160,7 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경<br/>
 
 ![ex_screenshot](./img/s3_agg1.png)
 
-`agg` 노드 drag & drop하여 회의실 예약 데이터에서 건물별 규모별 시간대별 예약회의실수 계산<br/>
+`데이터 처리(기본)` 패널에서 `agg` 노드 drag & drop하여 회의실 예약 데이터에서 건물별 규모별 시간대별 예약회의실수 계산<br/>
 `distinct` 노드에서 `agg` 노드로 연결<br/>
 우측 property 패널<br/>
 - **aggcol** : bldg, room_scale, dt, time<br/>
@@ -168,7 +168,7 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경<br/>
 
 <br/>
 
-`agg` 노드 drag & drop하여 회의실 메타 데이터에서 건물별 규모별 전체회의실수 계산<br/>
+`데이터 처리(기본)` 패널에서 `agg` 노드 drag & drop하여 회의실 메타 데이터에서 건물별 규모별 전체회의실수 계산<br/>
 `filter` 노드에서 `agg` 노드로 연결<br/>
 우측 property 패널<br/>
 - **aggcol** : bldg, room_scale, dt<br/>
@@ -180,7 +180,7 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경<br/>
 
 ![ex_screenshot](./img/s3_aql1.png)
 
-`SQL` 노드 drag & drop하여 회의실 예약 데이터에서 join key 생성<br/>
+`데이터 처리(고급)` 패널에서 `SQL` 노드 drag & drop하여 회의실 예약 데이터에서 join key 생성<br/>
 회의실 예약 데이터의 `agg` 노드에서 `SQL` 노드로 연결<br/>
 우측 property 패널<br/>
 - **query**  
@@ -194,7 +194,7 @@ from default;
 
 <br/>
 
-`SQL` 노드 drag & drop하여 회의실 메타 데이터에서 join key 생성<br/>
+`데이터 처리(고급)` 패널에서 `SQL` 노드 drag & drop하여 회의실 메타 데이터에서 join key 생성<br/>
 회의실 메타 데이터의 `agg` 노드에서 `SQL` 노드로 연결<br/>
 우측 property 패널  
 - **query**  
@@ -212,7 +212,7 @@ from default;
 
 ![ex_screenshot](./img/s3_join.png)
 
-좌측의 `데이터 처리하기` 패널에서 `dataJoin` 노드 우측 캔버스에 drag & drop하여 생성  
+좌측의 `데이터 처리(기본)` 패널에서 `dataJoin` 노드 우측 캔버스에 drag & drop하여 생성  
 `SQL` 노드 두개를 `dataJoin` 노드로 연결<br/> 
 우측 property패널<br/> 
 - **col1** : 회의실 예약 데이터의 key 선택  
@@ -225,7 +225,7 @@ from default;
 
 ![ex_screenshot](./img/s3_withColumn1.png)
 
-`withColumn` 노드 drag & drop하여 회의실이용률 계산  
+`데이터 처리(기본)` 패널에서 `withColumn` 노드 drag & drop하여 회의실이용률 계산  
 `dataJoin` 노드에서 `withColumn` 노드로 연결<br/>
 우측 property 패널  
 - **selectType** : column
@@ -240,7 +240,7 @@ from default;
 
 ![ex_screenshot](./img/s3_drop.png)
 
-`drop` 노드 drag & drop하여 불필요한 데이터 삭제  
+`데이터 처리(기본)` 패널에서 `drop` 노드 drag & drop하여 불필요한 데이터 삭제  
 `withColumn` 노드에서 `drop` 노드로 연결<br/>
 우측 property 패널  
 - **col** checkbox에서 아래 4가지 column 체크
@@ -255,7 +255,7 @@ from default;
 
 ![ex_screenshot](./img/s3_withColumnRenamed.png)
 
-`withColumnRenamed` 노드 drag&drop하여 생성<br/>
+`데이터 처리(기본)` 패널에서 `withColumnRenamed` 노드 drag&drop하여 생성<br/>
 `drop` 노드에서 `withColumnRenamed` 노드로 연결<br/>
 우측 property 패널<br/>
 - `전체 컬럼 불러오기` 아이콘을 통해 자동 파싱<br/>
@@ -266,7 +266,7 @@ from default;
 
 ![ex_screenshot](./img/s3_agg2.png)
 
-`agg` 노드 drag & drop하여 회의실 전체에 대한 이용률 계산<br/>
+`데이터 처리(기본)` 패널에서 `agg` 노드 drag & drop하여 회의실 전체에 대한 이용률 계산<br/>
 `withColumnRenamed` 노드에서 `agg` 노드로 연결<br/>
 우측 property 패널<br/>
 - **aggcol** : bldg, dt, time
@@ -278,7 +278,7 @@ from default;
 
 ![ex_screenshot](./img/s3_withColumn2.png)
 
-`withColumn` 노드 drag & drop하여 회의실 규모가 ‘전체'인 컬럼 추가<br/>
+`데이터 처리(기본)` 패널에서 `withColumn` 노드 drag & drop하여 회의실 규모가 ‘전체'인 컬럼 추가<br/>
 `agg` 노드에서 `withColumn` 노드로 연결<br/>
 우측 property 패널<br/>
 - **selectType** : const
@@ -292,7 +292,7 @@ from default;
 
 ![ex_screenshot](./img/s3_aql2.png)
 
-`SQL` 노드 drag & drop하여 컬럼 순서 변경<br/>
+`데이터 처리(고급)` 패널에서 `SQL` 노드 drag & drop하여 컬럼 순서 변경<br/>
 `withColumn` 노드에서 `SQL` 노드로 연결<br/>
 우측 property 패널<br/>
 - **query**
@@ -310,7 +310,7 @@ from default;
 
 ![ex_screenshot](./img/s3_unionAll.png)
 
-`unionAll` 노드 drag & drop하여 데이터 통합<br/>
+`데이터 처리(기본)` 패널에서 `unionAll` 노드 drag & drop하여 데이터 통합<br/>
 `withColumnRenamed` 노드와 `SQL` 노드를 `unionAll` 노드에 연결<br/>
 
 <br/>
@@ -319,8 +319,7 @@ from default;
 
 ![ex_screenshot](./img/s3_export.png)
 
-좌측 `데이터 내보내기` 클릭<br/>
-`ICOS 내보내기` 노드 drag & drop 하여 생성<br/>
+좌측 `데이터 내보내기` 패널에서 `ICOS 내보내기` 노드 drag & drop 하여 생성<br/>
 `unionAll` 노드에서 `ICOS 내보내기` 노드로 연결<br/>
 
 <br/>
