@@ -19,7 +19,7 @@
 >         1. [null 값 제거](scenario_2.md#null-값-제거)
 >         1. [컬럼명 변경](scenario_2.md#컬럼명-변경)
 >         1. [ICOS에 저장](scenario_2.md#ICOS에-저장)
->     1. [워크플로우 저장 및 실행](scenario_2.md#-저장-및-실행)
+>     1. [워크플로우 저장 및 실행](scenario_2.md#워크플로우-저장-및-실행)
 >     1. [워크플로우 상태 확인](scenario_2.md#워크플로우-상태-확인)
 >     1. [실행결과 확인](scenario_2.md#실행결과-확인)
 > 1. [데이터 시각화 (Data Insight)](scenario_2.md#데이터-시각화-data-insight)
@@ -296,15 +296,21 @@ from default;
 
 <br/>
 
-###  저장 및 실행
-  
-캔버스 상단에 워크플로우 이름 입력 (ex. 회의실 일평균 좌석이용률)<br/>
+### 워크플로우 저장 및 실행
+
+캔버스 상단에 워크플로우 이름 수정 (ex. 좌석유형별 주 이용 나이)
 
 <br/>
 
-캔버스에서 **ETL** 클릭 후 **appName** 입력 (ex. scenario1)
+캔버스에서 **ETL** 클릭 후 **appName** 입력 (ex. scenario2)
 
 ![ex_screenshot](./img/s2_final.png)
+
+<br/>
+
+    Note : source 우측 [Source Viewer] 아이콘을 클릭하면 변환된 pyspark 코드 확인 가능
+
+<br/>
 
 `저장` 클릭<br/>
 `실행` 클릭  
