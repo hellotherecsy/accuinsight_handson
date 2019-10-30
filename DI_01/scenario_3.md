@@ -326,7 +326,7 @@ from default;
 
 우측 property 패널<br/>
 - **path**의 browse 아이콘을 클릭하여 열리는 팝업에서 저장할 디렉토리 위치 선택 후 확인 클릭 (ex. ~/DI/results)  
-- **folder**에 생성할 디렉토리명 입력 (ex. edu01_scenario2)  
+- **folder**에 생성할 디렉토리명 입력 (ex. edu01_scenario3)  
 
 <br/>
 
