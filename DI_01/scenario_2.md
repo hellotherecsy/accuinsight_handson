@@ -102,7 +102,7 @@
 
 <br/>
 
-데이터 불러오기 그룹에서 ICOS 불러오기 노드를 캔버스 영역에 drag & drop하여 node 생성  
+`데이터 불러오기` 패널에서 ICOS 불러오기 노드를 캔버스 영역에 drag & drop하여 node 생성  
 우측 property 패널  
 - **file** : 불러오려는 ICOS 파일의 경로 지정
     - 좌석 예약 데이터의 경로 : IBMOSC1146611-6 스토리지에서 handson-bucket/DI/Dataset/desk_resv
@@ -144,9 +144,9 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경<br/>
 
 <br/>
 
-`distinct` 노드 drag & drop하여 좌석 예약 데이터에서 중복 예약 제거<br/>
+`데이터 처리(기본)` 패널에서 `distinct` 노드 drag & drop하여 좌석 예약 데이터에서 중복 예약 제거<br/>
 좌석 예약 데이터의 `select` 노드에서 `distinct` 노드로 연결<br/><br/>
-`filter` 노드 drag & drop하여 좌석 메타 데이터에서 고정 좌석 제외<br/>
+`데이터 처리(기본)` 패널에서 `filter` 노드 drag & drop하여 좌석 메타 데이터에서 고정 좌석 제외<br/>
 좌석 메타 데이터의 `select` 노드에서 `filter` 노드로 연결<br/>
 우측 property 패널  
 - **col** : occupied
@@ -159,15 +159,15 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경<br/>
 
 ![ex_screenshot](./img/s2_agg.png)
 
-`agg` 노드 drag & drop하여 좌석 예약 데이터에서 건물별 좌석유형별 회사별 나이대별 예약좌석수 계산<br/>
-`distinct` 노드에서 `agg` 노드로 연결<br/>
+`데이터 처리(기본)` 패널에서 `agg` 노드 drag & drop하여 좌석 예약 데이터에서 건물별 좌석유형별 회사별 나이대별 예약좌석수 계산<br/>
+`데이터 처리(기본)` 패널에서 `distinct` 노드에서 `agg` 노드로 연결<br/>
 우측 property 패널<br/>
 - **aggcol** : bldg, desk_type, dt, com, age<br/>
 - **target** : func count, col desk_id<br/>
 
 <br/>
 
-**agg** 노드 drag & drop하여 좌석 메타 데이터에서 건물별 좌석유형별 전체좌석수 계산<br/>
+`데이터 처리(기본)` 패널에서 `agg` 노드 drag & drop하여 좌석 메타 데이터에서 건물별 좌석유형별 전체좌석수 계산<br/>
 `filter` 노드에서 `agg` 노드로 연결<br/>
 우측 property 패널<br/>
 - **aggcol** : bldg, desk_type, dt<br/>
@@ -179,7 +179,7 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경<br/>
 
 ![ex_screenshot](./img/s2_aql.png)
 
-`SQL` 노드 drag & drop하여 좌석 예약 데이터에서 join key 생성  
+`데이터 처리(고급)` 패널에서 `SQL` 노드 drag & drop하여 좌석 예약 데이터에서 join key 생성  
 좌석 예약 데이터의 `agg` 노드에서 `SQL` 노드로 연결<br/>
 우측 property 패널  
 - **query**  
@@ -193,7 +193,7 @@ from default;
 
 <br/>
 
-`SQL` 노드 drag & drop하여 좌석 메타 데이터에서 join key 생성  
+`데이터 처리(고급)` 패널에서 `SQL` 노드 drag & drop하여 좌석 메타 데이터에서 join key 생성  
 좌석  데이터의 `agg` 노드에서 `SQL` 노드로 연결<br/>
 우측 property 패널  
 - **query**  
@@ -224,7 +224,7 @@ from default;
 
 ![ex_screenshot](./img/s2_withColumn.png)
 
-`withColumn` 노드 drag & drop하여 좌석이용률 계산  
+`데이터 처리(기본)` 패널에서 `withColumn` 노드 drag & drop하여 좌석이용률 계산  
 `dataJoin` 노드에서 `withColumn` 노드로 연결<br/>
 우측 property 패널  
 - **selectType** : column
@@ -239,7 +239,7 @@ from default;
 
 ![ex_screenshot](./img/s2_drop.png)
 
-`drop` 노드 drag & drop하여 불필요한 데이터 삭제  
+`데이터 처리(기본)` 패널에서 `drop` 노드 drag & drop하여 불필요한 데이터 삭제  
 `withColumn` 노드에서 `drop` 노드로 연결<br/>
 우측 property 패널  
 - **col** checkbox에서 아래 4가지 column 체크
@@ -254,7 +254,7 @@ from default;
 
 ![ex_screenshot](./img/s2_filter.png)
 
-`filter` 노드 drag & drop하여 회사명이 '\N'이거나 나이대가 '\N'이면 삭제<br/>
+`데이터 처리(기본)` 패널에서 `filter` 노드 drag & drop하여 회사명이 '\N'이거나 나이대가 '\N'이면 삭제<br/>
 `drop` 노드에서 `filter` 노드로 연결<br/>
 우측 property 패널  
 - **col** : com_df_~
@@ -274,7 +274,7 @@ from default;
 
 ![ex_screenshot](./img/s2_withColumnRenamed.png)
 
-`withColumnRenamed` 노드 drag&drop하여 생성<br/>
+`데이터 처리(기본)` 패널에서 `withColumnRenamed` 노드 drag&drop하여 생성<br/>
 `filter` 노드에서 `withColumnRenamed` 노드로 연결<br/>
 우측 property 패널<br/>
 - `전체 컬럼 불러오기` 아이콘을 통해 자동 파싱  
@@ -285,8 +285,7 @@ from default;
 
 ![ex_screenshot](./img/s2_export.png)
 
-좌측 `데이터 내보내기` 클릭<br/>
-`ICOS 내보내기` 노드 drag & drop 하여 생성<br/>
+좌측 `데이터 내보내기` 패널에서 `ICOS 내보내기` 노드 drag & drop 하여 생성<br/>
 `withColumnRenamed` 노드에서 `ICOS 내보내기` 노드로 연결<br/>
 
 <br/>
