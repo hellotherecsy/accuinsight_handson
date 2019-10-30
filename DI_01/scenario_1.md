@@ -313,13 +313,19 @@ from default;
 
 ### 워크플로우 저장 및 실행
 
-캔버스 상단에 워크플로우 이름 입력 (ex. 회 일평균 좌석이용률)
+캔버스 상단에 워크플로우 이름 수정 (ex. 회사별 일평균 좌석이용률)
 
 <br/>
 
 캔버스에서 **ETL** 클릭 후 **appName** 입력 (ex. scenario1)
 
 ![ex_screenshot](./img/s1_final.png)
+
+<br/>
+
+    Note : source 우측 [Source Viewer] 아이콘을 클릭하면 변환된 pyspark 코드 확인 가능
+
+<br/>
 
 `저장` 클릭<br/>
 `실행` 클릭  
