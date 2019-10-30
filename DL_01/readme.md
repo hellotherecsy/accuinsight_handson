@@ -504,7 +504,7 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
 
 (4) jupyter notebook sample code
 
-  - 아래 파이썬 파일을은 위에서 jupyter notebook에서 만든 코드와 동일합니다. (api_prediction.py)
+  - 아래 파이썬 파일은 위에서 jupyter notebook에서 만든 코드와 동일합니다. (api_prediction.py)
   - 7번째 줄 root_path 변수 값이 비어있습니다.
   - 비어있는 부분('' 처리된 부분)에 예측하고자 하는 이미지가 들어 있는 image path(전처리해 두었던 폴더)를 넣어줍니다.
   - get_model_result 함수 안에 있는 headers의 token 값과, post를 보내는 서버 주소를 변경하면 그 서버의 모델로 이미지를 예측하게 됩니다.
