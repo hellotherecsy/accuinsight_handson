@@ -331,13 +331,23 @@ from default;
 <br/>
 
 ### 워크플로우 저장 및 실행
-  
-ETL 클릭 후 appName 입력
+
+캔버스 상단에 워크플로우 이름 수정 (ex. 회의실 규모별 이용현황)
+
+<br/>
+
+캔버스에서 **ETL** 클릭 후 **appName** 입력 (ex. scenario3)
 
 ![ex_screenshot](./img/s3_final.png)
 
-저장 클릭<br/>
-실행 클릭<br/>
+<br/>
+
+    Note : source 우측 [Source Viewer] 아이콘을 클릭하면 변환된 pyspark 코드 확인 가능
+
+<br/>
+
+`저장` 클릭<br/>
+`실행` 클릭  
 
 <br/>
 
