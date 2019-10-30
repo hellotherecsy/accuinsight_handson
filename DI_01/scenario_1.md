@@ -233,12 +233,12 @@ from default;
 
 ![ex_screenshot](./img/s1_join.png)
 
-좌측의 `데이터 처리하기` 패널에서 `dataJoin` 노드 우측 캔버스에 drag & drop하여 생성  
+좌측의 `데이터 처리(기본)` 패널에서 `dataJoin` 노드 우측 캔버스에 drag & drop하여 생성  
 `SQL` 노드 두개를 `dataJoin` 노드로 연결<br/>
 우측 property패널  
 - **col1** : 좌석 예약 데이터의 key 선택  
 - **col2** : 좌석 메타 데이터의 key 선택  
-- **how** : right_outer 선택 (col1,col2 순서가 바뀐 경우 left_outer 선택)  
+- **how** : left_outer 선택 (col1,col2 순서가 바뀐 경우 right_outer 선택)  
 
 <br/>
 
