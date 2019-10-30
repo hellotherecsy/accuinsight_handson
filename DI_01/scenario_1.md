@@ -130,8 +130,6 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경<br/>
 
     column info 탭에서 컬럼 인식이 안된 경우, 전체파싱 [+] 클릭
 
-<br/>
-
 > 좌석 예약 데이터 : bldg, desk_type, desk_id, dt, com, age
 
 `확인` 클릭 
