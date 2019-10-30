@@ -67,7 +67,7 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   ![image_folder](./doc_images/[2-1-1]image_folder.png)
   ![image-sample](./doc_images/[2-1-2]image-sample.png)
   - 150px X 150px 사이즈의 자연/풍경 이미지 약 25,000개로 구성된 데이터셋입니다.
-  - Demo 학습에는 총 14,034개의 데이터가 있지만, 실습을 할 땐 59개 이미지만 학습 데이터로 사용하여 toy model을 만듭니다.
+  - 학습용 데이터로 총 14,034개의 이미지가 있지만, demo 실습을 할 땐 59개 이미지만 학습 데이터로 사용하여 toy model을 만듭니다.
   - 이미지 카테고리는 총 6개(buildings, forest, glacier, mountain, sea, street)입니다.
 
 (2) 학습 데이터
@@ -328,18 +328,18 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
     - b. 하이퍼파라미터 중, num_types는 6으로 설정해줍니다. demo 이미지의 카테고리 수가 6개이기 때문입니다. 다른 하이퍼파라미터는 기본 값으로 둡니다.
       - 학습 하이퍼파라미터 정리
       
-      | 종류 | 값 |
-      | :---: | :---: |
-      | batch_size | 100 |
-      | epochs | 100 |
-      | learning_rate | 0.001 |
-      | num_types | 6 |
-      | filter_num1 | 20 |
-      | filter_num2 | 40 |
-      | filter_num3 | 60 |
-      | filter_num4 | 80 |
-      | filter_num5 | 100 |
-      | filter_num6 | 100 |
+        | 종류 | 값 |
+        | :---: | :---: |
+        | batch_size | 100 |
+        | epochs | 100 |
+        | learning_rate | 0.001 |
+        | num_types | 6 |
+        | filter_num1 | 20 |
+        | filter_num2 | 40 |
+        | filter_num3 | 60 |
+        | filter_num4 | 80 |
+        | filter_num5 | 100 |
+        | filter_num6 | 100 |
       
     - c. 학습명 입력 칸에 학습명을 입력합니다.
       - 학습명: image-train-cpu
@@ -434,8 +434,8 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
 
   ![deploy_detail](./doc_images/[6-2-2]deploy_detail.png)
   - 배포 상세 탭에서 해당 서버의 상세 정보를 볼 수 있는데, 서버에 API를 던지는 샘플도 여기에 소개됩니다.
-  - 네모 박스 안에 있는 REST API서버 주소와 인증 토큰은 서버에 api 요청을 보낼 때 사용됩니다.
-  - 외부에서 API 활용 demo에는 방금 만든 toy model 서버가 아닌, 14,034개 전체 데이터로 만든 모델의 API서버에 요청을 보내 분류 데이터를 가져오겠습니다.
+  - 배포 서버 설명 중, REST API서버 주소와 인증 토큰은 서버에 api 요청을 보낼 때 사용됩니다.
+  - 외부에서 API를 활용 demo에는 방금 만든 toy model 서버가 아닌, 14,034개 전체 데이터로 만든 모델의 API서버에 요청을 보내 분류 데이터를 가져오겠습니다.
   
 (2) 파이썬 작업 환경 세팅
 
@@ -481,7 +481,7 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
   - 우측 상단의 New 버튼을 클릭하면 python3 노트북을 선택할 수 있습니다.
   
   ![prediction_code_1](./doc_images/[7-1-5]prediction_code_1.png)
-  - 새 노트북에서 파이썬 코딩을 진행합니다.
+  - 새 노트북에서 파이썬 코딩을 진행합니다. 파이썬 코드는 (4) jupyter notebook sample code 에서 복사하실 수 있습니다.
   
   [1]
   - 사용할 라이브러리를 호출합니다.
