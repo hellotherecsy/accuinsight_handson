@@ -162,7 +162,7 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경<br/>
 `데이터 처리(기본)` 패널에서 `agg` 노드 drag & drop하여 좌석 예약 데이터에서 건물별 좌석유형별 회사별 나이대별 예약좌석수 계산<br/>
 `데이터 처리(기본)` 패널에서 `distinct` 노드에서 `agg` 노드로 연결<br/>
 우측 property 패널<br/>
-- **aggcol** : bldg, desk_type, dt, com, age<br/>
+- **aggcol** : bldg, desk_type, dt, com, age  (aggcol 우측 [+] 로 컬럼 추가)<br/>
 - **target** : func count, col desk_id<br/>
 
 <br/>
