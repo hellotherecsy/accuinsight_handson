@@ -217,7 +217,7 @@ from default;
 우측 property패널<br/> 
 - **col1** : 회의실 예약 데이터의 key 선택  
 - **col2** : 회의실 메타 데이터의 key 선택  
-- **how** : right_outer 선택 (col1,col2 순서가 바뀐 경우 left_outer 선택)  
+- **how** : left_outer 선택 (col1,col2 순서가 바뀐 경우 right_outer 선택)  
 
 <br/>
 
