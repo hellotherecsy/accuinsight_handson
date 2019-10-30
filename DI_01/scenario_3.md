@@ -163,7 +163,7 @@ schema - `자동 파싱 열기` - column info 탭에서 컬럼명 변경<br/>
 `데이터 처리(기본)` 패널에서 `agg` 노드 drag & drop하여 회의실 예약 데이터에서 건물별 규모별 시간대별 예약회의실수 계산<br/>
 `distinct` 노드에서 `agg` 노드로 연결<br/>
 우측 property 패널<br/>
-- **aggcol** : bldg, room_scale, dt, time<br/>
+- **aggcol** : bldg, room_scale, dt, time  (aggcol 우측 [+] 로 컬럼 추가)<br/>
 - **target** : func count, col room_resv_id<br/>
 
 <br/>
