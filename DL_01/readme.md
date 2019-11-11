@@ -175,11 +175,11 @@ DL Modeler는 분산 환경 하의 딥러닝 학습 및 모델 배포를 통한 
     
   - 마지막으로 예측 이미지를 업로드합니다.
     - a. 데이터 세트 생성 정보를 입력합니다. 데이터 세트 명과 데이터 세트 설명을 입력합니다.
-      - 데이터 세트 명: pred-label
+      - 데이터 세트 명: pred-image
       - 데이터 세트 설명: prediction image set
     
     - b. RAW 데이터 등록 정보를 입력합니다. 저장할 데이터 명과 RAW 데이터 설명을 입력합니다. RAW 데이터 설명 입력 란은 맨 아래에 있습니다.
-      - 저장할 데이터 명: pred-label
+      - 저장할 데이터 명: pred-image
       - RAW 데이터 설명: jpg image for prediction
     
     - c. 데이터 파일을 등록합니다. ICOS에서 데이터를 가져올 것이므로, ICOS를 선택합니다.        
