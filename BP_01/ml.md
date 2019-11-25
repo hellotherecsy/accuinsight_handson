@@ -34,9 +34,9 @@ ML Modeler는 머신러닝을 코딩없이 사용할 수 있는 웹 기반 분�
 
 - BP 결과 데이터셋
 
-| user_id | age | category | price | group | style | age_group |
-|---|---|---|---|---|---|---|
-| 사용자 고유 식별자 | 사용자 나이 | 상품 카테고리 | 상품 가격 | 쇼핑몰이 등록한 연령대 | 쇼핑몰이 등록한 스타일 | 사용자 연령대 |
+| user_id | age | category | price | group | style | age_group | dates |
+|---|---|---|---|---|---|---|---|
+| 사용자 고유 식별자 | 사용자 나이 | 상품 카테고리 | 상품 가격 | 쇼핑몰이 등록한 연령대 | 쇼핑몰이 등록한 스타일 | 사용자 연령대 | 주문 날짜 |
 
 ### 데이터셋 불러오기
 
@@ -52,7 +52,7 @@ ML Modeler는 머신러닝을 코딩없이 사용할 수 있는 웹 기반 분�
 Batch Pipeline에서 만든 데이터를 불러온다.
 
 - HDFS 경로 입력: 
-  - 경로: `/tmp/bp_shop/part-000.csv` (파일 이름은 Hadoop이 자동으로 생성하여 저장한다.)
+  - 경로: `/tmp/bp_shop/training.csv` 
 - Dataset Name: `Shop Train`
 - Header exists: `TRUE`
 - Delimiter: `,`
@@ -178,3 +178,51 @@ Pipeline 메뉴에서 저장한 파이프라인을 확인한다.
 ![](images/ml/18.history.png)
 
 Training History 메뉴에서 모델 학습 기록들을 확인한다.
+
+### 데이터 예측하기
+
+Dataset 메뉴에서 테스트 데이터셋을 생성한다.
+  - 경로: `/tmp/bp_shop/test.csv`
+  - Dataset Name: `Shop Test`
+  - Description: `테스트 데이터`
+
+![](images/ml/19.model-predict.png)
+
+Model 메뉴에서 생성한 모델을 확인하고 Predict 버튼을 선택한다.
+
+![](images/ml/20.predict.add.testdata.png)
+
+Select Dataset 옆의 폴더 아이콘을 눌러 사전에 등록한 테스트 데이터 셋을 선택한다.
+Predict 버튼을 누른다.
+
+![](images/ml/21.predict.saveresult.png)
+
+  - Name: 예측 결과 이름 `Shop Test Result`
+  - Description: 예측 결과 설명 `테스트 데이터 예측 결과`
+  - HDFS 경로: 예측 결과 데이터를 저장할 장소, model 경로에 새로운 폴더 생성 `/tmp/model/test-result`
+  - Coulumn List: 예측 결과 중 저장할 칼럼을 선택 가능 
+    - category
+    - price
+    - groups
+    - style
+    - age
+    - dates
+    - user_id
+    - age_group
+    - predict_age_group
+
+
+### 예측 결과 확인하기
+
+![](images/ml/22.predict.results.png)
+
+Batch Pipeline 서비스의 HDFS 브라우저에서 결과 데이터를 확인한다.
+
+- 경로: `/tmp/model/test-result/DS_/part-0000` (폴더와 파일 이름은 자동으로 생성하여 저장된다.)
+
+파일을 더블 클릭하여 샘플 데이터를 미리 보거나 다운로드 버튼을 사용하여 로컬에 저장한다.
+
+
+
+
+

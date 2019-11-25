@@ -32,9 +32,9 @@ Drag & Drop으로 손쉽게 Oozie 기반의 워크플로우를 작성할 수 있
 
 상품을 주문한 사용자 정보가 담겨 있다.
 
-| user_id | goods_id | age |
-|---|---|---|
-| 사용자 고유 식별자 | 주문한 상품의 고유 식별자 | 사용자 나이 |
+| user_id | goods_id | age | date |
+|---|---|---|---|
+| 사용자 고유 식별자 | 주문한 상품의 고유 식별자 | 사용자 나이 | 주문 날짜 |
 
 - 사용자 나이 범위: 15 ~ 45
 - 나이가 45인 경우 45세 이상
@@ -56,9 +56,9 @@ Drag & Drop으로 손쉽게 Oozie 기반의 워크플로우를 작성할 수 있
 
 사용자, 주문, 상품, 쇼핑몰 정보를 처리하여 얻고자 하는 데이터 형태는 다음과 같다.
 
-| user_id | age | category | price | group | style | age_group |
-|---|---|---|---|---|---|---|
-| 사용자 고유 식별자 | 사용자 나이 | 상품 카테고리 | 상품 가격 | 쇼핑몰이 등록한 연령대 | 쇼핑몰이 등록한 스타일 | 사용자 연령대 |
+| user_id | age | category | price | group | style | age_group | dates |
+|---|---|---|---|---|---|---|---|
+| 사용자 고유 식별자 | 사용자 나이 | 상품 카테고리 | 상품 가격 | 쇼핑몰이 등록한 연령대 | 쇼핑몰이 등록한 스타일 | 사용자 연령대 | 주문 날짜 |
 
 ### 세션 생성
 
@@ -205,6 +205,7 @@ ICOS 불러오기 노드를 클릭하고 우측 메뉴에서 변수를 설정한
    - price_df_[랜덤값]
    - group_df_[랜덤값]
    - style_df_[랜덤값]
+   - dates_df_[랜덤값]
 
 데이터가 결합 노드를 지나면 컬럼 이름은 `컬럼명`에서 `컬럼명_df_[랜덤값]`으로 바뀐다.  
 따라서 다음 [컬럼 이름 변경](#컬럼-이름-변경) 노드에서 컬럼 이름을 정리해야 한다.
@@ -269,6 +270,7 @@ Hadoop으로 처리한 데이터는 자동으로 파일명이 지정된다.
 
 **마지막으로 워크플로우를 저장한다.**
 
+
 ### 세션 종료
 
 ![](images/bp/37.close.session.png)
@@ -281,7 +283,7 @@ Hadoop으로 처리한 데이터는 자동으로 파일명이 지정된다.
 
 워크플로우를 저장하고 실행 버튼을 클릭한다. 워크플로우가 실행되며 노드 색깔이 초록색으로 바뀐다.
 
-### 완료
+### 작업 완료
 
 ![](images/bp/21.job.finish.png)
 
@@ -353,7 +355,71 @@ HDFS 브라우저에서 생성된 데이터셋을 확인한다.
 
 DHP 클러스터 페이지에서 실행한 작업들의 정보와 클러스터 상태를 확인할 수 있다.
 
+### HIVE 태이블 생성하기
+HDFS에 저장된 데이터를 학습/테스트 데이터로 나누기 위하여 HIVE Table을 생성한다.
+
+![](images/bp/30.hive.menu.png)
+
+1. `상단 메뉴 → 브라우저 → HIVE ` 
+   - HIVE 브라우저를 선택한다.
+1. `좌측 메뉴`에서 이미 생성된 DHP 클러스터를 선택한다.
+1. `HIVE 계정 관리`를 선택하고 HIVE 계정을 추가한다.
+
+![](images/bp/31.hive.manageuser.png)
+
+![](images/bp/32.hive.adduser.png)
+
+1. `쿼리` 화면에 아래의 sql을 입력하여 Table을 생성한다. 
+- 칼럼 정보(category STRING, price INT, groups STRING, style STRING, age INT, order_date STRING, user_id STRING, age_group INT)를 입력하는 순서는 **실제 저장된 파일의 칼럼 순서와 동일**하게 입력.
+   - CREATE EXTERNAL TABLE IF NOT EXISTS shopping_data (`category STRING, price INT, groups STRING, style STRING, age INT, order_date STRING, user_id STRING, age_group INT`) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE LOCATION '`/tmp/bp_shop`' TBLPROPERTIES ("skip.header.line.count"="1")
+
+    생성된 테이블 내용을 확인한다.
+
+![](images/bp/33.hive.createtable.png)
+
+### 데이터 나누기
+
+1. `상단 메뉴 → 워크플로우 → 관리` 화면에서 워크플로우 편집을 선택한다.
+1. `좌측 메뉴 → Flow 구성 → hiveToHdfs`
+   - **캔버스의 ETL 상자 밖**으로 **드래그앤드롭**하여 트레이닝 셋을 저장할 노드를 추가한다.
+
+![](images/bp/34.hive.trainingset.png)
+
+1. hiveToHdfs 노드의 property를 아래와 같이 설정하고 기존에 생성한 **ETL 캔버스**와 연결한다.
+    - Node Description: `트레이닝 셋 저장`
+    - cluster: DHP 클러스터 선택
+    - user: Hive 브라우저에서 생성한 유저 아이디 입력
+    - path: Hive 쿼리 결과를 저장할 폴더 선택 `/tmp/bp_shop/`
+    - fileName: Hive 쿼리 결과를 저장할 파일 이름 입력 `traing.csv`
+    - header: 데이터에 HEAD 포함하기 위해 `체크`
+    - sql: 쿼리 입력
+        - `select * from shopping_data where ABS(HASH(order_date))%10 < 8;`
+
+    ![](images/bp/35.hive.trainingset2.png)
+
+1. `좌측 메뉴 → Flow 구성 → hiveToHdfs`
+   - **캔버스의 ETL 상자 밖**으로 **드래그앤드롭**하여 테스트 셋을 저장할 노드를 추가한다.
+1. hiveToHdfs 노드의 property를 아래와 같이 설정하고 기존에 생성한 **트레이닝 셋 저장 노드**와 연결한다.
+    - cluster: DHP 클러스터 선택
+    - user: Hive 브라우저에서 생성한 유저 아이디 입력
+    - path: Hive 쿼리 결과를 저장할 폴더 선택 `/tmp/bp_shop/`
+    - fileName: Hive 쿼리 결과를 저장할 파일 이름 입력 `test.csv`
+    - header: 데이터에 HEAD 포함하기 위해 `체크`
+    - sql: 쿼리 입력
+        - `select * from shopping_data where ABS(HASH(order_date))%10 >= 8;`
+    ![](images/bp/36.hive.testset.png)
+
+1. 최종 워크플로우를 저장하고 실행을 누른다.
+
+    ![](images/bp/37.hive.running.png)
 
 
+### 데이터 확인
 
+![](images/bp/38.hive.datacheck.png)
 
+HDFS 브라우저에서 생성된 트레이닝/테스트 데이터를 확인한다.
+
+- 경로: `/tmp/bp_shop/training.csv`, `/tmp/bp_shop/test.csv`
+
+파일을 더블 클릭하여 샘플 데이터를 미리 보거나 다운로드 버튼을 사용하여 로컬에 저장한다.
