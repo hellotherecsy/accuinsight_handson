@@ -206,7 +206,7 @@ Predict 버튼을 누른다.
     - groups
     - style
     - age
-    - order_date
+    - dates
     - user_id
     - age_group
     - predict_age_group

@@ -56,7 +56,7 @@ Drag & Drop으로 손쉽게 Oozie 기반의 워크플로우를 작성할 수 있
 
 사용자, 주문, 상품, 쇼핑몰 정보를 처리하여 얻고자 하는 데이터 형태는 다음과 같다.
 
-| user_id | age | category | price | group | style | age_group | 주문 날짜 |
+| user_id | age | category | price | group | style | age_group | dates |
 |---|---|---|---|---|---|---|---|
 | 사용자 고유 식별자 | 사용자 나이 | 상품 카테고리 | 상품 가격 | 쇼핑몰이 등록한 연령대 | 쇼핑몰이 등록한 스타일 | 사용자 연령대 | 주문 날짜 |
 
