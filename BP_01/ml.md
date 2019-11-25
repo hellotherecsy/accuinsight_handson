@@ -52,7 +52,7 @@ ML Modeler는 머신러닝을 코딩없이 사용할 수 있는 웹 기반 분�
 Batch Pipeline에서 만든 데이터를 불러온다.
 
 - HDFS 경로 입력: 
-  - 경로: `/tmp/bp_shop/training.csv` 
+  - 경로: `/tmp/bp_shop_training/part-000.csv` 
 - Dataset Name: `Shop Train`
 - Header exists: `TRUE`
 - Delimiter: `,`
@@ -182,7 +182,7 @@ Training History 메뉴에서 모델 학습 기록들을 확인한다.
 ### 데이터 예측하기
 
 Dataset 메뉴에서 테스트 데이터셋을 생성한다.
-  - 경로: `/tmp/bp_shop/test.csv`
+  - 경로: `/tmp/bp_shop_test/part-000.csv`
   - Dataset Name: `Shop Test`
   - Description: `테스트 데이터`
 
