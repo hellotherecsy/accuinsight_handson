@@ -278,7 +278,7 @@ ICOS 속성텝에서 `더보기` 버튼을 클릭한다.
 ![ex_screenshot](./img/fillnaNode2.png)
 
 1. `fillna 노드` 를 드래그 & 드랍해 캔버스에 옮긴다.
-2. `select 노드` 와 연결해 준다.
+2. `fillna 노드` 와 연결해 준다.
 3. 1개의 컬럼에 대한 null처리를 진행한다. (null -> "PO")
    *  `KitchenQual `
 
