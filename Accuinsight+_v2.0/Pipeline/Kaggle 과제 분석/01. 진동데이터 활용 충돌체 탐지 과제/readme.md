@@ -8,5 +8,6 @@
    > 실제 kaggle의 노트북중 [AtomicAI-Starter](https://www.kaggle.com/jaganadhg/atomicai-starter)을 활용함
    >
    > [튜토리얼 바로가기](https://youtu.be/t7NGMZ9Rt5o)
+   > 관련 파일은 현재 디렉토리 Files 폴더를 참고해주세요
 
 
