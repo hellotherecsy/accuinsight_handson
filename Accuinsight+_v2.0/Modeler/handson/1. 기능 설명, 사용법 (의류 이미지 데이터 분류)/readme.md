@@ -12,7 +12,7 @@
    >
    > 1. [RESTAPI.PY](./Files/RESTAPI.PY)
    > 2. [test_image_1.csv](./Files/test_image_1.csv)
-   > 3. [test_labelscsv](./Files/test_labelscsv)
+   > 3. [test_labels.csv](./Files/test_labels.csv)
    > 4. [tutorial-experiment.ipynb](./Files/tutorial-experiment.ipynb)
 
 

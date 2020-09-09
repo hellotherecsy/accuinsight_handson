@@ -7,7 +7,7 @@
    >
    > 실제 kaggle의 노트북중 [AtomicAI-Starter](https://www.kaggle.com/jaganadhg/atomicai-starter)을 활용함
    >
-   > 아래 4개 파일을 다운로드 후 [튜토리얼 영상 바로가기](https://youtu.be/t7NGMZ9Rt5o)를 참고해 튜토리얼을 진행해 주세요.
+   > 아래 4개 파일을 다운로드 후 [튜토리얼 영상 바로가기](https://www.youtube.com/watch?v=KnV_Aoy3Iow&t=43s)를 참고해 튜토리얼을 진행해 주세요.
    >
    > 1. [test_features.csv](./Files/test_features.csv)
    > 2. [train_features.csv](./Files/test_features.csv)
