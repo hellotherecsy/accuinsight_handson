@@ -1,4 +1,4 @@
-# AccuInsight+ Pipeline 2.0 핸즈온 - (1) 기능 설명, 사용법(주택 가격 예측 모델)
+# AccuInsight+ Pipeline 2.0 핸즈온 - (1) 기능 설명, - 사용법 주택 가격 예측 모델
 
   ## Handson 내용
 
