@@ -1,0 +1,383 @@
+{
+  "workflow": {
+    "category": "DEMO",
+    "name": "온라인 쇼핑몰 사용자 추천 시나리오_GTM",
+    "creator": "accu_gtm",
+    "description": "쇼핑몰의 웹 로그 데이터를 기반으로 사용자별 상품(카테고리) 추천",
+    "workflowDefinition": {
+      "components": [{
+        "componentType": "batch",
+        "type": "batch",
+        "setting": {
+          "properties": {
+            "notifyLevel": {
+              "level": "ERROR",
+              "messengerId": ""
+            },
+            "workflow": {
+              "name": "온라인 쇼핑몰 사용자 추천 시나리오_GTM",
+              "appName": "G1128",
+              "alias": "",
+              "libPath": "/tmp/lib/batch",
+              "useSystemLibPath": true
+            },
+            "cluster": {
+              "stackId": "EMR_364"
+            },
+            "notification": {
+              "event": [],
+              "notificationReceiver": []
+            }
+          }
+        },
+        "scheduler": {
+          "properties": {
+            "enable": false,
+            "start": null,
+            "end": null,
+            "timezone": "GMT+09:00",
+            "frequency": {
+              "inputType": "Basic",
+              "frequencyNumber": 5,
+              "frequencyUnit": "minutes",
+              "frequencyCron": ""
+            },
+            "controls": {
+              "timeout": "-1",
+              "concurrency": "1",
+              "execution": "FIFO",
+              "throttle": "12"
+            },
+            "datasets": {
+              "inputEvents": [{
+                "name": "",
+                "uriTemplate": "",
+                "frequency": "",
+                "initialInstance": "",
+                "timezone": "",
+                "doneFlag": ""
+              }],
+              "outputEvents": [{
+                "name": "",
+                "uriTemplate": "",
+                "frequency": "",
+                "initialInstance": "",
+                "timezone": "",
+                "doneFlag": ""
+              }]
+            }
+          }
+        },
+        "jobProperty": {
+          "properties": {
+            "parameters": [{
+              "key": "jobPropertyKey",
+              "value": "jobPropertyValue"
+            }]
+          }
+        },
+        "nodes": [{
+          "uuid": "RK0G-Ldcv-GEo6-GJvc-v2y0-CDGr-tpI3-z92M",
+          "type": "ETL",
+          "label": "전처리",
+          "group": "hadoopBatch",
+          "link": ["nNFx-MY3l-HImx-1iwI-lGjv-fxrL-6im4-ce4A"],
+          "parent": "",
+          "child": [],
+          "props": {
+            "appName": "온라인_쇼핑몰_사용자_추천_시나리오_GTM",
+            "sampling": "limit",
+            "limit": "10000000",
+            "argument": [{
+              "arg": ""
+            }],
+            "sparkOpts": [{
+              "key": "",
+              "value": ""
+            }],
+            "pysparkPython": "/usr/bin/python3.6",
+            "pythonPath": "/home/dpcore/.local/lib/python3.6/site-packages",
+            "mode": "cluster",
+            "forceOK": false
+          }
+        }, {
+          "uuid": "x5N5-981n-vVYy-0Hu4-VX7m-979J-41WK-XUX6",
+          "name": "로그 패턴 파싱",
+          "type": "patternParser",
+          "label": "patternParser",
+          "group": "hadoopBatch",
+          "link": ["X4K4-ZWj6-AlNr-B20Y-zWYz-syPM-9L8m-BqV5"],
+          "parent": "RK0G-Ldcv-GEo6-GJvc-v2y0-CDGr-tpI3-z92M",
+          "child": [],
+          "props": {
+            "targetColumn": "df_X4AY.value",
+            "schema": [{
+              "column": "host",
+              "dataType": "StringType()"
+            }, {
+              "column": "user_id",
+              "dataType": "StringType()"
+            }, {
+              "column": "http_date",
+              "dataType": "StringType()"
+            }, {
+              "column": "request",
+              "dataType": "StringType()"
+            }, {
+              "column": "response_status",
+              "dataType": "StringType()"
+            }, {
+              "column": "size",
+              "dataType": "StringType()"
+            }],
+            "pattern": "%{HOST:host} - %{USER:user_id} [%{TIMESTAMP_ISO8601:http_date}] %{QS:request} %{NUMBER:response_status} %{BASE16NUM:size}",
+            "parsedSample": " -  []   "
+          }
+        }, {
+          "uuid": "X4K4-ZWj6-AlNr-B20Y-zWYz-syPM-9L8m-BqV5",
+          "name": "URL 패턴 파싱",
+          "type": "splitColumn",
+          "label": "splitColumn",
+          "group": "hadoopBatch",
+          "link": ["Y72I-mM0Z-58OG-9jRh-98tT-6g1m-lSxg-eq9l"],
+          "parent": "RK0G-Ldcv-GEo6-GJvc-v2y0-CDGr-tpI3-z92M",
+          "child": [],
+          "props": {
+            "column": "df_x5N5.request",
+            "delimiter": "\\\\?|&",
+            "newColumns": [{
+              "column": "request_url"
+            }, {
+              "column": "request_query"
+            }, {
+              "column": "request_option_1"
+            }, {
+              "column": "request_option_2"
+            }]
+          }
+        }, {
+          "uuid": "Y72I-mM0Z-58OG-9jRh-98tT-6g1m-lSxg-eq9l",
+          "name": "Key-Value 추출",
+          "type": "splitColumn",
+          "label": "splitColumn",
+          "group": "hadoopBatch",
+          "link": ["Lh8o-uhCS-wTcF-ica9-Q73p-Xo63-2R5T-FpS2"],
+          "parent": "RK0G-Ldcv-GEo6-GJvc-v2y0-CDGr-tpI3-z92M",
+          "child": [],
+          "props": {
+            "column": "df_X4K4.request_query",
+            "delimiter": "=",
+            "newColumns": [{
+              "column": "query_key"
+            }, {
+              "column": "query_value"
+            }]
+          }
+        }, {
+          "uuid": "Lh8o-uhCS-wTcF-ica9-Q73p-Xo63-2R5T-FpS2",
+          "name": "필요한 컬럼만 선택",
+          "type": "select",
+          "label": "select",
+          "group": "hadoopBatch",
+          "link": ["w3uA-272M-HLuG-cvCg-RSlk-QQc9-y2XK-7dRv"],
+          "parent": "RK0G-Ldcv-GEo6-GJvc-v2y0-CDGr-tpI3-z92M",
+          "child": [],
+          "props": {
+            "col": ["df_Y72I.user_id", "df_Y72I.http_date", "df_Y72I.query_key", "df_Y72I.query_value"]
+          }
+        }, {
+          "uuid": "w3uA-272M-HLuG-cvCg-RSlk-QQc9-y2XK-7dRv",
+          "name": "상품 카테고리 조회 이력 추출",
+          "type": "filter",
+          "label": "filter",
+          "group": "hadoopBatch",
+          "link": ["vdJy-0wB5-6bK0-UrqT-rz41-Zf7v-rZxw-XQKk"],
+          "parent": "RK0G-Ldcv-GEo6-GJvc-v2y0-CDGr-tpI3-z92M",
+          "child": [],
+          "props": {
+            "filters": [{
+              "col": "df_Lh8o.query_key",
+              "filterOption": "= : equal",
+              "filterValue": "category_id"
+            }],
+            "filterOperator": "AND",
+            "useCustom": false,
+            "customCondition": ""
+          }
+        }, {
+          "uuid": "vdJy-0wB5-6bK0-UrqT-rz41-Zf7v-rZxw-XQKk",
+          "name": "조회 건수 기반으로 집계 및 Scoring",
+          "type": "agg",
+          "label": "agg",
+          "group": "hadoopBatch",
+          "link": ["dMft-48rk-jY4T-L7V6-rNl4-hT24-rtaj-3m77"],
+          "parent": "RK0G-Ldcv-GEo6-GJvc-v2y0-CDGr-tpI3-z92M",
+          "child": [],
+          "props": {
+            "aggcol": [{
+              "col": "df_w3uA.user_id"
+            }, {
+              "col": "df_w3uA.query_value"
+            }],
+            "target": [{
+              "func": "count",
+              "col": "df_w3uA.query_value"
+            }]
+          }
+        }, {
+          "uuid": "JNOi-lX20-39q6-xr7Z-1o2I-OLAM-tbg1-sgca",
+          "name": "사용자 별 상품 추천",
+          "type": "mlRecommend",
+          "label": "mlRecommend",
+          "group": "hadoopBatch",
+          "link": [],
+          "parent": "",
+          "child": [],
+          "props": {
+            "master": "yarn-cluster",
+            "name": "상품 추천 결과",
+            "useTrainNodeModel": true,
+            "modelPath": "s3a://accuinsight/demo/shopping/model",
+            "modelPathcredential": {
+              "object.storage.name": "accuinsight",
+              "fs.s3a.access.key": "",
+              "fs.s3a.secret.key": "",
+              "fs.s3a.endpoint": ""
+            },
+            "saveHdfsPath": "s3a://accuinsight/demo/shopping/recommend",
+            "saveHdfsPathcredential": {
+              "object.storage.name": "accuinsight",
+              "fs.s3a.access.key": "",
+              "fs.s3a.secret.key": "",
+              "fs.s3a.endpoint": ""
+            },
+            "saveDataSetFormat": "parquet",
+            "saveDataSetDelimiter": ",",
+            "saveDataSetHeaderExists": "TRUE",
+            "recommendType": "recommendForAllUsers",
+            "numRecommends": "3",
+            "userCol": "user_id",
+            "itemCol": "item_id",
+            "predRatingCol": "rating",
+            "sparkOpts": [{
+              "key": "",
+              "value": ""
+            }],
+            "forceOK": false
+          }
+        }, {
+          "uuid": "PfSd-8j10-03X0-93c5-NtfT-bCCP-0I3J-CKAo",
+          "name": "웹 로그 데이터 불러오기",
+          "type": "importS3",
+          "label": "S3 불러오기",
+          "group": "hadoopBatch",
+          "link": ["x5N5-981n-vVYy-0Hu4-VX7m-979J-41WK-XUX6"],
+          "parent": "RK0G-Ldcv-GEo6-GJvc-v2y0-CDGr-tpI3-z92M",
+          "child": [],
+          "props": {
+            "file": "s3a://accuinsight/demo/shopping/raw/shopping_web.log",
+            "format": "csv",
+            "delimiter": ",",
+            "option": [{
+              "key": "header",
+              "value": "false"
+            }],
+            "schema": [{
+              "column": "value",
+              "dataType": "StringType()"
+            }],
+            "credential": {
+              "fs.s3a.access.key": "",
+              "fs.s3a.secret.key": "",
+              "fs.s3a.endpoint": ""
+            }
+          }
+        }, {
+          "uuid": "dMft-48rk-jY4T-L7V6-rNl4-hT24-rtaj-3m77",
+          "name": "전처리 데이터 저장",
+          "type": "exportS3",
+          "label": "S3 내보내기",
+          "group": "hadoopBatch",
+          "link": [],
+          "parent": "RK0G-Ldcv-GEo6-GJvc-v2y0-CDGr-tpI3-z92M",
+          "child": [],
+          "props": {
+            "path": "s3a://accuinsight/demo/shopping",
+            "folder": "preprocessing",
+            "fileName": "",
+            "format": "csv",
+            "mode": "overwrite",
+            "header": "true",
+            "option": [{
+              "key": "",
+              "value": ""
+            }],
+            "credential": {
+              "fs.s3a.access.key": "",
+              "fs.s3a.secret.key": "",
+              "fs.s3a.endpoint": ""
+            },
+            "mlDataset": {
+              "useMlDataset": true,
+              "mlDatasetName": "쇼핑몰 웹로그 전처리",
+              "mlDatasetDescription": ""
+            },
+            "catalogDataset": {
+              "useCatalogDataset": false,
+              "targetBucket": "",
+              "datasetName": "",
+              "userId": ""
+            }
+          }
+        }, {
+          "uuid": "nNFx-MY3l-HImx-1iwI-lGjv-fxrL-6im4-ce4A",
+          "name": "협업 필터링(CF) 알고리즘 수행",
+          "type": "mlTrain",
+          "label": "mlTrain",
+          "group": "hadoopBatch",
+          "link": ["JNOi-lX20-39q6-xr7Z-1o2I-OLAM-tbg1-sgca"],
+          "parent": "",
+          "child": [],
+          "props": {
+            "modelName": "쇼핑몰 추천 모델",
+            "modelDesc": "",
+            "pipelineId": "PL_fe4083c0_4101_433a_992b_76a81ee99fee",
+            "datasetPath": "s3a://accuinsight/demo/shopping/preprocessing/",
+            "format": "csv",
+            "datasetPathcredential": {
+              "object.storage.name": "accuinsight",
+              "fs.s3a.access.key": "",
+              "fs.s3a.secret.key": "",
+              "fs.s3a.endpoint": ""
+            },
+            "modelPath": "s3a://accuinsight/demo/shopping/model",
+            "modelPathcredential": {
+              "object.storage.name": "accuinsight",
+              "fs.s3a.access.key": "",
+              "fs.s3a.secret.key": "",
+              "fs.s3a.endpoint": ""
+            },
+            "modelCluster": "-",
+            "sparkOpts": [{
+              "key": "",
+              "value": ""
+            }]
+          }
+        }],
+        "workflow": {
+          "id": "18002",
+          "name": "온라인 쇼핑몰 사용자 추천 시나리오_GTM",
+          "appName": "G1128"
+        },
+        "extraProps": {
+          "clientId": "accu_gtm",
+          "id": "1128"
+        },
+        "uuid": "d8DS-9ILM-YfXY-5BJu-SA40-T5CK-cXS6-S12c"
+      }]
+    }
+  },
+  "gid": -1,
+  "workflowJson": "{\"RK0G-Ldcv-GEo6-GJvc-v2y0-CDGr-tpI3-z92M\":\"-420 -120\",\"x5N5-981n-vVYy-0Hu4-VX7m-979J-41WK-XUX6\":\"-420 0\",\"X4K4-ZWj6-AlNr-B20Y-zWYz-syPM-9L8m-BqV5\":\"-420 120\",\"Y72I-mM0Z-58OG-9jRh-98tT-6g1m-lSxg-eq9l\":\"-150 0\",\"Lh8o-uhCS-wTcF-ica9-Q73p-Xo63-2R5T-FpS2\":\"-150 120\",\"w3uA-272M-HLuG-cvCg-RSlk-QQc9-y2XK-7dRv\":\"120 120\",\"vdJy-0wB5-6bK0-UrqT-rz41-Zf7v-rZxw-XQKk\":\"120 0\",\"JNOi-lX20-39q6-xr7Z-1o2I-OLAM-tbg1-sgca\":\"450 120\",\"PfSd-8j10-03X0-93c5-NtfT-bCCP-0I3J-CKAo\":\"-420 -120\",\"dMft-48rk-jY4T-L7V6-rNl4-hT24-rtaj-3m77\":\"120 -120\",\"nNFx-MY3l-HImx-1iwI-lGjv-fxrL-6im4-ce4A\":\"450 0\"}",
+  "specVersion": "1.0"
+}
